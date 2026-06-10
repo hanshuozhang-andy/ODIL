@@ -1,0 +1,10 @@
+/Users/hanshuozhang/Desktop/ODIL_literature/Wave/wave.py
+Running Newton optimizer
+
+epoch=00000
+residual: fu:96.544
+error: u:0.22361
+memory: 212 MiB
+walltime: 0.129 s
+walltime+callback: 0.129 s
+u_00000.png ut_00000.png

@@ -14,7 +14,7 @@ Examples:
   python wave_mac_standalone.py --optimizer newton --Nt 25 --Nx 25 --outdir out_wave_mac
   python wave_mac_standalone.py --optimizer lbfgsb --Nt 25 --Nx 25 --outdir out_wave_mac_lbfgs
 
-Notes:
+Notes:conda --version
   - This script implements the non-multigrid wave case.
   - Newton is implemented as a sparse linear solve because the wave residual is linear.
   - L-BFGS-B minimizes mean squared discrete residuals from zero initial guess.

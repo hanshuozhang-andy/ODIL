@@ -1,0 +1,201 @@
+heat_odil_library_like_source.py --outdir out_odiln --Nt 64 --Nx 64 --ref_path ref/ref.pickle --infer_k 1 --imposed stripe --optimizer newton --multigrid 0 --kwreg 1 --report_every 5 --history_every 1 --plot_every 10
+Loading reference solution from '../ref/ref.pickle'
+Running Newton optimizer
+
+epoch=00000
+residual: fu:6.5885, imp:0.76234, wreg:0
+error: u:0.36418, k:2.494
+memory: 410 MiB
+walltime: 1.025 s
+walltime+callback: 1.025 s
+u_00000.png k_00000.png
+
+epoch=00005
+residual: fu:0.085181, imp:0.029189, wreg:0
+error: u:0.027266, k:0.35865
+memory: 646 MiB
+walltime: 44.388 s
+walltime+callback: 44.613 s
+walltime/epoch: 8877.614 ms
+throughput: 0.000M cells/s
+
+epoch=00010
+residual: fu:0.0064262, imp:0.018465, wreg:0
+error: u:0.022058, k:0.35479
+memory: 644 MiB
+walltime: 88.207 s
+walltime+callback: 88.440 s
+walltime/epoch: 8763.697 ms
+throughput: 0.000M cells/s
+u_00001.png k_00001.png
+
+epoch=00015
+residual: fu:0.019395, imp:0.012597, wreg:0
+error: u:0.016665, k:0.19783
+memory: 629 MiB
+walltime: 131.961 s
+walltime+callback: 132.281 s
+walltime/epoch: 8750.865 ms
+throughput: 0.000M cells/s
+
+epoch=00020
+residual: fu:0.0063538, imp:0.0078777, wreg:0
+error: u:0.010572, k:0.080954
+memory: 633 MiB
+walltime: 175.631 s
+walltime+callback: 175.958 s
+walltime/epoch: 8733.954 ms
+throughput: 0.000M cells/s
+u_00002.png k_00002.png
+
+epoch=00025
+residual: fu:0.0040944, imp:0.0057332, wreg:0
+error: u:0.007482, k:0.046663
+memory: 434 MiB
+walltime: 220.460 s
+walltime+callback: 220.876 s
+walltime/epoch: 8965.774 ms
+throughput: 0.000M cells/s
+
+epoch=00030
+residual: fu:0.0029503, imp:0.0044567, wreg:0
+error: u:0.0056258, k:0.030726
+memory: 399 MiB
+walltime: 265.173 s
+walltime+callback: 265.598 s
+walltime/epoch: 8942.626 ms
+throughput: 0.000M cells/s
+u_00003.png k_00003.png
+
+epoch=00035
+residual: fu:0.0021983, imp:0.0036691, wreg:0
+error: u:0.0044692, k:0.022022
+memory: 442 MiB
+walltime: 309.258 s
+walltime+callback: 309.779 s
+walltime/epoch: 8817.034 ms
+throughput: 0.000M cells/s
+
+epoch=00040
+residual: fu:0.0016967, imp:0.0031824, wreg:0
+error: u:0.0037452, k:0.016945
+memory: 437 MiB
+walltime: 353.184 s
+walltime+callback: 353.713 s
+walltime/epoch: 8785.214 ms
+throughput: 0.000M cells/s
+u_00004.png k_00004.png
+
+epoch=00045
+residual: fu:0.00137, imp:0.0028796, wreg:0
+error: u:0.0032903, k:0.013903
+memory: 448 MiB
+walltime: 397.446 s
+walltime+callback: 398.063 s
+walltime/epoch: 8852.495 ms
+throughput: 0.000M cells/s
+
+epoch=00050
+residual: fu:0.0011516, imp:0.0026891, wreg:0
+error: u:0.0030036, k:0.012084
+memory: 432 MiB
+walltime: 441.159 s
+walltime+callback: 441.784 s
+walltime/epoch: 8742.576 ms
+throughput: 0.000M cells/s
+u_00005.png k_00005.png
+
+epoch=00055
+residual: fu:0.0010142, imp:0.0025669, wreg:0
+error: u:0.0028213, k:0.011004
+memory: 454 MiB
+walltime: 484.713 s
+walltime+callback: 485.423 s
+walltime/epoch: 8710.774 ms
+throughput: 0.000M cells/s
+
+epoch=00060
+residual: fu:0.00092426, imp:0.0024862, wreg:0
+error: u:0.0027041, k:0.010371
+memory: 448 MiB
+walltime: 528.310 s
+walltime+callback: 529.028 s
+walltime/epoch: 8719.470 ms
+throughput: 0.000M cells/s
+u_00006.png k_00006.png
+
+epoch=00065
+residual: fu:0.00086582, imp:0.002431, wreg:0
+error: u:0.0026277, k:0.010005
+memory: 453 MiB
+walltime: 571.930 s
+walltime+callback: 572.732 s
+walltime/epoch: 8723.949 ms
+throughput: 0.000M cells/s
+
+epoch=00070
+residual: fu:0.00082703, imp:0.0023917, wreg:0
+error: u:0.0025772, k:0.0097939
+memory: 453 MiB
+walltime: 615.457 s
+walltime+callback: 616.267 s
+walltime/epoch: 8705.404 ms
+throughput: 0.000M cells/s
+u_00007.png k_00007.png
+
+epoch=00075
+residual: fu:0.00080088, imp:0.0023625, wreg:0
+error: u:0.0025434, k:0.0096746
+memory: 584 MiB
+walltime: 659.684 s
+walltime+callback: 660.579 s
+walltime/epoch: 8845.438 ms
+throughput: 0.000M cells/s
+
+epoch=00080
+residual: fu:0.00078241, imp:0.00234, wreg:0
+error: u:0.0025207, k:0.0096089
+memory: 592 MiB
+walltime: 703.986 s
+walltime+callback: 704.889 s
+walltime/epoch: 8860.228 ms
+throughput: 0.000M cells/s
+u_00008.png k_00008.png
+
+epoch=00085
+residual: fu:0.00076896, imp:0.0023218, wreg:0
+error: u:0.0025055, k:0.0095749
+memory: 598 MiB
+walltime: 747.680 s
+walltime+callback: 748.668 s
+walltime/epoch: 8738.941 ms
+throughput: 0.000M cells/s
+
+epoch=00090
+residual: fu:0.00075872, imp:0.0023066, wreg:0
+error: u:0.0024954, k:0.0095596
+memory: 591 MiB
+walltime: 792.252 s
+walltime+callback: 793.249 s
+walltime/epoch: 8914.281 ms
+throughput: 0.000M cells/s
+u_00009.png k_00009.png
+
+epoch=00095
+residual: fu:0.0007507, imp:0.0022935, wreg:0
+error: u:0.0024889, k:0.0095553
+memory: 604 MiB
+walltime: 836.293 s
+walltime+callback: 837.375 s
+walltime/epoch: 8808.354 ms
+throughput: 0.000M cells/s
+
+epoch=00100
+residual: fu:0.00074417, imp:0.002282, wreg:0
+error: u:0.002485, k:0.0095579
+memory: 604 MiB
+walltime: 880.035 s
+walltime+callback: 881.124 s
+walltime/epoch: 8748.396 ms
+throughput: 0.000M cells/s
+u_00010.png k_00010.png

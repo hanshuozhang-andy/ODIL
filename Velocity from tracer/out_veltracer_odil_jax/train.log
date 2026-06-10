@@ -1,0 +1,115 @@
+velocity_tracer.py --Nx 64 --Nt 64 --optimizer adam --multigrid 1 --mg_interp conv --lr 0.01 --kxreg 0.01 --ktreg 1 --kimp 10 --frames 10 --plot_every 100
+ODIL backend: jax
+ODIL JIT: 0
+grid cshape: (64, 64, 64)
+field shape ncc: (65, 64, 64)
+multigrid levels: [(64, 64, 64), (32, 32, 32), (16, 16, 16), (8, 8, 8), (4, 4, 4), (2, 2, 2)]
+Running AdamNative optimizer
+
+epoch=00000
+residual: fu:3.364, fimp:23.727, vx_lap:0, vy_lap:0, vx_t:0, vy_t:0
+tracer endpoint error: t0:0.29965, t1:0.2989
+memory: 430 MiB
+walltime: 0.817 s
+walltime+callback: 0.817 s
+u_00000.png v_00000.png
+
+epoch=00100
+residual: fu:0.17463, fimp:0.098434, vx_lap:0.10182, vy_lap:0.10071, vx_t:0.059694, vy_t:0.028834
+tracer endpoint error: t0:0.0011388, t1:0.0060436
+memory: 606 MiB
+walltime: 11.615 s
+walltime+callback: 13.802 s
+walltime/epoch: 116.146 ms
+throughput: 2.257M cells/s
+u_00001.png v_00001.png
+
+epoch=00200
+residual: fu:0.14011, fimp:0.0059991, vx_lap:0.11252, vy_lap:0.11847, vx_t:0.068032, vy_t:0.037214
+tracer endpoint error: t0:0.00011294, t1:0.0081084
+memory: 644 MiB
+walltime: 22.149 s
+walltime+callback: 25.093 s
+walltime/epoch: 105.341 ms
+throughput: 2.489M cells/s
+u_00002.png v_00002.png
+
+epoch=00300
+residual: fu:0.13578, fimp:0.0060311, vx_lap:0.1213, vy_lap:0.11724, vx_t:0.072638, vy_t:0.035787
+tracer endpoint error: t0:0.00014865, t1:0.0088681
+memory: 623 MiB
+walltime: 32.873 s
+walltime+callback: 36.612 s
+walltime/epoch: 107.240 ms
+throughput: 2.444M cells/s
+u_00003.png v_00003.png
+
+epoch=00400
+residual: fu:0.13746, fimp:0.0060933, vx_lap:0.10581, vy_lap:0.12336, vx_t:0.069739, vy_t:0.040249
+tracer endpoint error: t0:0.00030909, t1:0.0092791
+memory: 515 MiB
+walltime: 43.801 s
+walltime+callback: 48.319 s
+walltime/epoch: 109.280 ms
+throughput: 2.399M cells/s
+u_00004.png v_00004.png
+
+epoch=00500
+residual: fu:0.13479, fimp:0.0061258, vx_lap:0.11079, vy_lap:0.11792, vx_t:0.071428, vy_t:0.038165
+tracer endpoint error: t0:0.00076299, t1:0.0095302
+memory: 567 MiB
+walltime: 54.846 s
+walltime+callback: 60.216 s
+walltime/epoch: 110.457 ms
+throughput: 2.373M cells/s
+u_00005.png v_00005.png
+
+epoch=00600
+residual: fu:0.13859, fimp:0.006137, vx_lap:0.14204, vy_lap:0.13263, vx_t:0.069732, vy_t:0.041277
+tracer endpoint error: t0:0.0009653, t1:0.0096774
+memory: 585 MiB
+walltime: 65.967 s
+walltime+callback: 72.143 s
+walltime/epoch: 111.205 ms
+throughput: 2.357M cells/s
+u_00006.png v_00006.png
+
+epoch=00700
+residual: fu:0.14082, fimp:0.094629, vx_lap:0.10593, vy_lap:0.11314, vx_t:0.071666, vy_t:0.036859
+tracer endpoint error: t0:0.00066065, t1:0.009798
+memory: 612 MiB
+walltime: 77.165 s
+walltime+callback: 84.143 s
+walltime/epoch: 111.987 ms
+throughput: 2.341M cells/s
+u_00007.png v_00007.png
+
+epoch=00800
+residual: fu:0.13249, fimp:0.0061388, vx_lap:0.10224, vy_lap:0.12625, vx_t:0.06985, vy_t:0.035108
+tracer endpoint error: t0:0.00024824, t1:0.0098136
+memory: 587 MiB
+walltime: 88.504 s
+walltime+callback: 96.340 s
+walltime/epoch: 113.386 ms
+throughput: 2.312M cells/s
+u_00008.png v_00008.png
+
+epoch=00900
+residual: fu:0.1341, fimp:0.062241, vx_lap:0.1088, vy_lap:0.11152, vx_t:0.071798, vy_t:0.038074
+tracer endpoint error: t0:0.00017657, t1:0.009918
+memory: 653 MiB
+walltime: 100.000 s
+walltime+callback: 108.655 s
+walltime/epoch: 114.955 ms
+throughput: 2.280M cells/s
+u_00009.png v_00009.png
+
+epoch=01000
+residual: fu:0.13628, fimp:0.0061583, vx_lap:0.11846, vy_lap:0.14118, vx_t:0.073078, vy_t:0.051428
+tracer endpoint error: t0:0.0009838, t1:0.0098829
+memory: 599 MiB
+walltime: 111.567 s
+walltime+callback: 121.106 s
+walltime/epoch: 115.675 ms
+throughput: 2.266M cells/s
+u_00010.png v_00010.png

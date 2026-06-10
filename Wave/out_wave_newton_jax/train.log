@@ -1,0 +1,10 @@
+wave.py --optimizer newton --multigrid 0 --linsolver direct --every_factor 0.01 --Nt 25 --Nx 25 --outdir out_wave_newton_jax
+Running Newton optimizer
+
+epoch=00000
+residual: fu:23.57
+error: u:0.22361
+memory: 208 MiB
+walltime: 0.116 s
+walltime+callback: 0.116 s
+u_00000.png ut_00000.png
