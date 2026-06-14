@@ -1,6 +1,18 @@
 #!/usr/bin/env python3
 """
-
+python body_shape_odil_jax.py \
+  --case all \
+  --N 64 \
+  --Re 60 \
+  --D 0.4 \
+  --lambda_penalty 10 \
+  --forward_epochs 12000 \
+  --epochs 20000 \
+  --lr 1e-3 \
+  --forward_lr 1e-3 \
+  --n_data 100 \
+  --report_every 200 \
+  --outdir out_body_shape
 """
 
 from __future__ import annotations
@@ -376,6 +388,8 @@ def vorticity_np(u: np.ndarray, v: np.ndarray, dx: float, dy: float) -> np.ndarr
 
 
 def read_history(path: str) -> Dict[str, np.ndarray]:
+    if not os.path.exists(path):
+        return {}
     data = {}
     with open(path, newline="") as f:
         rows = list(csv.DictReader(f))
@@ -386,7 +400,201 @@ def read_history(path: str) -> Dict[str, np.ndarray]:
     return data
 
 
+def setup_plot_style() -> None:
+    plt.rcParams.update({
+        "figure.facecolor": "white",
+        "axes.facecolor": "white",
+        "axes.edgecolor": "0.18",
+        "axes.labelsize": 9,
+        "axes.titlesize": 10,
+        "xtick.labelsize": 8,
+        "ytick.labelsize": 8,
+        "legend.fontsize": 8,
+        "font.size": 9,
+        "savefig.bbox": "tight",
+    })
+
+
+def symmetric_limit(*arrays: np.ndarray, percentile: float = 99.0) -> float:
+    vals = np.concatenate([np.ravel(np.asarray(a)) for a in arrays])
+    vals = np.abs(vals[np.isfinite(vals)])
+    if vals.size == 0:
+        return 1.0
+    return max(float(np.percentile(vals, percentile)), 1e-6)
+
+
+def robust_limits(arr: np.ndarray, lo: float = 1.0, hi: float = 99.0) -> Tuple[float, float]:
+    vals = np.ravel(np.asarray(arr))
+    vals = vals[np.isfinite(vals)]
+    if vals.size == 0:
+        return 0.0, 1.0
+    vmin, vmax = np.percentile(vals, [lo, hi])
+    if np.isclose(vmin, vmax):
+        pad = max(abs(float(vmin)) * 0.05, 1e-6)
+        return float(vmin - pad), float(vmax + pad)
+    return float(vmin), float(vmax)
+
+
+def measurement_xy(const: Const) -> Tuple[np.ndarray, np.ndarray]:
+    x = np.asarray(const.x)
+    y = np.asarray(const.y)
+    i = np.asarray(const.meas_i)
+    j = np.asarray(const.meas_j)
+    return x[i, j], y[i, j]
+
+
+def format_domain_axis(ax, title: str, show_ylabel: bool = True) -> None:
+    ax.set_title(title, pad=6)
+    ax.set_xlim(0.0, 2.0)
+    ax.set_ylim(0.0, 1.0)
+    ax.set_aspect("equal")
+    ax.set_xlabel("x")
+    if show_ylabel:
+        ax.set_ylabel("y")
+    else:
+        ax.set_yticklabels([])
+    ax.tick_params(direction="out", length=3, width=0.8)
+
+
+def contour_if_present(ax, x: np.ndarray, y: np.ndarray, field: np.ndarray, level: float, **kwargs) -> None:
+    if np.nanmin(field) <= level <= np.nanmax(field):
+        ax.contour(x, y, field, levels=[level], **kwargs)
+
+
+def largest_component_mask(mask: np.ndarray) -> np.ndarray:
+    mask = np.asarray(mask, dtype=bool)
+    visited = np.zeros(mask.shape, dtype=bool)
+    best: list[tuple[int, int]] = []
+    for start in np.argwhere(mask):
+        si, sj = int(start[0]), int(start[1])
+        if visited[si, sj]:
+            continue
+        stack = [(si, sj)]
+        visited[si, sj] = True
+        component: list[tuple[int, int]] = []
+        while stack:
+            i, j = stack.pop()
+            component.append((i, j))
+            for di in (-1, 0, 1):
+                for dj in (-1, 0, 1):
+                    if di == 0 and dj == 0:
+                        continue
+                    ni, nj = i + di, j + dj
+                    if 0 <= ni < mask.shape[0] and 0 <= nj < mask.shape[1] and mask[ni, nj] and not visited[ni, nj]:
+                        visited[ni, nj] = True
+                        stack.append((ni, nj))
+        if len(component) > len(best):
+            best = component
+
+    result = np.zeros(mask.shape, dtype=bool)
+    if best:
+        ii, jj = zip(*best)
+        result[np.array(ii), np.array(jj)] = True
+    return result
+
+
+def box_smooth(arr: np.ndarray, passes: int = 3) -> np.ndarray:
+    smoothed = np.asarray(arr, dtype=float)
+    for _ in range(passes):
+        padded = np.pad(smoothed, ((1, 1), (1, 1)), mode="edge")
+        smoothed = (
+            padded[:-2, :-2] + padded[:-2, 1:-1] + padded[:-2, 2:]
+            + padded[1:-1, :-2] + padded[1:-1, 1:-1] + padded[1:-1, 2:]
+            + padded[2:, :-2] + padded[2:, 1:-1] + padded[2:, 2:]
+        ) / 9.0
+    return smoothed
+
+
+def inferred_body_mask_for_plot(chi: np.ndarray) -> np.ndarray:
+    # Display-only smoothing turns checkerboard-like inferred chi into a readable outline.
+    return largest_component_mask(box_smooth(chi, passes=3) >= 0.18).astype(float)
+
+
+def reference_body_mask_for_plot(chi_ref: np.ndarray) -> np.ndarray:
+    return largest_component_mask(chi_ref >= 0.5).astype(float)
+
+
+def overlay_body_contours(ax, x: np.ndarray, y: np.ndarray, chi: np.ndarray, chi_ref: np.ndarray) -> None:
+    contour_if_present(ax, x, y, inferred_body_mask_for_plot(chi), 0.5, colors="#d62728", linewidths=1.6)
+    contour_if_present(ax, x, y, reference_body_mask_for_plot(chi_ref), 0.5, colors="black", linewidths=1.1, linestyles="--")
+
+
+def overlay_measurements(ax, const: Const, alpha: float = 0.42) -> None:
+    mx, my = measurement_xy(const)
+    ax.scatter(
+        mx,
+        my,
+        s=11,
+        marker="o",
+        facecolors="white",
+        edgecolors="black",
+        linewidths=0.45,
+        alpha=alpha,
+        zorder=4,
+        rasterized=True,
+    )
+
+
+def shape_metrics(chi: np.ndarray, chi_ref: np.ndarray) -> Dict[str, float]:
+    inferred = inferred_body_mask_for_plot(chi).astype(bool)
+    reference = reference_body_mask_for_plot(chi_ref).astype(bool)
+    inter = np.logical_and(inferred, reference).sum()
+    union = np.logical_or(inferred, reference).sum()
+    denom = inferred.sum() + reference.sum()
+    iou = float(inter / union) if union else 1.0
+    dice = float(2.0 * inter / denom) if denom else 1.0
+    area_ratio = float((inferred.mean() + 1e-12) / (reference.mean() + 1e-12))
+    chi_rmse = float(np.sqrt(np.mean((chi - chi_ref) ** 2)) / (np.mean(chi_ref) + 1e-12))
+    return {"iou": iou, "dice": dice, "area_ratio": area_ratio, "chi_rmse": chi_rmse}
+
+
+def add_metrics_box(ax, text: str, loc: str = "lower left") -> None:
+    anchors = {
+        "lower left": (0.025, 0.045, "left", "bottom"),
+        "upper left": (0.025, 0.955, "left", "top"),
+        "upper right": (0.975, 0.955, "right", "top"),
+    }
+    x, y, ha, va = anchors[loc]
+    ax.text(
+        x,
+        y,
+        text,
+        transform=ax.transAxes,
+        ha=ha,
+        va=va,
+        fontsize=8,
+        color="0.08",
+        bbox={"boxstyle": "round,pad=0.28", "facecolor": "white", "edgecolor": "0.82", "alpha": 0.88},
+        zorder=5,
+    )
+
+
+def add_history_panel(ax, hist: Dict[str, np.ndarray]) -> None:
+    if not hist or "epoch" not in hist:
+        ax.text(0.5, 0.5, "history not found", ha="center", va="center", transform=ax.transAxes)
+        ax.set_axis_off()
+        return
+    epoch = hist["epoch"]
+    series = [
+        ("loss", "#1f77b4", 1.9),
+        ("pde", "#2ca02c", 1.5),
+        ("bc", "#ff7f0e", 1.5),
+        ("err_u", "#9467bd", 1.8),
+        ("err_chi", "#d62728", 1.8),
+    ]
+    for key, color, lw in series:
+        if key in hist:
+            vals = np.maximum(hist[key], 1e-16)
+            ax.semilogy(epoch, vals, label=key, color=color, lw=lw)
+    ax.set_xlabel("epoch")
+    ax.set_ylabel("log scale")
+    ax.set_title("Optimization history", pad=6)
+    ax.grid(True, which="both", alpha=0.22, linewidth=0.7)
+    ax.legend(ncol=3, frameon=False, loc="upper right", handlelength=1.6, columnspacing=0.9)
+
+
 def save_figure(case: str, outdir: str, const: Const, params: PyTree, hist_path: str, suffix: str = "final") -> None:
+    setup_plot_style()
     x = np.asarray(const.x)
     y = np.asarray(const.y)
     u_ref = np.asarray(const.u_ref)
@@ -399,56 +607,111 @@ def save_figure(case: str, outdir: str, const: Const, params: PyTree, hist_path:
 
     w_ref = vorticity_np(u_ref, v_ref, const.dx, const.dy)
     w_inf = vorticity_np(u, v, const.dx, const.dy)
-    vmax = np.percentile(np.abs(np.concatenate([w_ref.ravel(), w_inf.ravel()])), 99.0)
-    vmax = max(vmax, 1e-6)
+    w_err = w_inf - w_ref
+    speed_err = np.sqrt((u - u_ref) ** 2 + (v - v_ref) ** 2)
+    vorticity_limit = symmetric_limit(w_ref, w_inf, percentile=99.0)
+    residual_limit = symmetric_limit(w_err, percentile=99.0)
+    speed_vmin, speed_vmax = robust_limits(speed_err, 0.0, 99.0)
     extent = [0, 2, 0, 1]
+    metrics = shape_metrics(chi, chi_ref)
+    vel_rmse = float(np.sqrt(np.mean((u - u_ref) ** 2 + (v - v_ref) ** 2)))
 
     hist = read_history(hist_path)
-    fig = plt.figure(figsize=(11.0, 7.0), constrained_layout=True)
-    gs = fig.add_gridspec(2, 2, height_ratios=(1.3, 1.0))
+    fig = plt.figure(figsize=(13.2, 7.6), constrained_layout=True)
+    gs = fig.add_gridspec(2, 3, height_ratios=(1.0, 0.92), width_ratios=(1.0, 1.0, 1.02))
 
     ax0 = fig.add_subplot(gs[0, 0])
-    im0 = ax0.imshow(w_inf.T, origin="lower", extent=extent, cmap="RdBu_r", vmin=-vmax, vmax=vmax, interpolation="bilinear")
-    ax0.contour(x, y, chi, levels=[0.5], colors="tab:red", linewidths=1.5)
-    ax0.contour(x, y, chi_ref, levels=[0.5], colors="k", linewidths=1.0, linestyles="--")
-    ax0.scatter(np.asarray(const.x)[np.asarray(const.meas_i), np.asarray(const.meas_j)],
-                np.asarray(const.y)[np.asarray(const.meas_i), np.asarray(const.meas_j)],
-                s=8, c="k", alpha=0.8)
-    ax0.set_title(f"{case}: inferred vorticity + body contour")
-    ax0.set_xlabel("x")
-    ax0.set_ylabel("y")
-    ax0.set_aspect("equal")
+    im0 = ax0.imshow(
+        w_inf.T,
+        origin="lower",
+        extent=extent,
+        cmap="RdBu_r",
+        vmin=-vorticity_limit,
+        vmax=vorticity_limit,
+        interpolation="bilinear",
+        rasterized=True,
+    )
+    overlay_body_contours(ax0, x, y, chi, chi_ref)
+    overlay_measurements(ax0, const)
+    format_domain_axis(ax0, "Inferred vorticity", show_ylabel=True)
+    add_metrics_box(ax0, "red: inferred body\nblack dashed: reference", loc="upper left")
 
     ax1 = fig.add_subplot(gs[0, 1])
-    im1 = ax1.imshow(w_ref.T, origin="lower", extent=extent, cmap="RdBu_r", vmin=-vmax, vmax=vmax, interpolation="bilinear")
-    ax1.contour(x, y, chi_ref, levels=[0.5], colors="k", linewidths=1.0)
-    ax1.scatter(np.asarray(const.x)[np.asarray(const.meas_i), np.asarray(const.meas_j)],
-                np.asarray(const.y)[np.asarray(const.meas_i), np.asarray(const.meas_j)],
-                s=8, c="k", alpha=0.8)
-    ax1.set_title("reference vorticity + body contour")
-    ax1.set_xlabel("x")
-    ax1.set_ylabel("y")
-    ax1.set_aspect("equal")
-    cbar = fig.colorbar(im1, ax=[ax0, ax1], shrink=0.85, pad=0.01)
-    cbar.set_label("vorticity ω")
+    im1 = ax1.imshow(
+        w_ref.T,
+        origin="lower",
+        extent=extent,
+        cmap="RdBu_r",
+        vmin=-vorticity_limit,
+        vmax=vorticity_limit,
+        interpolation="bilinear",
+        rasterized=True,
+    )
+    contour_if_present(ax1, x, y, chi_ref, 0.5, colors="black", linewidths=1.25)
+    overlay_measurements(ax1, const)
+    format_domain_axis(ax1, "Reference vorticity", show_ylabel=False)
 
-    ax2 = fig.add_subplot(gs[1, 0])
-    if hist:
-        ax2.semilogy(hist["epoch"], hist["err_u"], lw=1.8)
-    ax2.set_xlabel("epoch")
-    ax2.set_ylabel("RMS error in u")
-    ax2.set_title("B) velocity-u error history")
-    ax2.grid(True, which="both", alpha=0.25)
+    ax2 = fig.add_subplot(gs[0, 2])
+    im2 = ax2.imshow(
+        w_err.T,
+        origin="lower",
+        extent=extent,
+        cmap="PuOr_r",
+        vmin=-residual_limit,
+        vmax=residual_limit,
+        interpolation="bilinear",
+        rasterized=True,
+    )
+    overlay_body_contours(ax2, x, y, chi, chi_ref)
+    format_domain_axis(ax2, "Vorticity residual", show_ylabel=False)
+    cbar = fig.colorbar(im1, ax=[ax0, ax1], shrink=0.78, pad=0.01)
+    cbar.set_label("vorticity")
+    cbar2 = fig.colorbar(im2, ax=ax2, shrink=0.78, pad=0.012)
+    cbar2.set_label("inferred - reference")
 
-    ax3 = fig.add_subplot(gs[1, 1])
-    if hist:
-        ax3.semilogy(hist["epoch"], hist["err_chi"], lw=1.8)
-    ax3.set_xlabel("epoch")
-    ax3.set_ylabel("RMS error in χ / mean(χ_ref)")
-    ax3.set_title("C) body-fraction error history")
-    ax3.grid(True, which="both", alpha=0.25)
+    ax3 = fig.add_subplot(gs[1, 0])
+    im3 = ax3.imshow(
+        chi.T,
+        origin="lower",
+        extent=extent,
+        cmap="viridis",
+        vmin=0.0,
+        vmax=1.0,
+        interpolation="nearest",
+        rasterized=True,
+    )
+    overlay_body_contours(ax3, x, y, chi, chi_ref)
+    format_domain_axis(ax3, "Body fraction chi", show_ylabel=True)
+    add_metrics_box(
+        ax3,
+        f"IoU {metrics['iou']:.3f}\nDice {metrics['dice']:.3f}\narea ratio {metrics['area_ratio']:.2f}",
+        loc="upper right",
+    )
+    cbar3 = fig.colorbar(im3, ax=ax3, shrink=0.78, pad=0.012)
+    cbar3.set_label("chi")
 
-    fig.suptitle(f"Inferring body shape from velocity, Re={const.Re:g}, D={const.D:g}")
+    ax4 = fig.add_subplot(gs[1, 1])
+    im4 = ax4.imshow(
+        speed_err.T,
+        origin="lower",
+        extent=extent,
+        cmap="magma",
+        vmin=speed_vmin,
+        vmax=speed_vmax,
+        interpolation="bilinear",
+        rasterized=True,
+    )
+    overlay_body_contours(ax4, x, y, chi, chi_ref)
+    overlay_measurements(ax4, const, alpha=0.28)
+    format_domain_axis(ax4, "Velocity error magnitude", show_ylabel=False)
+    add_metrics_box(ax4, f"RMSE {vel_rmse:.3e}\nchi err {metrics['chi_rmse']:.3f}", loc="upper right")
+    cbar4 = fig.colorbar(im4, ax=ax4, shrink=0.78, pad=0.012)
+    cbar4.set_label("|u - u_ref|")
+
+    ax5 = fig.add_subplot(gs[1, 2])
+    add_history_panel(ax5, hist)
+
+    fig.suptitle(f"{case.capitalize()} body-shape inversion  |  Re={const.Re:g}, D={const.D:g}", fontsize=13)
     path = os.path.join(outdir, f"fig_{case}_{suffix}.png")
     fig.savefig(path, dpi=220)
     plt.close(fig)
@@ -456,15 +719,44 @@ def save_figure(case: str, outdir: str, const: Const, params: PyTree, hist_path:
 
 
 def save_field_panels(case: str, outdir: str, const: Const, params: PyTree) -> None:
+    setup_plot_style()
     u, v, p, phi, chi = fields_from_params(params, const, "inverse")
-    arrays = [("u", u), ("v", v), ("chi", chi), ("phi", phi)]
-    fig, axs = plt.subplots(1, 4, figsize=(13, 3.3), constrained_layout=True)
-    for ax, (name, arr) in zip(axs, arrays):
-        arr = np.asarray(arr)
-        im = ax.imshow(arr.T, origin="lower", extent=[0, 2, 0, 1], interpolation="bilinear")
-        ax.set_title(name)
-        ax.set_aspect("equal")
-        fig.colorbar(im, ax=ax, shrink=0.8)
+    x = np.asarray(const.x)
+    y = np.asarray(const.y)
+    chi_ref = np.asarray(const.chi_ref)
+    u = np.asarray(u)
+    v = np.asarray(v)
+    p = np.asarray(p)
+    phi = np.asarray(phi)
+    chi = np.asarray(chi)
+    speed = np.sqrt(u**2 + v**2)
+    speed_err = np.sqrt((u - np.asarray(const.u_ref)) ** 2 + (v - np.asarray(const.v_ref)) ** 2)
+    panels = [
+        ("u velocity", u, "viridis", robust_limits(u)),
+        ("v velocity", v, "RdBu_r", (-symmetric_limit(v), symmetric_limit(v))),
+        ("pressure", p, "RdBu_r", (-symmetric_limit(p), symmetric_limit(p))),
+        ("speed", speed, "magma", robust_limits(speed, 0.0, 99.0)),
+        ("body fraction chi", chi, "viridis", (0.0, 1.0)),
+        ("velocity error", speed_err, "magma", robust_limits(speed_err, 0.0, 99.0)),
+    ]
+    fig, axs = plt.subplots(2, 3, figsize=(12.8, 6.0), constrained_layout=True)
+    for idx, (ax, (name, arr, cmap, limits)) in enumerate(zip(axs.ravel(), panels)):
+        im = ax.imshow(
+            arr.T,
+            origin="lower",
+            extent=[0, 2, 0, 1],
+            interpolation="bilinear" if name != "body fraction chi" else "nearest",
+            cmap=cmap,
+            vmin=limits[0],
+            vmax=limits[1],
+            rasterized=True,
+        )
+        overlay_body_contours(ax, x, y, chi, chi_ref)
+        if name in {"u velocity", "v velocity", "speed", "velocity error"}:
+            overlay_measurements(ax, const, alpha=0.25)
+        format_domain_axis(ax, name, show_ylabel=(idx % 3 == 0))
+        fig.colorbar(im, ax=ax, shrink=0.78, pad=0.012)
+    fig.suptitle(f"{case.capitalize()} inferred fields", fontsize=13)
     path = os.path.join(outdir, f"fields_{case}.png")
     fig.savefig(path, dpi=180)
     plt.close(fig)
@@ -553,6 +845,27 @@ def run_case(args: argparse.Namespace, case: str) -> None:
     # Build reference constants with dummy u_ref for the forward problem.
     const_ref0 = build_const(args, case, None, None, None, None)
 
+    if args.viz_only:
+        inv_path = os.path.join(outdir, "inverse.pkl")
+        if not os.path.exists(ref_path):
+            raise FileNotFoundError(f"missing reference state for --viz_only: {ref_path}")
+        if not os.path.exists(inv_path):
+            raise FileNotFoundError(f"missing inverse state for --viz_only: {inv_path}")
+        ref_params = load_state(ref_path)
+        u_ref = np.asarray(ref_params["u"])
+        v_ref = np.asarray(ref_params["v"])
+        p_ref = np.asarray(ref_params["p"])
+        rng = np.random.default_rng(args.seed)
+        x_np, y_np, dx, dy = make_grid(args.N)
+        phi_ref_np = phi_body(case, x_np, y_np, args.D)
+        meas = sample_measurements(rng, u_ref, v_ref, phi_ref_np, x_np, y_np, dx, args.n_data, args.data_gap)
+        const_inv = build_const(args, case, u_ref, v_ref, p_ref, meas)
+        inv_params = load_state(inv_path)
+        inv_hist = os.path.join(outdir, "inverse.csv")
+        save_figure(case, outdir, const_inv, inv_params, inv_hist)
+        save_field_panels(case, outdir, const_inv, inv_params)
+        return
+
     if args.load_ref and os.path.exists(ref_path):
         ref_params = load_state(ref_path)
         print(f"loaded reference {ref_path}")
@@ -626,6 +939,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--seed", type=int, default=1)
     p.add_argument("--outdir", default="out_body_shape")
     p.add_argument("--load_ref", type=int, default=1, help="Reuse reference.pkl if present")
+    p.add_argument("--viz_only", type=int, default=0, help="Reload existing states and regenerate figures without training")
     return p.parse_args()
 
 

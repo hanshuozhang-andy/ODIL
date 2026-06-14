@@ -1,6 +1,0 @@
-# wave_mac_standalone.py
-# optimizer=newton
-# Nt=64, Nx=64, kimp=1.0
-# dt=0.015625, dx=0.03125
-# epoch, loss, error_u, rel_error_u, elapsed
-1,2.5548008228168534e-25,7.4963650420112864e-03,3.3524763636180600e-02,0.00765637
