@@ -1,0 +1,211 @@
+lid_cavity_flow_complexity_figure8_odil_jax.py --N 64 --cavity_ref_pickle /Users/hanshuozhang/Desktop/ODIL_literature/Lid-driven cavity Forward/out_cavity_re3200/data_Re3200_final.pickle --flows uniform,couette,poiseuille,cavity --K_list 1,2,4,8,16,29,40,50 --nsamples 2 --optimizer adam --multigrid 1 --mg_interp conv --scheme upwind --lr 1e-3 --epochs 3000 --kreg 1e-3 --eps 0.05 --outdir out_figure8_debug
+ODIL backend: jax
+ODIL JIT: 0
+grid: (64, 64)
+flows: ['uniform', 'couette', 'poiseuille', 'cavity']
+K_list: [1, 2, 4, 8, 16, 29, 40, 50]
+nsamples: 2
+eps: 0.05
+optimizer: adam epochs: 3000 lr: 0.001
+kreg: 0.001
+cavity reference: /Users/hanshuozhang/Desktop/ODIL_literature/Lid-driven cavity Forward/out_cavity_re3200/data_Re3200_final.pickle
+
+=== flow: uniform source: analytic ===
+flow=uniform    K=  1 sample=  1/2
+Running AdamNative optimizer
+  error=1.276834e+00
+flow=uniform    K=  1 sample=  2/2
+Running AdamNative optimizer
+  error=1.356889e+00
+flow=uniform    K=  2 sample=  1/2
+Running AdamNative optimizer
+  error=9.337158e-01
+flow=uniform    K=  2 sample=  2/2
+Running AdamNative optimizer
+  error=9.833072e-01
+flow=uniform    K=  4 sample=  1/2
+Running AdamNative optimizer
+  error=6.757336e-01
+flow=uniform    K=  4 sample=  2/2
+Running AdamNative optimizer
+  error=3.697652e-01
+flow=uniform    K=  8 sample=  1/2
+Running AdamNative optimizer
+  error=3.357373e-01
+flow=uniform    K=  8 sample=  2/2
+Running AdamNative optimizer
+  error=3.437166e-01
+flow=uniform    K= 16 sample=  1/2
+Running AdamNative optimizer
+  error=1.718132e-01
+flow=uniform    K= 16 sample=  2/2
+Running AdamNative optimizer
+  error=9.885734e-02
+flow=uniform    K= 29 sample=  1/2
+Running AdamNative optimizer
+  error=1.223160e-02
+flow=uniform    K= 29 sample=  2/2
+Running AdamNative optimizer
+  error=4.611097e-03
+flow=uniform    K= 40 sample=  1/2
+Running AdamNative optimizer
+  error=5.942505e-03
+flow=uniform    K= 40 sample=  2/2
+Running AdamNative optimizer
+  error=2.176812e-02
+flow=uniform    K= 50 sample=  1/2
+Running AdamNative optimizer
+  error=9.977986e-03
+flow=uniform    K= 50 sample=  2/2
+Running AdamNative optimizer
+  error=4.516633e-03
+
+=== flow: couette source: analytic ===
+flow=couette    K=  1 sample=  1/2
+Running AdamNative optimizer
+  error=4.931833e-01
+flow=couette    K=  1 sample=  2/2
+Running AdamNative optimizer
+  error=5.235188e-01
+flow=couette    K=  2 sample=  1/2
+Running AdamNative optimizer
+  error=4.210706e-01
+flow=couette    K=  2 sample=  2/2
+Running AdamNative optimizer
+  error=5.222424e-01
+flow=couette    K=  4 sample=  1/2
+Running AdamNative optimizer
+  error=1.910776e-01
+flow=couette    K=  4 sample=  2/2
+Running AdamNative optimizer
+  error=4.010395e-01
+flow=couette    K=  8 sample=  1/2
+Running AdamNative optimizer
+  error=1.353816e-01
+flow=couette    K=  8 sample=  2/2
+Running AdamNative optimizer
+  error=1.381889e-01
+flow=couette    K= 16 sample=  1/2
+Running AdamNative optimizer
+  error=1.892534e-02
+flow=couette    K= 16 sample=  2/2
+Running AdamNative optimizer
+  error=3.650778e-02
+flow=couette    K= 29 sample=  1/2
+Running AdamNative optimizer
+  error=5.726669e-02
+flow=couette    K= 29 sample=  2/2
+Running AdamNative optimizer
+  error=1.667647e-02
+flow=couette    K= 40 sample=  1/2
+Running AdamNative optimizer
+  error=4.753643e-03
+flow=couette    K= 40 sample=  2/2
+Running AdamNative optimizer
+  error=2.265094e-03
+flow=couette    K= 50 sample=  1/2
+Running AdamNative optimizer
+  error=3.151621e-03
+flow=couette    K= 50 sample=  2/2
+Running AdamNative optimizer
+  error=1.077128e-02
+
+=== flow: poiseuille source: analytic ===
+flow=poiseuille K=  1 sample=  1/2
+Running AdamNative optimizer
+  error=6.689532e-01
+flow=poiseuille K=  1 sample=  2/2
+Running AdamNative optimizer
+  error=8.456100e-01
+flow=poiseuille K=  2 sample=  1/2
+Running AdamNative optimizer
+  error=4.437952e-01
+flow=poiseuille K=  2 sample=  2/2
+Running AdamNative optimizer
+  error=8.336784e-01
+flow=poiseuille K=  4 sample=  1/2
+Running AdamNative optimizer
+  error=3.580480e-01
+flow=poiseuille K=  4 sample=  2/2
+Running AdamNative optimizer
+  error=2.781132e-01
+flow=poiseuille K=  8 sample=  1/2
+Running AdamNative optimizer
+  error=4.395142e-02
+flow=poiseuille K=  8 sample=  2/2
+Running AdamNative optimizer
+  error=1.827447e-01
+flow=poiseuille K= 16 sample=  1/2
+Running AdamNative optimizer
+  error=1.840205e-01
+flow=poiseuille K= 16 sample=  2/2
+Running AdamNative optimizer
+  error=3.324660e-02
+flow=poiseuille K= 29 sample=  1/2
+Running AdamNative optimizer
+  error=5.983157e-03
+flow=poiseuille K= 29 sample=  2/2
+Running AdamNative optimizer
+  error=1.161507e-02
+flow=poiseuille K= 40 sample=  1/2
+Running AdamNative optimizer
+  error=3.580585e-03
+flow=poiseuille K= 40 sample=  2/2
+Running AdamNative optimizer
+  error=5.063104e-03
+flow=poiseuille K= 50 sample=  1/2
+Running AdamNative optimizer
+  error=2.732140e-03
+flow=poiseuille K= 50 sample=  2/2
+Running AdamNative optimizer
+  error=1.193530e-02
+
+=== flow: cavity source: /Users/hanshuozhang/Desktop/ODIL_literature/Lid-driven cavity Forward/out_cavity_re3200/data_Re3200_final.pickle ===
+flow=cavity     K=  1 sample=  1/2
+Running AdamNative optimizer
+  error=1.906967e-01
+flow=cavity     K=  1 sample=  2/2
+Running AdamNative optimizer
+  error=1.990578e-01
+flow=cavity     K=  2 sample=  1/2
+Running AdamNative optimizer
+  error=1.706008e-01
+flow=cavity     K=  2 sample=  2/2
+Running AdamNative optimizer
+  error=2.120883e-01
+flow=cavity     K=  4 sample=  1/2
+Running AdamNative optimizer
+  error=1.557386e-01
+flow=cavity     K=  4 sample=  2/2
+Running AdamNative optimizer
+  error=1.612417e-01
+flow=cavity     K=  8 sample=  1/2
+Running AdamNative optimizer
+  error=9.087013e-02
+flow=cavity     K=  8 sample=  2/2
+Running AdamNative optimizer
+  error=1.128666e-01
+flow=cavity     K= 16 sample=  1/2
+Running AdamNative optimizer
+  error=7.329536e-02
+flow=cavity     K= 16 sample=  2/2
+Running AdamNative optimizer
+  error=7.380220e-02
+flow=cavity     K= 29 sample=  1/2
+Running AdamNative optimizer
+  error=5.768649e-02
+flow=cavity     K= 29 sample=  2/2
+Running AdamNative optimizer
+  error=4.724193e-02
+flow=cavity     K= 40 sample=  1/2
+Running AdamNative optimizer
+  error=4.348017e-02
+flow=cavity     K= 40 sample=  2/2
+Running AdamNative optimizer
+  error=3.781536e-02
+flow=cavity     K= 50 sample=  1/2
+Running AdamNative optimizer
+  error=3.903034e-02
+flow=cavity     K= 50 sample=  2/2
+Running AdamNative optimizer
+  error=3.317919e-02

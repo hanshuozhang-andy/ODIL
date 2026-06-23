@@ -1,0 +1,480 @@
+lid_cavity_reconstruction_figure7_odil_jax_high_contrast.py --N 128 --Re 3200 --ref_pickle /Users/hanshuozhang/Desktop/ODIL_literature/Lid-driven cavity Forward/out_cavity_re3200/data_Re3200_final.pickle --ndata 100 --seed 1 --optimizer adam --multigrid 1 --mg_interp conv --scheme upwind --lr 1e-3 --epochs 50000 --plot_every 5000 --report_every 1000 --outdir out_cavity_reconstruction_fig7
+ODIL backend: jax
+ODIL JIT: 0
+grid cshape: (128, 128)
+Re: 3200.0
+scheme: upwind
+reference: /Users/hanshuozhang/Desktop/ODIL_literature/Lid-driven cavity Forward/out_cavity_re3200/data_Re3200_final.pickle
+ndata: 100 seed: 1 impose: reparam
+obs_margin: 3
+multigrid levels: [(128, 128), (64, 64), (32, 32), (16, 16), (8, 8), (4, 4), (2, 2)]
+Running AdamNative optimizer
+
+epoch=00000
+residual: cont:0.72391, mom_u:0.18781, mom_v:0.24366, p_gauge:0
+diagnostics: div_rms:0.72391, rel_rms:0.62542, mean_abs:0.076737, umax:0.44925, umin:-0.26988, vmax:0.25017, vmin:-0.4864, speed_max:0.48777
+memory: 348 MiB
+walltime: 0.676 s
+walltime+callback: 0.676 s
+figure7_reconstruction_Re3200_00000.png
+
+epoch=01000
+residual: cont:0.010037, mom_u:0.01715, mom_v:0.011512, p_gauge:1.7118e-07
+diagnostics: div_rms:0.010064, rel_rms:0.31614, mean_abs:0.019842, umax:0.45633, umin:-0.27025, vmax:0.25824, vmin:-0.51119, speed_max:0.51173
+memory: 457 MiB
+walltime: 2.758 s
+walltime+callback: 4.424 s
+walltime/epoch: 2.758 ms
+throughput: 5.940M cells/s
+
+epoch=02000
+residual: cont:0.010215, mom_u:0.010538, mom_v:0.0089836, p_gauge:1.6762e-07
+diagnostics: div_rms:0.01024, rel_rms:0.28291, mean_abs:0.017976, umax:0.59678, umin:-0.27027, vmax:0.2575, vmin:-0.6166, speed_max:0.61771
+memory: 505 MiB
+walltime: 4.641 s
+walltime+callback: 6.420 s
+walltime/epoch: 1.883 ms
+throughput: 8.703M cells/s
+
+epoch=03000
+residual: cont:0.0099827, mom_u:0.0097993, mom_v:0.0085064, p_gauge:1.6917e-07
+diagnostics: div_rms:0.0099201, rel_rms:0.27192, mean_abs:0.017765, umax:0.63282, umin:-0.27017, vmax:0.25711, vmin:-0.66285, speed_max:0.66298
+memory: 519 MiB
+walltime: 6.522 s
+walltime+callback: 8.414 s
+walltime/epoch: 1.882 ms
+throughput: 8.708M cells/s
+
+epoch=04000
+residual: cont:0.010666, mom_u:0.0097981, mom_v:0.0084921, p_gauge:1.7059e-07
+diagnostics: div_rms:0.010742, rel_rms:0.26805, mean_abs:0.017794, umax:0.6438, umin:-0.27033, vmax:0.25704, vmin:-0.69068, speed_max:0.69068
+memory: 552 MiB
+walltime: 8.386 s
+walltime+callback: 10.388 s
+walltime/epoch: 1.864 ms
+throughput: 8.790M cells/s
+
+epoch=05000
+residual: cont:0.0096176, mom_u:0.0092301, mom_v:0.0081308, p_gauge:1.717e-07
+diagnostics: div_rms:0.0098753, rel_rms:0.26801, mean_abs:0.017926, umax:0.64976, umin:-0.27022, vmax:0.25706, vmin:-0.72301, speed_max:0.72301
+memory: 619 MiB
+walltime: 10.277 s
+walltime+callback: 12.390 s
+walltime/epoch: 1.891 ms
+throughput: 8.666M cells/s
+figure7_reconstruction_Re3200_00001.png
+
+epoch=06000
+residual: cont:0.010006, mom_u:0.0093099, mom_v:0.0080615, p_gauge:1.7231e-07
+diagnostics: div_rms:0.010081, rel_rms:0.2686, mean_abs:0.018168, umax:0.65203, umin:-0.27014, vmax:0.25705, vmin:-0.74059, speed_max:0.74059
+memory: 663 MiB
+walltime: 12.213 s
+walltime+callback: 14.701 s
+walltime/epoch: 1.936 ms
+throughput: 8.464M cells/s
+
+epoch=07000
+residual: cont:0.010822, mom_u:0.0097422, mom_v:0.0083665, p_gauge:1.7259e-07
+diagnostics: div_rms:0.010943, rel_rms:0.26918, mean_abs:0.018364, umax:0.65307, umin:-0.27049, vmax:0.25689, vmin:-0.74912, speed_max:0.74912
+memory: 671 MiB
+walltime: 14.103 s
+walltime+callback: 16.705 s
+walltime/epoch: 1.890 ms
+throughput: 8.667M cells/s
+
+epoch=08000
+residual: cont:0.010841, mom_u:0.0094993, mom_v:0.0082509, p_gauge:1.7337e-07
+diagnostics: div_rms:0.010533, rel_rms:0.26975, mean_abs:0.018515, umax:0.65448, umin:-0.27028, vmax:0.25694, vmin:-0.75358, speed_max:0.75358
+memory: 682 MiB
+walltime: 15.999 s
+walltime+callback: 18.714 s
+walltime/epoch: 1.896 ms
+throughput: 8.641M cells/s
+
+epoch=09000
+residual: cont:0.011193, mom_u:0.0096419, mom_v:0.0084288, p_gauge:1.7389e-07
+diagnostics: div_rms:0.010933, rel_rms:0.27045, mean_abs:0.018687, umax:0.6552, umin:-0.27034, vmax:0.25693, vmin:-0.75655, speed_max:0.75655
+memory: 692 MiB
+walltime: 17.895 s
+walltime+callback: 20.722 s
+walltime/epoch: 1.896 ms
+throughput: 8.641M cells/s
+
+epoch=10000
+residual: cont:0.010628, mom_u:0.0096175, mom_v:0.0082915, p_gauge:1.7425e-07
+diagnostics: div_rms:0.010569, rel_rms:0.27146, mean_abs:0.018832, umax:0.65532, umin:-0.2704, vmax:0.25691, vmin:-0.75922, speed_max:0.75922
+memory: 710 MiB
+walltime: 19.798 s
+walltime+callback: 22.737 s
+walltime/epoch: 1.903 ms
+throughput: 8.609M cells/s
+figure7_reconstruction_Re3200_00002.png
+
+epoch=11000
+residual: cont:0.0099557, mom_u:0.0092473, mom_v:0.0079447, p_gauge:1.7459e-07
+diagnostics: div_rms:0.0099206, rel_rms:0.27253, mean_abs:0.018973, umax:0.65546, umin:-0.27032, vmax:0.25694, vmin:-0.76031, speed_max:0.76031
+memory: 736 MiB
+walltime: 21.741 s
+walltime+callback: 25.084 s
+walltime/epoch: 1.943 ms
+throughput: 8.433M cells/s
+
+epoch=12000
+residual: cont:0.010092, mom_u:0.009256, mom_v:0.0081564, p_gauge:1.75e-07
+diagnostics: div_rms:0.010136, rel_rms:0.27358, mean_abs:0.019157, umax:0.65572, umin:-0.27028, vmax:0.25692, vmin:-0.76114, speed_max:0.76114
+memory: 748 MiB
+walltime: 23.654 s
+walltime+callback: 27.109 s
+walltime/epoch: 1.913 ms
+throughput: 8.564M cells/s
+
+epoch=13000
+residual: cont:0.0104, mom_u:0.0095182, mom_v:0.0084015, p_gauge:1.7538e-07
+diagnostics: div_rms:0.010646, rel_rms:0.27479, mean_abs:0.019237, umax:0.65567, umin:-0.27023, vmax:0.25705, vmin:-0.7633, speed_max:0.7633
+memory: 771 MiB
+walltime: 25.584 s
+walltime+callback: 29.151 s
+walltime/epoch: 1.930 ms
+throughput: 8.489M cells/s
+
+epoch=14000
+residual: cont:0.0099534, mom_u:0.0093699, mom_v:0.0080746, p_gauge:1.7575e-07
+diagnostics: div_rms:0.0099521, rel_rms:0.27589, mean_abs:0.019421, umax:0.65592, umin:-0.27041, vmax:0.25688, vmin:-0.76493, speed_max:0.76493
+memory: 787 MiB
+walltime: 27.510 s
+walltime+callback: 31.189 s
+walltime/epoch: 1.926 ms
+throughput: 8.509M cells/s
+
+epoch=15000
+residual: cont:0.010939, mom_u:0.0095513, mom_v:0.0084041, p_gauge:1.7629e-07
+diagnostics: div_rms:0.010909, rel_rms:0.27682, mean_abs:0.019568, umax:0.65618, umin:-0.27055, vmax:0.2568, vmin:-0.76769, speed_max:0.76769
+memory: 802 MiB
+walltime: 29.448 s
+walltime+callback: 33.241 s
+walltime/epoch: 1.938 ms
+throughput: 8.454M cells/s
+figure7_reconstruction_Re3200_00003.png
+
+epoch=16000
+residual: cont:0.011054, mom_u:0.0096636, mom_v:0.0084252, p_gauge:1.7655e-07
+diagnostics: div_rms:0.010847, rel_rms:0.27775, mean_abs:0.019649, umax:0.65661, umin:-0.27042, vmax:0.26292, vmin:-0.77203, speed_max:0.77204
+memory: 787 MiB
+walltime: 31.385 s
+walltime+callback: 35.548 s
+walltime/epoch: 1.937 ms
+throughput: 8.459M cells/s
+
+epoch=17000
+residual: cont:0.0099243, mom_u:0.0092089, mom_v:0.0079507, p_gauge:1.7695e-07
+diagnostics: div_rms:0.0099948, rel_rms:0.2785, mean_abs:0.019735, umax:0.65715, umin:-0.27036, vmax:0.29425, vmin:-0.77715, speed_max:0.77716
+memory: 787 MiB
+walltime: 33.285 s
+walltime+callback: 37.562 s
+walltime/epoch: 1.901 ms
+throughput: 8.619M cells/s
+
+epoch=18000
+residual: cont:0.010286, mom_u:0.0094669, mom_v:0.0083262, p_gauge:1.7737e-07
+diagnostics: div_rms:0.010204, rel_rms:0.27916, mean_abs:0.019755, umax:0.65781, umin:-0.27025, vmax:0.32092, vmin:-0.7834, speed_max:0.78342
+memory: 701 MiB
+walltime: 35.241 s
+walltime+callback: 39.669 s
+walltime/epoch: 1.956 ms
+throughput: 8.376M cells/s
+
+epoch=19000
+residual: cont:0.0085823, mom_u:0.0087567, mom_v:0.0073323, p_gauge:1.7793e-07
+diagnostics: div_rms:0.0087102, rel_rms:0.27958, mean_abs:0.019837, umax:0.65826, umin:-0.27038, vmax:0.34296, vmin:-0.79005, speed_max:0.79007
+memory: 704 MiB
+walltime: 37.145 s
+walltime+callback: 41.683 s
+walltime/epoch: 1.903 ms
+throughput: 8.607M cells/s
+
+epoch=20000
+residual: cont:0.010277, mom_u:0.0095383, mom_v:0.0082873, p_gauge:1.7836e-07
+diagnostics: div_rms:0.010496, rel_rms:0.28002, mean_abs:0.019906, umax:0.65901, umin:-0.27027, vmax:0.35858, vmin:-0.79687, speed_max:0.79691
+memory: 705 MiB
+walltime: 39.055 s
+walltime+callback: 43.703 s
+walltime/epoch: 1.910 ms
+throughput: 8.577M cells/s
+figure7_reconstruction_Re3200_00004.png
+
+epoch=21000
+residual: cont:0.009213, mom_u:0.0087218, mom_v:0.007524, p_gauge:1.786e-07
+diagnostics: div_rms:0.009097, rel_rms:0.28047, mean_abs:0.019975, umax:0.65935, umin:-0.27026, vmax:0.3731, vmin:-0.80255, speed_max:0.8026
+memory: 697 MiB
+walltime: 41.005 s
+walltime+callback: 46.031 s
+walltime/epoch: 1.950 ms
+throughput: 8.403M cells/s
+
+epoch=22000
+residual: cont:0.01017, mom_u:0.0095455, mom_v:0.0079259, p_gauge:1.7888e-07
+diagnostics: div_rms:0.010392, rel_rms:0.28099, mean_abs:0.02003, umax:0.6594, umin:-0.27039, vmax:0.38271, vmin:-0.8078, speed_max:0.80786
+memory: 697 MiB
+walltime: 42.910 s
+walltime+callback: 48.048 s
+walltime/epoch: 1.905 ms
+throughput: 8.599M cells/s
+
+epoch=23000
+residual: cont:0.011342, mom_u:0.0096836, mom_v:0.0085436, p_gauge:1.7929e-07
+diagnostics: div_rms:0.010969, rel_rms:0.28151, mean_abs:0.020097, umax:0.65983, umin:-0.27042, vmax:0.39071, vmin:-0.81152, speed_max:0.81159
+memory: 697 MiB
+walltime: 44.805 s
+walltime+callback: 50.054 s
+walltime/epoch: 1.894 ms
+throughput: 8.648M cells/s
+
+epoch=24000
+residual: cont:0.0094375, mom_u:0.0087137, mom_v:0.0076212, p_gauge:1.7958e-07
+diagnostics: div_rms:0.0093058, rel_rms:0.28211, mean_abs:0.020191, umax:0.65965, umin:-0.27026, vmax:0.39663, vmin:-0.81483, speed_max:0.8149
+memory: 697 MiB
+walltime: 46.712 s
+walltime+callback: 52.074 s
+walltime/epoch: 1.907 ms
+throughput: 8.590M cells/s
+
+epoch=25000
+residual: cont:0.011339, mom_u:0.009813, mom_v:0.0086409, p_gauge:1.7991e-07
+diagnostics: div_rms:0.011062, rel_rms:0.28266, mean_abs:0.020314, umax:0.65955, umin:-0.27033, vmax:0.40109, vmin:-0.81759, speed_max:0.81766
+memory: 697 MiB
+walltime: 48.620 s
+walltime+callback: 54.094 s
+walltime/epoch: 1.908 ms
+throughput: 8.585M cells/s
+figure7_reconstruction_Re3200_00005.png
+
+epoch=26000
+residual: cont:0.010813, mom_u:0.009739, mom_v:0.0085049, p_gauge:1.8028e-07
+diagnostics: div_rms:0.011143, rel_rms:0.28326, mean_abs:0.020302, umax:0.65932, umin:-0.27034, vmax:0.40378, vmin:-0.82059, speed_max:0.82065
+memory: 665 MiB
+walltime: 50.575 s
+walltime+callback: 56.462 s
+walltime/epoch: 1.954 ms
+throughput: 8.383M cells/s
+
+epoch=27000
+residual: cont:0.010469, mom_u:0.0092921, mom_v:0.0081618, p_gauge:1.8036e-07
+diagnostics: div_rms:0.010302, rel_rms:0.28377, mean_abs:0.020414, umax:0.65945, umin:-0.27029, vmax:0.40681, vmin:-0.82189, speed_max:0.82196
+memory: 670 MiB
+walltime: 52.490 s
+walltime+callback: 58.492 s
+walltime/epoch: 1.915 ms
+throughput: 8.554M cells/s
+
+epoch=28000
+residual: cont:0.010435, mom_u:0.0090798, mom_v:0.0082705, p_gauge:1.8074e-07
+diagnostics: div_rms:0.010315, rel_rms:0.28431, mean_abs:0.020535, umax:0.65942, umin:-0.27028, vmax:0.4096, vmin:-0.82276, speed_max:0.82283
+memory: 640 MiB
+walltime: 54.425 s
+walltime+callback: 60.544 s
+walltime/epoch: 1.935 ms
+throughput: 8.468M cells/s
+
+epoch=29000
+residual: cont:0.0091627, mom_u:0.0089279, mom_v:0.0076449, p_gauge:1.8102e-07
+diagnostics: div_rms:0.0091801, rel_rms:0.28497, mean_abs:0.020527, umax:0.65904, umin:-0.27029, vmax:0.41191, vmin:-0.82493, speed_max:0.82499
+memory: 629 MiB
+walltime: 56.331 s
+walltime+callback: 62.564 s
+walltime/epoch: 1.906 ms
+throughput: 8.596M cells/s
+
+epoch=30000
+residual: cont:0.011512, mom_u:0.0099091, mom_v:0.0086204, p_gauge:1.8127e-07
+diagnostics: div_rms:0.011402, rel_rms:0.28554, mean_abs:0.020619, umax:0.65866, umin:-0.27034, vmax:0.41415, vmin:-0.82666, speed_max:0.82672
+memory: 624 MiB
+walltime: 58.243 s
+walltime+callback: 64.589 s
+walltime/epoch: 1.912 ms
+throughput: 8.570M cells/s
+figure7_reconstruction_Re3200_00006.png
+
+epoch=31000
+residual: cont:0.010884, mom_u:0.009785, mom_v:0.0084972, p_gauge:1.8159e-07
+diagnostics: div_rms:0.011017, rel_rms:0.28617, mean_abs:0.020649, umax:0.65857, umin:-0.27027, vmax:0.41593, vmin:-0.8283, speed_max:0.82835
+memory: 593 MiB
+walltime: 60.209 s
+walltime+callback: 66.926 s
+walltime/epoch: 1.967 ms
+throughput: 8.331M cells/s
+
+epoch=32000
+residual: cont:0.010222, mom_u:0.0093006, mom_v:0.0081842, p_gauge:1.8186e-07
+diagnostics: div_rms:0.01002, rel_rms:0.28675, mean_abs:0.020745, umax:0.65832, umin:-0.27023, vmax:0.41811, vmin:-0.82917, speed_max:0.82923
+memory: 589 MiB
+walltime: 62.137 s
+walltime+callback: 68.971 s
+walltime/epoch: 1.928 ms
+throughput: 8.499M cells/s
+
+epoch=33000
+residual: cont:0.01108, mom_u:0.0096129, mom_v:0.008745, p_gauge:1.8209e-07
+diagnostics: div_rms:0.010862, rel_rms:0.28732, mean_abs:0.020844, umax:0.65834, umin:-0.27024, vmax:0.42004, vmin:-0.83009, speed_max:0.83014
+memory: 580 MiB
+walltime: 64.052 s
+walltime+callback: 71.001 s
+walltime/epoch: 1.915 ms
+throughput: 8.555M cells/s
+
+epoch=34000
+residual: cont:0.01022, mom_u:0.0092528, mom_v:0.0079698, p_gauge:1.8265e-07
+diagnostics: div_rms:0.010282, rel_rms:0.28799, mean_abs:0.020967, umax:0.65927, umin:-0.27039, vmax:0.43833, vmin:-0.83372, speed_max:0.83377
+memory: 589 MiB
+walltime: 65.939 s
+walltime+callback: 73.000 s
+walltime/epoch: 1.887 ms
+throughput: 8.684M cells/s
+
+epoch=35000
+residual: cont:0.0095485, mom_u:0.0089348, mom_v:0.0076709, p_gauge:1.8297e-07
+diagnostics: div_rms:0.0095481, rel_rms:0.28877, mean_abs:0.021037, umax:0.66031, umin:-0.27043, vmax:0.46286, vmin:-0.84079, speed_max:0.84085
+memory: 598 MiB
+walltime: 67.859 s
+walltime+callback: 75.036 s
+walltime/epoch: 1.920 ms
+throughput: 8.532M cells/s
+figure7_reconstruction_Re3200_00007.png
+
+epoch=36000
+residual: cont:0.013819, mom_u:0.011102, mom_v:0.010018, p_gauge:1.8333e-07
+diagnostics: div_rms:0.013769, rel_rms:0.28959, mean_abs:0.02108, umax:0.66072, umin:-0.27024, vmax:0.48686, vmin:-0.8489, speed_max:0.84895
+memory: 592 MiB
+walltime: 69.808 s
+walltime+callback: 77.357 s
+walltime/epoch: 1.948 ms
+throughput: 8.409M cells/s
+
+epoch=37000
+residual: cont:0.011569, mom_u:0.0095461, mom_v:0.0085865, p_gauge:1.8348e-07
+diagnostics: div_rms:0.011291, rel_rms:0.29019, mean_abs:0.021136, umax:0.66198, umin:-0.27008, vmax:0.51068, vmin:-0.85457, speed_max:0.85461
+memory: 593 MiB
+walltime: 71.733 s
+walltime+callback: 79.398 s
+walltime/epoch: 1.925 ms
+throughput: 8.511M cells/s
+
+epoch=38000
+residual: cont:0.0092827, mom_u:0.0090031, mom_v:0.0077962, p_gauge:1.838e-07
+diagnostics: div_rms:0.0092799, rel_rms:0.29087, mean_abs:0.0212, umax:0.66265, umin:-0.27024, vmax:0.5311, vmin:-0.86008, speed_max:0.86011
+memory: 593 MiB
+walltime: 73.639 s
+walltime+callback: 81.419 s
+walltime/epoch: 1.907 ms
+throughput: 8.594M cells/s
+
+epoch=39000
+residual: cont:0.0095112, mom_u:0.0089821, mom_v:0.0077583, p_gauge:1.8403e-07
+diagnostics: div_rms:0.0096496, rel_rms:0.29154, mean_abs:0.021245, umax:0.66322, umin:-0.27041, vmax:0.54843, vmin:-0.86439, speed_max:0.86441
+memory: 593 MiB
+walltime: 75.553 s
+walltime+callback: 83.447 s
+walltime/epoch: 1.914 ms
+throughput: 8.560M cells/s
+
+epoch=40000
+residual: cont:0.009643, mom_u:0.0090742, mom_v:0.0079368, p_gauge:1.8436e-07
+diagnostics: div_rms:0.0096888, rel_rms:0.29227, mean_abs:0.021299, umax:0.66372, umin:-0.2703, vmax:0.5624, vmin:-0.86774, speed_max:0.86775
+memory: 593 MiB
+walltime: 77.480 s
+walltime+callback: 85.490 s
+walltime/epoch: 1.927 ms
+throughput: 8.503M cells/s
+figure7_reconstruction_Re3200_00008.png
+
+epoch=41000
+residual: cont:0.0091156, mom_u:0.0087207, mom_v:0.0076674, p_gauge:1.8427e-07
+diagnostics: div_rms:0.0091746, rel_rms:0.29284, mean_abs:0.021346, umax:0.66361, umin:-0.2702, vmax:0.56769, vmin:-0.87048, speed_max:0.8705
+memory: 560 MiB
+walltime: 79.445 s
+walltime+callback: 87.827 s
+walltime/epoch: 1.965 ms
+throughput: 8.339M cells/s
+
+epoch=42000
+residual: cont:0.011581, mom_u:0.0099763, mom_v:0.0089746, p_gauge:1.8457e-07
+diagnostics: div_rms:0.011466, rel_rms:0.29337, mean_abs:0.021365, umax:0.66341, umin:-0.27007, vmax:0.57028, vmin:-0.87193, speed_max:0.87194
+memory: 561 MiB
+walltime: 81.364 s
+walltime+callback: 89.859 s
+walltime/epoch: 1.919 ms
+throughput: 8.536M cells/s
+
+epoch=43000
+residual: cont:0.010239, mom_u:0.0092473, mom_v:0.0082506, p_gauge:1.8477e-07
+diagnostics: div_rms:0.010339, rel_rms:0.29382, mean_abs:0.021392, umax:0.66337, umin:-0.2702, vmax:0.57228, vmin:-0.8726, speed_max:0.87261
+memory: 564 MiB
+walltime: 83.283 s
+walltime+callback: 91.892 s
+walltime/epoch: 1.919 ms
+throughput: 8.538M cells/s
+
+epoch=44000
+residual: cont:0.010457, mom_u:0.0095856, mom_v:0.0082858, p_gauge:1.8482e-07
+diagnostics: div_rms:0.010491, rel_rms:0.29419, mean_abs:0.021448, umax:0.66327, umin:-0.27023, vmax:0.57354, vmin:-0.87326, speed_max:0.87327
+memory: 565 MiB
+walltime: 85.197 s
+walltime+callback: 93.919 s
+walltime/epoch: 1.914 ms
+throughput: 8.562M cells/s
+
+epoch=45000
+residual: cont:0.011568, mom_u:0.0098502, mom_v:0.0089184, p_gauge:1.8486e-07
+diagnostics: div_rms:0.011616, rel_rms:0.2946, mean_abs:0.021481, umax:0.66329, umin:-0.27008, vmax:0.57451, vmin:-0.87385, speed_max:0.87386
+memory: 566 MiB
+walltime: 87.111 s
+walltime+callback: 95.946 s
+walltime/epoch: 1.914 ms
+throughput: 8.559M cells/s
+figure7_reconstruction_Re3200_00009.png
+
+epoch=46000
+residual: cont:0.0090225, mom_u:0.0086666, mom_v:0.0074832, p_gauge:1.8505e-07
+diagnostics: div_rms:0.0087779, rel_rms:0.29491, mean_abs:0.021536, umax:0.66321, umin:-0.27024, vmax:0.57574, vmin:-0.8738, speed_max:0.87381
+memory: 562 MiB
+walltime: 89.038 s
+walltime+callback: 98.297 s
+walltime/epoch: 1.927 ms
+throughput: 8.503M cells/s
+
+epoch=47000
+residual: cont:0.010809, mom_u:0.0093574, mom_v:0.0080679, p_gauge:1.851e-07
+diagnostics: div_rms:0.011003, rel_rms:0.29513, mean_abs:0.021579, umax:0.6632, umin:-0.27046, vmax:0.57635, vmin:-0.87434, speed_max:0.87435
+memory: 564 MiB
+walltime: 90.938 s
+walltime+callback: 100.313 s
+walltime/epoch: 1.900 ms
+throughput: 8.624M cells/s
+
+epoch=48000
+residual: cont:0.010067, mom_u:0.0091999, mom_v:0.0081551, p_gauge:1.8516e-07
+diagnostics: div_rms:0.010365, rel_rms:0.29545, mean_abs:0.021575, umax:0.6631, umin:-0.27027, vmax:0.57651, vmin:-0.87515, speed_max:0.87515
+memory: 564 MiB
+walltime: 92.837 s
+walltime+callback: 102.328 s
+walltime/epoch: 1.900 ms
+throughput: 8.624M cells/s
+
+epoch=49000
+residual: cont:0.010442, mom_u:0.0092392, mom_v:0.0080516, p_gauge:1.8535e-07
+diagnostics: div_rms:0.010699, rel_rms:0.29573, mean_abs:0.021609, umax:0.66322, umin:-0.27017, vmax:0.57723, vmin:-0.875, speed_max:0.87501
+memory: 566 MiB
+walltime: 94.739 s
+walltime+callback: 104.345 s
+walltime/epoch: 1.902 ms
+throughput: 8.614M cells/s
+
+epoch=50000
+residual: cont:0.0096708, mom_u:0.0090254, mom_v:0.0078444, p_gauge:1.8545e-07
+diagnostics: div_rms:0.009618, rel_rms:0.29599, mean_abs:0.021635, umax:0.66318, umin:-0.27024, vmax:0.57763, vmin:-0.87513, speed_max:0.87514
+memory: 566 MiB
+walltime: 96.643 s
+walltime+callback: 106.363 s
+walltime/epoch: 1.903 ms
+throughput: 8.608M cells/s
+figure7_reconstruction_Re3200_00010.png
+figure7_reconstruction_Re3200_final.png

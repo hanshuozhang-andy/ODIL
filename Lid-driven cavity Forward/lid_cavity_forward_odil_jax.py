@@ -54,6 +54,7 @@ python lid_cavity_forward_odil_jax.py \
   --report_every 1000 \
   --outdir out_cavity_re1000_128
 
+cd "/Users/hanshuozhang/Desktop/ODIL_literature"
 """
 
 import argparse

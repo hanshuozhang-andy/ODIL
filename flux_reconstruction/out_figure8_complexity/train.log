@@ -1,0 +1,3421 @@
+lid_cavity_flow_complexity_figure8_odil_jax.py --N 64 --cavity_ref_pickle /Users/hanshuozhang/Desktop/ODIL_literature/Lid-driven cavity Forward/out_cavity_re3200/data_Re3200_final.pickle --flows uniform,couette,poiseuille,cavity --K_list 1,2,4,6,8,10,12,16,20,24,29,35,40,45,50 --nsamples 20 --optimizer adam --multigrid 1 --mg_interp conv --scheme upwind --lr 1e-3 --epochs 10000 --kreg 1e-3 --eps 0.05 --outdir out_figure8_complexity
+ODIL backend: jax
+ODIL JIT: 0
+grid: (64, 64)
+flows: ['uniform', 'couette', 'poiseuille', 'cavity']
+K_list: [1, 2, 4, 6, 8, 10, 12, 16, 20, 24, 29, 35, 40, 45, 50]
+nsamples: 20
+eps: 0.05
+optimizer: adam epochs: 10000 lr: 0.001
+kreg: 0.001
+cavity reference: /Users/hanshuozhang/Desktop/ODIL_literature/Lid-driven cavity Forward/out_cavity_re3200/data_Re3200_final.pickle
+
+=== flow: uniform source: analytic ===
+flow=uniform    K=  6 sample=  7/20
+Running AdamNative optimizer
+  error=3.441712e-01
+flow=uniform    K=  6 sample=  8/20
+Running AdamNative optimizer
+  error=2.391095e-01
+flow=uniform    K=  6 sample=  9/20
+Running AdamNative optimizer
+  error=1.583973e-02
+flow=uniform    K=  6 sample= 10/20
+Running AdamNative optimizer
+  error=1.973781e-02
+flow=uniform    K=  6 sample= 11/20
+Running AdamNative optimizer
+  error=7.314656e-02
+flow=uniform    K=  6 sample= 12/20
+Running AdamNative optimizer
+  error=8.902954e-02
+flow=uniform    K=  6 sample= 13/20
+Running AdamNative optimizer
+  error=1.756666e-01
+flow=uniform    K=  6 sample= 14/20
+Running AdamNative optimizer
+  error=8.592672e-02
+flow=uniform    K=  6 sample= 15/20
+Running AdamNative optimizer
+  error=4.339503e-02
+flow=uniform    K=  6 sample= 16/20
+Running AdamNative optimizer
+  error=9.653990e-02
+flow=uniform    K=  6 sample= 17/20
+Running AdamNative optimizer
+  error=1.268944e-01
+flow=uniform    K=  6 sample= 18/20
+Running AdamNative optimizer
+  error=1.726726e-01
+flow=uniform    K=  6 sample= 19/20
+Running AdamNative optimizer
+  error=1.045296e-01
+flow=uniform    K=  6 sample= 20/20
+Running AdamNative optimizer
+  error=1.215910e-01
+flow=uniform    K=  8 sample=  1/20
+Running AdamNative optimizer
+  error=9.009305e-03
+flow=uniform    K=  8 sample=  2/20
+Running AdamNative optimizer
+  error=1.004890e-01
+flow=uniform    K=  8 sample=  3/20
+Running AdamNative optimizer
+  error=4.460705e-02
+flow=uniform    K=  8 sample=  4/20
+Running AdamNative optimizer
+  error=4.601019e-02
+flow=uniform    K=  8 sample=  5/20
+Running AdamNative optimizer
+  error=4.077403e-02
+flow=uniform    K=  8 sample=  6/20
+Running AdamNative optimizer
+  error=3.943289e-03
+flow=uniform    K=  8 sample=  7/20
+Running AdamNative optimizer
+  error=1.137539e-01
+flow=uniform    K=  8 sample=  8/20
+Running AdamNative optimizer
+  error=6.399479e-02
+flow=uniform    K=  8 sample=  9/20
+Running AdamNative optimizer
+  error=2.320867e-02
+flow=uniform    K=  8 sample= 10/20
+Running AdamNative optimizer
+  error=1.612043e-02
+flow=uniform    K=  8 sample= 11/20
+Running AdamNative optimizer
+  error=6.192625e-02
+flow=uniform    K=  8 sample= 12/20
+Running AdamNative optimizer
+  error=9.202623e-03
+flow=uniform    K=  8 sample= 13/20
+Running AdamNative optimizer
+  error=2.661875e-02
+flow=uniform    K=  8 sample= 14/20
+Running AdamNative optimizer
+  error=3.338663e-02
+flow=uniform    K=  8 sample= 15/20
+Running AdamNative optimizer
+  error=3.422114e-03
+flow=uniform    K=  8 sample= 16/20
+Running AdamNative optimizer
+  error=7.850894e-02
+flow=uniform    K=  8 sample= 17/20
+Running AdamNative optimizer
+  error=9.020435e-02
+flow=uniform    K=  8 sample= 18/20
+Running AdamNative optimizer
+  error=5.575440e-03
+flow=uniform    K=  8 sample= 19/20
+Running AdamNative optimizer
+  error=1.427077e-02
+flow=uniform    K=  8 sample= 20/20
+Running AdamNative optimizer
+  error=9.957654e-02
+flow=uniform    K= 10 sample=  1/20
+Running AdamNative optimizer
+  error=4.481186e-03
+flow=uniform    K= 10 sample=  2/20
+Running AdamNative optimizer
+  error=8.667480e-03
+flow=uniform    K= 10 sample=  3/20
+Running AdamNative optimizer
+  error=4.131159e-04
+flow=uniform    K= 10 sample=  4/20
+Running AdamNative optimizer
+  error=2.100193e-02
+flow=uniform    K= 10 sample=  5/20
+Running AdamNative optimizer
+  error=4.657592e-04
+flow=uniform    K= 10 sample=  6/20
+Running AdamNative optimizer
+  error=6.180902e-02
+flow=uniform    K= 10 sample=  7/20
+Running AdamNative optimizer
+  error=5.831579e-02
+flow=uniform    K= 10 sample=  8/20
+Running AdamNative optimizer
+  error=7.924726e-04
+flow=uniform    K= 10 sample=  9/20
+Running AdamNative optimizer
+  error=6.068961e-02
+flow=uniform    K= 10 sample= 10/20
+Running AdamNative optimizer
+  error=6.922854e-04
+flow=uniform    K= 10 sample= 11/20
+Running AdamNative optimizer
+  error=4.074220e-03
+flow=uniform    K= 10 sample= 12/20
+Running AdamNative optimizer
+  error=2.626509e-03
+flow=uniform    K= 10 sample= 13/20
+Running AdamNative optimizer
+  error=4.026170e-04
+flow=uniform    K= 10 sample= 14/20
+Running AdamNative optimizer
+  error=6.960627e-03
+flow=uniform    K= 10 sample= 15/20
+Running AdamNative optimizer
+  error=8.983855e-03
+flow=uniform    K= 10 sample= 16/20
+Running AdamNative optimizer
+  error=4.750658e-04
+flow=uniform    K= 10 sample= 17/20
+Running AdamNative optimizer
+  error=5.426478e-03
+flow=uniform    K= 10 sample= 18/20
+Running AdamNative optimizer
+  error=1.420072e-02
+flow=uniform    K= 10 sample= 19/20
+Running AdamNative optimizer
+  error=8.236428e-02
+flow=uniform    K= 10 sample= 20/20
+Running AdamNative optimizer
+  error=1.276323e-01
+flow=uniform    K= 12 sample=  1/20
+Running AdamNative optimizer
+  error=8.126901e-04
+flow=uniform    K= 12 sample=  2/20
+Running AdamNative optimizer
+  error=1.029160e-02
+flow=uniform    K= 12 sample=  3/20
+Running AdamNative optimizer
+  error=2.945738e-03
+flow=uniform    K= 12 sample=  4/20
+Running AdamNative optimizer
+  error=1.215453e-01
+flow=uniform    K= 12 sample=  5/20
+Running AdamNative optimizer
+  error=1.239332e-03
+flow=uniform    K= 12 sample=  6/20
+Running AdamNative optimizer
+  error=6.902479e-03
+flow=uniform    K= 12 sample=  7/20
+Running AdamNative optimizer
+  error=3.594153e-04
+flow=uniform    K= 12 sample=  8/20
+Running AdamNative optimizer
+  error=9.368170e-04
+flow=uniform    K= 12 sample=  9/20
+Running AdamNative optimizer
+  error=7.664900e-04
+flow=uniform    K= 12 sample= 10/20
+Running AdamNative optimizer
+  error=3.671189e-03
+flow=uniform    K= 12 sample= 11/20
+Running AdamNative optimizer
+  error=1.511973e-03
+flow=uniform    K= 12 sample= 12/20
+Running AdamNative optimizer
+  error=2.365273e-04
+flow=uniform    K= 12 sample= 13/20
+Running AdamNative optimizer
+  error=2.346715e-02
+flow=uniform    K= 12 sample= 14/20
+Running AdamNative optimizer
+  error=1.964396e-04
+flow=uniform    K= 12 sample= 15/20
+Running AdamNative optimizer
+  error=1.879586e-03
+flow=uniform    K= 12 sample= 16/20
+Running AdamNative optimizer
+  error=6.881834e-03
+flow=uniform    K= 12 sample= 17/20
+Running AdamNative optimizer
+  error=8.152317e-02
+flow=uniform    K= 12 sample= 18/20
+Running AdamNative optimizer
+  error=3.855959e-04
+flow=uniform    K= 12 sample= 19/20
+Running AdamNative optimizer
+  error=2.691287e-02
+flow=uniform    K= 12 sample= 20/20
+Running AdamNative optimizer
+  error=2.060319e-04
+flow=uniform    K= 16 sample=  1/20
+Running AdamNative optimizer
+  error=9.800822e-04
+flow=uniform    K= 16 sample=  2/20
+Running AdamNative optimizer
+  error=4.667438e-04
+flow=uniform    K= 16 sample=  3/20
+Running AdamNative optimizer
+  error=3.774417e-04
+flow=uniform    K= 16 sample=  4/20
+Running AdamNative optimizer
+  error=2.431844e-04
+flow=uniform    K= 16 sample=  5/20
+Running AdamNative optimizer
+  error=5.455329e-04
+flow=uniform    K= 16 sample=  6/20
+Running AdamNative optimizer
+  error=2.144520e-03
+flow=uniform    K= 16 sample=  7/20
+Running AdamNative optimizer
+  error=4.669309e-04
+flow=uniform    K= 16 sample=  8/20
+Running AdamNative optimizer
+  error=1.063935e-03
+flow=uniform    K= 16 sample=  9/20
+Running AdamNative optimizer
+  error=3.000304e-04
+flow=uniform    K= 16 sample= 10/20
+Running AdamNative optimizer
+  error=1.755997e-02
+flow=uniform    K= 16 sample= 11/20
+Running AdamNative optimizer
+  error=2.375361e-04
+flow=uniform    K= 16 sample= 12/20
+Running AdamNative optimizer
+  error=4.265265e-04
+flow=uniform    K= 16 sample= 13/20
+Running AdamNative optimizer
+  error=1.314054e-04
+flow=uniform    K= 16 sample= 14/20
+Running AdamNative optimizer
+  error=3.444021e-04
+flow=uniform    K= 16 sample= 15/20
+Running AdamNative optimizer
+  error=2.490904e-04
+flow=uniform    K= 16 sample= 16/20
+Running AdamNative optimizer
+  error=3.989605e-04
+flow=uniform    K= 16 sample= 17/20
+Running AdamNative optimizer
+  error=3.447546e-04
+flow=uniform    K= 16 sample= 18/20
+Running AdamNative optimizer
+  error=6.854382e-04
+flow=uniform    K= 16 sample= 19/20
+Running AdamNative optimizer
+  error=1.857962e-04
+flow=uniform    K= 16 sample= 20/20
+Running AdamNative optimizer
+  error=1.932189e-02
+flow=uniform    K= 20 sample=  1/20
+Running AdamNative optimizer
+  error=2.905828e-03
+flow=uniform    K= 20 sample=  2/20
+Running AdamNative optimizer
+  error=1.454418e-04
+flow=uniform    K= 20 sample=  3/20
+Running AdamNative optimizer
+  error=2.101695e-04
+flow=uniform    K= 20 sample=  4/20
+Running AdamNative optimizer
+  error=9.327035e-04
+flow=uniform    K= 20 sample=  5/20
+Running AdamNative optimizer
+  error=2.714094e-04
+flow=uniform    K= 20 sample=  6/20
+Running AdamNative optimizer
+  error=1.707916e-02
+flow=uniform    K= 20 sample=  7/20
+Running AdamNative optimizer
+  error=5.352914e-04
+flow=uniform    K= 20 sample=  8/20
+Running AdamNative optimizer
+  error=6.152288e-04
+flow=uniform    K= 20 sample=  9/20
+Running AdamNative optimizer
+  error=2.668368e-04
+flow=uniform    K= 20 sample= 10/20
+Running AdamNative optimizer
+  error=2.790930e-04
+flow=uniform    K= 20 sample= 11/20
+Running AdamNative optimizer
+  error=3.058548e-04
+flow=uniform    K= 20 sample= 12/20
+Running AdamNative optimizer
+  error=2.437577e-04
+flow=uniform    K= 20 sample= 13/20
+Running AdamNative optimizer
+  error=3.378387e-04
+flow=uniform    K= 20 sample= 14/20
+Running AdamNative optimizer
+  error=2.736342e-03
+flow=uniform    K= 20 sample= 15/20
+Running AdamNative optimizer
+  error=1.479827e-04
+flow=uniform    K= 20 sample= 16/20
+Running AdamNative optimizer
+  error=9.856651e-05
+flow=uniform    K= 20 sample= 17/20
+Running AdamNative optimizer
+  error=1.226231e-04
+flow=uniform    K= 20 sample= 18/20
+Running AdamNative optimizer
+  error=4.214913e-04
+flow=uniform    K= 20 sample= 19/20
+Running AdamNative optimizer
+  error=4.494047e-04
+flow=uniform    K= 20 sample= 20/20
+Running AdamNative optimizer
+  error=2.296978e-04
+flow=uniform    K= 24 sample=  1/20
+Running AdamNative optimizer
+  error=8.504727e-04
+flow=uniform    K= 24 sample=  2/20
+Running AdamNative optimizer
+  error=2.125671e-03
+flow=uniform    K= 24 sample=  3/20
+Running AdamNative optimizer
+  error=1.577473e-04
+flow=uniform    K= 24 sample=  4/20
+Running AdamNative optimizer
+  error=2.098686e-04
+flow=uniform    K= 24 sample=  5/20
+Running AdamNative optimizer
+  error=1.498508e-04
+flow=uniform    K= 24 sample=  6/20
+Running AdamNative optimizer
+  error=1.298403e-04
+flow=uniform    K= 24 sample=  7/20
+Running AdamNative optimizer
+  error=1.509360e-04
+flow=uniform    K= 24 sample=  8/20
+Running AdamNative optimizer
+  error=2.219133e-04
+flow=uniform    K= 24 sample=  9/20
+Running AdamNative optimizer
+  error=4.371915e-03
+flow=uniform    K= 24 sample= 10/20
+Running AdamNative optimizer
+  error=1.102127e-02
+flow=uniform    K= 24 sample= 11/20
+Running AdamNative optimizer
+  error=3.751105e-04
+flow=uniform    K= 24 sample= 12/20
+Running AdamNative optimizer
+  error=3.789781e-04
+flow=uniform    K= 24 sample= 13/20
+Running AdamNative optimizer
+  error=2.216767e-04
+flow=uniform    K= 24 sample= 14/20
+Running AdamNative optimizer
+  error=2.549290e-04
+flow=uniform    K= 24 sample= 15/20
+Running AdamNative optimizer
+  error=1.019048e-04
+flow=uniform    K= 24 sample= 16/20
+Running AdamNative optimizer
+  error=2.782457e-04
+flow=uniform    K= 24 sample= 17/20
+Running AdamNative optimizer
+  error=1.792043e-04
+flow=uniform    K= 24 sample= 18/20
+Running AdamNative optimizer
+  error=1.562564e-04
+flow=uniform    K= 24 sample= 19/20
+Running AdamNative optimizer
+  error=3.192231e-04
+flow=uniform    K= 24 sample= 20/20
+Running AdamNative optimizer
+  error=1.990452e-04
+flow=uniform    K= 29 sample=  1/20
+Running AdamNative optimizer
+  error=1.361685e-04
+flow=uniform    K= 29 sample=  2/20
+Running AdamNative optimizer
+  error=9.207678e-05
+flow=uniform    K= 29 sample=  3/20
+Running AdamNative optimizer
+  error=2.003165e-04
+flow=uniform    K= 29 sample=  4/20
+Running AdamNative optimizer
+  error=6.639764e-04
+flow=uniform    K= 29 sample=  5/20
+Running AdamNative optimizer
+  error=2.233611e-04
+flow=uniform    K= 29 sample=  6/20
+Running AdamNative optimizer
+  error=1.009862e-04
+flow=uniform    K= 29 sample=  7/20
+Running AdamNative optimizer
+  error=1.703900e-04
+flow=uniform    K= 29 sample=  8/20
+Running AdamNative optimizer
+  error=1.041659e-04
+flow=uniform    K= 29 sample=  9/20
+Running AdamNative optimizer
+  error=1.747882e-04
+flow=uniform    K= 29 sample= 10/20
+Running AdamNative optimizer
+  error=2.555265e-04
+flow=uniform    K= 29 sample= 11/20
+Running AdamNative optimizer
+  error=1.589790e-04
+flow=uniform    K= 29 sample= 12/20
+Running AdamNative optimizer
+  error=7.165396e-04
+flow=uniform    K= 29 sample= 13/20
+Running AdamNative optimizer
+  error=1.331861e-04
+flow=uniform    K= 29 sample= 14/20
+Running AdamNative optimizer
+  error=1.699615e-04
+flow=uniform    K= 29 sample= 15/20
+Running AdamNative optimizer
+  error=1.956315e-04
+flow=uniform    K= 29 sample= 16/20
+Running AdamNative optimizer
+  error=1.999637e-04
+flow=uniform    K= 29 sample= 17/20
+Running AdamNative optimizer
+  error=1.652485e-04
+flow=uniform    K= 29 sample= 18/20
+Running AdamNative optimizer
+  error=1.801291e-04
+flow=uniform    K= 29 sample= 19/20
+Running AdamNative optimizer
+  error=1.533634e-04
+flow=uniform    K= 29 sample= 20/20
+Running AdamNative optimizer
+  error=2.384623e-04
+flow=uniform    K= 35 sample=  1/20
+Running AdamNative optimizer
+  error=4.491753e-04
+flow=uniform    K= 35 sample=  2/20
+Running AdamNative optimizer
+  error=9.030338e-05
+flow=uniform    K= 35 sample=  3/20
+Running AdamNative optimizer
+  error=1.689292e-04
+flow=uniform    K= 35 sample=  4/20
+Running AdamNative optimizer
+  error=1.392900e-04
+flow=uniform    K= 35 sample=  5/20
+Running AdamNative optimizer
+  error=1.202644e-04
+flow=uniform    K= 35 sample=  6/20
+Running AdamNative optimizer
+  error=1.378190e-04
+flow=uniform    K= 35 sample=  7/20
+Running AdamNative optimizer
+  error=1.761609e-04
+flow=uniform    K= 35 sample=  8/20
+Running AdamNative optimizer
+  error=1.249046e-04
+flow=uniform    K= 35 sample=  9/20
+Running AdamNative optimizer
+  error=2.117142e-04
+flow=uniform    K= 35 sample= 10/20
+Running AdamNative optimizer
+  error=1.334658e-04
+flow=uniform    K= 35 sample= 11/20
+Running AdamNative optimizer
+  error=9.847174e-05
+flow=uniform    K= 35 sample= 12/20
+Running AdamNative optimizer
+  error=1.613148e-04
+flow=uniform    K= 35 sample= 13/20
+Running AdamNative optimizer
+  error=3.618469e-04
+flow=uniform    K= 35 sample= 14/20
+Running AdamNative optimizer
+  error=7.021346e-05
+flow=uniform    K= 35 sample= 15/20
+Running AdamNative optimizer
+  error=1.676722e-04
+flow=uniform    K= 35 sample= 16/20
+Running AdamNative optimizer
+  error=9.198426e-05
+flow=uniform    K= 35 sample= 17/20
+Running AdamNative optimizer
+  error=1.359098e-03
+flow=uniform    K= 35 sample= 18/20
+Running AdamNative optimizer
+  error=1.632837e-04
+flow=uniform    K= 35 sample= 19/20
+Running AdamNative optimizer
+  error=9.472943e-05
+flow=uniform    K= 35 sample= 20/20
+Running AdamNative optimizer
+  error=1.835534e-04
+flow=uniform    K= 40 sample=  1/20
+Running AdamNative optimizer
+  error=1.349244e-04
+flow=uniform    K= 40 sample=  2/20
+Running AdamNative optimizer
+  error=1.466211e-04
+flow=uniform    K= 40 sample=  3/20
+Running AdamNative optimizer
+  error=1.795085e-04
+flow=uniform    K= 40 sample=  4/20
+Running AdamNative optimizer
+  error=1.717535e-04
+flow=uniform    K= 40 sample=  5/20
+Running AdamNative optimizer
+  error=1.274058e-04
+flow=uniform    K= 40 sample=  6/20
+Running AdamNative optimizer
+  error=1.021762e-04
+flow=uniform    K= 40 sample=  7/20
+Running AdamNative optimizer
+  error=1.647452e-04
+flow=uniform    K= 40 sample=  8/20
+Running AdamNative optimizer
+  error=2.104640e-04
+flow=uniform    K= 40 sample=  9/20
+Running AdamNative optimizer
+  error=1.643358e-04
+flow=uniform    K= 40 sample= 10/20
+Running AdamNative optimizer
+  error=1.983185e-04
+flow=uniform    K= 40 sample= 11/20
+Running AdamNative optimizer
+  error=2.032977e-04
+flow=uniform    K= 40 sample= 12/20
+Running AdamNative optimizer
+  error=1.407197e-04
+flow=uniform    K= 40 sample= 13/20
+Running AdamNative optimizer
+  error=1.352524e-04
+flow=uniform    K= 40 sample= 14/20
+Running AdamNative optimizer
+  error=1.604990e-04
+flow=uniform    K= 40 sample= 15/20
+Running AdamNative optimizer
+  error=1.889615e-04
+flow=uniform    K= 40 sample= 16/20
+Running AdamNative optimizer
+  error=1.065467e-04
+flow=uniform    K= 40 sample= 17/20
+Running AdamNative optimizer
+  error=1.914181e-04
+flow=uniform    K= 40 sample= 18/20
+Running AdamNative optimizer
+  error=1.127123e-04
+flow=uniform    K= 40 sample= 19/20
+Running AdamNative optimizer
+  error=1.121199e-04
+flow=uniform    K= 40 sample= 20/20
+Running AdamNative optimizer
+  error=1.171790e-04
+flow=uniform    K= 45 sample=  1/20
+Running AdamNative optimizer
+  error=1.629879e-04
+flow=uniform    K= 45 sample=  2/20
+Running AdamNative optimizer
+  error=1.291678e-03
+flow=uniform    K= 45 sample=  3/20
+Running AdamNative optimizer
+  error=1.204688e-04
+flow=uniform    K= 45 sample=  4/20
+Running AdamNative optimizer
+  error=1.199058e-04
+flow=uniform    K= 45 sample=  5/20
+Running AdamNative optimizer
+  error=2.190119e-04
+flow=uniform    K= 45 sample=  6/20
+Running AdamNative optimizer
+  error=1.191992e-04
+flow=uniform    K= 45 sample=  7/20
+Running AdamNative optimizer
+  error=1.978083e-04
+flow=uniform    K= 45 sample=  8/20
+Running AdamNative optimizer
+  error=2.035513e-04
+flow=uniform    K= 45 sample=  9/20
+Running AdamNative optimizer
+  error=1.761099e-04
+flow=uniform    K= 45 sample= 10/20
+Running AdamNative optimizer
+  error=1.471714e-04
+flow=uniform    K= 45 sample= 11/20
+Running AdamNative optimizer
+  error=1.841020e-04
+flow=uniform    K= 45 sample= 12/20
+Running AdamNative optimizer
+  error=1.353708e-04
+flow=uniform    K= 45 sample= 13/20
+Running AdamNative optimizer
+  error=1.061565e-04
+flow=uniform    K= 45 sample= 14/20
+Running AdamNative optimizer
+  error=1.599592e-04
+flow=uniform    K= 45 sample= 15/20
+Running AdamNative optimizer
+  error=1.157075e-04
+flow=uniform    K= 45 sample= 16/20
+Running AdamNative optimizer
+  error=1.281506e-04
+flow=uniform    K= 45 sample= 17/20
+Running AdamNative optimizer
+  error=1.625658e-04
+flow=uniform    K= 45 sample= 18/20
+Running AdamNative optimizer
+  error=1.038626e-04
+flow=uniform    K= 45 sample= 19/20
+Running AdamNative optimizer
+  error=1.196999e-04
+flow=uniform    K= 45 sample= 20/20
+Running AdamNative optimizer
+  error=1.185407e-04
+flow=uniform    K= 50 sample=  1/20
+Running AdamNative optimizer
+  error=2.246774e-04
+flow=uniform    K= 50 sample=  2/20
+Running AdamNative optimizer
+  error=1.117526e-04
+flow=uniform    K= 50 sample=  3/20
+Running AdamNative optimizer
+  error=2.061446e-04
+flow=uniform    K= 50 sample=  4/20
+Running AdamNative optimizer
+  error=1.642316e-04
+flow=uniform    K= 50 sample=  5/20
+Running AdamNative optimizer
+  error=1.036218e-04
+flow=uniform    K= 50 sample=  6/20
+Running AdamNative optimizer
+  error=1.040291e-04
+flow=uniform    K= 50 sample=  7/20
+Running AdamNative optimizer
+  error=1.843271e-04
+flow=uniform    K= 50 sample=  8/20
+Running AdamNative optimizer
+  error=1.920089e-04
+flow=uniform    K= 50 sample=  9/20
+Running AdamNative optimizer
+  error=1.151179e-04
+flow=uniform    K= 50 sample= 10/20
+Running AdamNative optimizer
+  error=9.414924e-05
+flow=uniform    K= 50 sample= 11/20
+Running AdamNative optimizer
+  error=1.714468e-04
+flow=uniform    K= 50 sample= 12/20
+Running AdamNative optimizer
+  error=1.060863e-04
+flow=uniform    K= 50 sample= 13/20
+Running AdamNative optimizer
+  error=5.858090e-05
+flow=uniform    K= 50 sample= 14/20
+Running AdamNative optimizer
+  error=1.275346e-04
+flow=uniform    K= 50 sample= 15/20
+Running AdamNative optimizer
+  error=8.471006e-05
+flow=uniform    K= 50 sample= 16/20
+Running AdamNative optimizer
+  error=2.177730e-04
+flow=uniform    K= 50 sample= 17/20
+Running AdamNative optimizer
+  error=2.085472e-04
+flow=uniform    K= 50 sample= 18/20
+Running AdamNative optimizer
+  error=1.810109e-04
+flow=uniform    K= 50 sample= 19/20
+Running AdamNative optimizer
+  error=8.358550e-05
+flow=uniform    K= 50 sample= 20/20
+Running AdamNative optimizer
+  error=8.220982e-05
+
+=== flow: couette source: analytic ===
+flow=couette    K=  1 sample=  1/20
+Running AdamNative optimizer
+  error=4.859869e-01
+flow=couette    K=  1 sample=  2/20
+Running AdamNative optimizer
+  error=4.342202e-01
+flow=couette    K=  1 sample=  3/20
+Running AdamNative optimizer
+  error=5.096076e-01
+flow=couette    K=  1 sample=  4/20
+Running AdamNative optimizer
+  error=4.923711e-01
+flow=couette    K=  1 sample=  5/20
+Running AdamNative optimizer
+  error=5.214837e-01
+flow=couette    K=  1 sample=  6/20
+Running AdamNative optimizer
+  error=5.048126e-01
+flow=couette    K=  1 sample=  7/20
+Running AdamNative optimizer
+  error=4.247395e-01
+flow=couette    K=  1 sample=  8/20
+Running AdamNative optimizer
+  error=3.746368e-01
+flow=couette    K=  1 sample=  9/20
+Running AdamNative optimizer
+  error=5.404192e-01
+flow=couette    K=  1 sample= 10/20
+Running AdamNative optimizer
+  error=5.033184e-01
+flow=couette    K=  1 sample= 11/20
+Running AdamNative optimizer
+  error=5.104699e-01
+flow=couette    K=  1 sample= 12/20
+Running AdamNative optimizer
+  error=2.933321e-01
+flow=couette    K=  1 sample= 13/20
+Running AdamNative optimizer
+  error=4.782825e-01
+flow=couette    K=  1 sample= 14/20
+Running AdamNative optimizer
+  error=5.018406e-01
+flow=couette    K=  1 sample= 15/20
+Running AdamNative optimizer
+  error=5.006779e-01
+flow=couette    K=  1 sample= 16/20
+Running AdamNative optimizer
+  error=4.956882e-01
+flow=couette    K=  1 sample= 17/20
+Running AdamNative optimizer
+  error=5.141295e-01
+flow=couette    K=  1 sample= 18/20
+Running AdamNative optimizer
+  error=4.926439e-01
+flow=couette    K=  1 sample= 19/20
+Running AdamNative optimizer
+  error=5.499257e-01
+flow=couette    K=  1 sample= 20/20
+Running AdamNative optimizer
+  error=5.575639e-01
+flow=couette    K=  2 sample=  1/20
+Running AdamNative optimizer
+  error=4.028606e-01
+flow=couette    K=  2 sample=  2/20
+Running AdamNative optimizer
+  error=5.216062e-01
+flow=couette    K=  2 sample=  3/20
+Running AdamNative optimizer
+  error=3.740051e-01
+flow=couette    K=  2 sample=  4/20
+Running AdamNative optimizer
+  error=5.182785e-01
+flow=couette    K=  2 sample=  5/20
+Running AdamNative optimizer
+  error=4.471911e-01
+flow=couette    K=  2 sample=  6/20
+Running AdamNative optimizer
+  error=2.581227e-01
+flow=couette    K=  2 sample=  7/20
+Running AdamNative optimizer
+  error=2.482694e-01
+flow=couette    K=  2 sample=  8/20
+Running AdamNative optimizer
+  error=2.826031e-01
+flow=couette    K=  2 sample=  9/20
+Running AdamNative optimizer
+  error=2.441391e-01
+flow=couette    K=  2 sample= 10/20
+Running AdamNative optimizer
+  error=3.815777e-01
+flow=couette    K=  2 sample= 11/20
+Running AdamNative optimizer
+  error=2.109944e-01
+flow=couette    K=  2 sample= 12/20
+Running AdamNative optimizer
+  error=4.519283e-01
+flow=couette    K=  2 sample= 13/20
+Running AdamNative optimizer
+  error=2.867743e-01
+flow=couette    K=  2 sample= 14/20
+Running AdamNative optimizer
+  error=3.233927e-01
+flow=couette    K=  2 sample= 15/20
+Running AdamNative optimizer
+  error=3.351926e-01
+flow=couette    K=  2 sample= 16/20
+Running AdamNative optimizer
+  error=3.416101e-01
+flow=couette    K=  2 sample= 17/20
+Running AdamNative optimizer
+  error=2.707496e-01
+flow=couette    K=  2 sample= 18/20
+Running AdamNative optimizer
+  error=1.920394e-01
+flow=couette    K=  2 sample= 19/20
+Running AdamNative optimizer
+  error=6.719035e-01
+flow=couette    K=  2 sample= 20/20
+Running AdamNative optimizer
+  error=3.277309e-01
+flow=couette    K=  4 sample=  1/20
+Running AdamNative optimizer
+  error=5.613144e-02
+flow=couette    K=  4 sample=  2/20
+Running AdamNative optimizer
+  error=2.619599e-01
+flow=couette    K=  4 sample=  3/20
+Running AdamNative optimizer
+  error=3.249543e-01
+flow=couette    K=  4 sample=  4/20
+Running AdamNative optimizer
+  error=1.435027e-01
+flow=couette    K=  4 sample=  5/20
+Running AdamNative optimizer
+  error=1.885893e-01
+flow=couette    K=  4 sample=  6/20
+Running AdamNative optimizer
+  error=1.334845e-01
+flow=couette    K=  4 sample=  7/20
+Running AdamNative optimizer
+  error=2.388720e-01
+flow=couette    K=  4 sample=  8/20
+Running AdamNative optimizer
+  error=1.777632e-01
+flow=couette    K=  4 sample=  9/20
+Running AdamNative optimizer
+  error=1.918075e-01
+flow=couette    K=  4 sample= 10/20
+Running AdamNative optimizer
+  error=1.893513e-01
+flow=couette    K=  4 sample= 11/20
+Running AdamNative optimizer
+  error=2.700156e-01
+flow=couette    K=  4 sample= 12/20
+Running AdamNative optimizer
+  error=5.166490e-01
+flow=couette    K=  4 sample= 13/20
+Running AdamNative optimizer
+  error=3.013061e-01
+flow=couette    K=  4 sample= 14/20
+Running AdamNative optimizer
+  error=8.162801e-02
+flow=couette    K=  4 sample= 15/20
+Running AdamNative optimizer
+  error=2.286995e-01
+flow=couette    K=  4 sample= 16/20
+Running AdamNative optimizer
+  error=4.117312e-02
+flow=couette    K=  4 sample= 17/20
+Running AdamNative optimizer
+  error=3.197179e-01
+flow=couette    K=  4 sample= 18/20
+Running AdamNative optimizer
+  error=5.800322e-02
+flow=couette    K=  4 sample= 19/20
+Running AdamNative optimizer
+  error=1.299037e-01
+flow=couette    K=  4 sample= 20/20
+Running AdamNative optimizer
+  error=1.597724e-01
+flow=couette    K=  6 sample=  1/20
+Running AdamNative optimizer
+  error=3.315123e-02
+flow=couette    K=  6 sample=  2/20
+Running AdamNative optimizer
+  error=3.092395e-02
+flow=couette    K=  6 sample=  3/20
+Running AdamNative optimizer
+  error=1.268751e-01
+flow=couette    K=  6 sample=  4/20
+Running AdamNative optimizer
+  error=6.315338e-02
+flow=couette    K=  6 sample=  5/20
+Running AdamNative optimizer
+  error=1.099661e-02
+flow=couette    K=  6 sample=  6/20
+Running AdamNative optimizer
+  error=3.054191e-02
+flow=couette    K=  6 sample=  7/20
+Running AdamNative optimizer
+  error=1.039711e-01
+flow=couette    K=  6 sample=  8/20
+Running AdamNative optimizer
+  error=1.803910e-02
+flow=couette    K=  6 sample=  9/20
+Running AdamNative optimizer
+  error=1.452827e-01
+flow=couette    K=  6 sample= 10/20
+Running AdamNative optimizer
+  error=3.967215e-01
+flow=couette    K=  6 sample= 11/20
+Running AdamNative optimizer
+  error=3.251695e-03
+flow=couette    K=  6 sample= 12/20
+Running AdamNative optimizer
+  error=1.097593e-02
+flow=couette    K=  6 sample= 13/20
+Running AdamNative optimizer
+  error=1.115085e-01
+flow=couette    K=  6 sample= 14/20
+Running AdamNative optimizer
+  error=2.336668e-01
+flow=couette    K=  6 sample= 15/20
+Running AdamNative optimizer
+  error=3.346563e-02
+flow=couette    K=  6 sample= 16/20
+Running AdamNative optimizer
+  error=1.030171e-02
+flow=couette    K=  6 sample= 17/20
+Running AdamNative optimizer
+  error=3.609764e-03
+flow=couette    K=  6 sample= 18/20
+Running AdamNative optimizer
+  error=3.654300e-03
+flow=couette    K=  6 sample= 19/20
+Running AdamNative optimizer
+  error=2.066705e-02
+flow=couette    K=  6 sample= 20/20
+Running AdamNative optimizer
+  error=6.234529e-02
+flow=couette    K=  8 sample=  1/20
+Running AdamNative optimizer
+  error=2.316360e-02
+flow=couette    K=  8 sample=  2/20
+Running AdamNative optimizer
+  error=1.531533e-03
+flow=couette    K=  8 sample=  3/20
+Running AdamNative optimizer
+  error=4.335662e-04
+flow=couette    K=  8 sample=  4/20
+Running AdamNative optimizer
+  error=2.835187e-02
+flow=couette    K=  8 sample=  5/20
+Running AdamNative optimizer
+  error=1.249407e-02
+flow=couette    K=  8 sample=  6/20
+Running AdamNative optimizer
+  error=1.468377e-02
+flow=couette    K=  8 sample=  7/20
+Running AdamNative optimizer
+  error=1.626325e-02
+flow=couette    K=  8 sample=  8/20
+Running AdamNative optimizer
+  error=2.657458e-03
+flow=couette    K=  8 sample=  9/20
+Running AdamNative optimizer
+  error=1.221554e-02
+flow=couette    K=  8 sample= 10/20
+Running AdamNative optimizer
+  error=5.471394e-03
+flow=couette    K=  8 sample= 11/20
+Running AdamNative optimizer
+  error=2.867737e-03
+flow=couette    K=  8 sample= 12/20
+Running AdamNative optimizer
+  error=1.913468e-03
+flow=couette    K=  8 sample= 13/20
+Running AdamNative optimizer
+  error=9.381456e-02
+flow=couette    K=  8 sample= 14/20
+Running AdamNative optimizer
+  error=3.390440e-03
+flow=couette    K=  8 sample= 15/20
+Running AdamNative optimizer
+  error=2.770844e-02
+flow=couette    K=  8 sample= 16/20
+Running AdamNative optimizer
+  error=9.565383e-03
+flow=couette    K=  8 sample= 17/20
+Running AdamNative optimizer
+  error=1.561544e-02
+flow=couette    K=  8 sample= 18/20
+Running AdamNative optimizer
+  error=1.525537e-01
+flow=couette    K=  8 sample= 19/20
+Running AdamNative optimizer
+  error=3.690874e-02
+flow=couette    K=  8 sample= 20/20
+Running AdamNative optimizer
+  error=1.578678e-02
+flow=couette    K= 10 sample=  1/20
+Running AdamNative optimizer
+  error=2.572428e-03
+flow=couette    K= 10 sample=  2/20
+Running AdamNative optimizer
+  error=5.912376e-04
+flow=couette    K= 10 sample=  3/20
+Running AdamNative optimizer
+  error=3.587872e-02
+flow=couette    K= 10 sample=  4/20
+Running AdamNative optimizer
+  error=1.239321e-02
+flow=couette    K= 10 sample=  5/20
+Running AdamNative optimizer
+  error=1.444408e-03
+flow=couette    K= 10 sample=  6/20
+Running AdamNative optimizer
+  error=2.429383e-03
+flow=couette    K= 10 sample=  7/20
+Running AdamNative optimizer
+  error=3.487271e-03
+flow=couette    K= 10 sample=  8/20
+Running AdamNative optimizer
+  error=7.325364e-02
+flow=couette    K= 10 sample=  9/20
+Running AdamNative optimizer
+  error=5.249076e-02
+flow=couette    K= 10 sample= 10/20
+Running AdamNative optimizer
+  error=2.438998e-03
+flow=couette    K= 10 sample= 11/20
+Running AdamNative optimizer
+  error=1.126104e-03
+flow=couette    K= 10 sample= 12/20
+Running AdamNative optimizer
+  error=3.156912e-02
+flow=couette    K= 10 sample= 13/20
+Running AdamNative optimizer
+  error=9.420155e-04
+flow=couette    K= 10 sample= 14/20
+Running AdamNative optimizer
+  error=1.991611e-03
+flow=couette    K= 10 sample= 15/20
+Running AdamNative optimizer
+  error=2.848836e-02
+flow=couette    K= 10 sample= 16/20
+Running AdamNative optimizer
+  error=4.881279e-03
+flow=couette    K= 10 sample= 17/20
+Running AdamNative optimizer
+  error=1.926204e-03
+flow=couette    K= 10 sample= 18/20
+Running AdamNative optimizer
+  error=2.375541e-03
+flow=couette    K= 10 sample= 19/20
+Running AdamNative optimizer
+  error=7.738518e-02
+flow=couette    K= 10 sample= 20/20
+Running AdamNative optimizer
+  error=1.113870e-02
+flow=couette    K= 12 sample=  1/20
+Running AdamNative optimizer
+  error=6.750479e-04
+flow=couette    K= 12 sample=  2/20
+Running AdamNative optimizer
+  error=8.075251e-03
+flow=couette    K= 12 sample=  3/20
+Running AdamNative optimizer
+  error=4.590457e-04
+flow=couette    K= 12 sample=  4/20
+Running AdamNative optimizer
+  error=4.096616e-04
+flow=couette    K= 12 sample=  5/20
+Running AdamNative optimizer
+  error=2.356510e-03
+flow=couette    K= 12 sample=  6/20
+Running AdamNative optimizer
+  error=1.285888e-03
+flow=couette    K= 12 sample=  7/20
+Running AdamNative optimizer
+  error=1.043595e-01
+flow=couette    K= 12 sample=  8/20
+Running AdamNative optimizer
+  error=8.019383e-02
+flow=couette    K= 12 sample=  9/20
+Running AdamNative optimizer
+  error=2.446468e-03
+flow=couette    K= 12 sample= 10/20
+Running AdamNative optimizer
+  error=5.141595e-02
+flow=couette    K= 12 sample= 11/20
+Running AdamNative optimizer
+  error=2.622839e-03
+flow=couette    K= 12 sample= 12/20
+Running AdamNative optimizer
+  error=7.914950e-04
+flow=couette    K= 12 sample= 13/20
+Running AdamNative optimizer
+  error=3.508508e-04
+flow=couette    K= 12 sample= 14/20
+Running AdamNative optimizer
+  error=3.424291e-03
+flow=couette    K= 12 sample= 15/20
+Running AdamNative optimizer
+  error=4.052916e-04
+flow=couette    K= 12 sample= 16/20
+Running AdamNative optimizer
+  error=5.172273e-03
+flow=couette    K= 12 sample= 17/20
+Running AdamNative optimizer
+  error=4.246953e-04
+flow=couette    K= 12 sample= 18/20
+Running AdamNative optimizer
+  error=3.084085e-03
+flow=couette    K= 12 sample= 19/20
+Running AdamNative optimizer
+  error=5.566443e-03
+flow=couette    K= 12 sample= 20/20
+Running AdamNative optimizer
+  error=9.471986e-02
+flow=couette    K= 16 sample=  1/20
+Running AdamNative optimizer
+  error=8.109585e-04
+flow=couette    K= 16 sample=  2/20
+Running AdamNative optimizer
+  error=3.552425e-04
+flow=couette    K= 16 sample=  3/20
+Running AdamNative optimizer
+  error=2.484742e-04
+flow=couette    K= 16 sample=  4/20
+Running AdamNative optimizer
+  error=1.280173e-04
+flow=couette    K= 16 sample=  5/20
+Running AdamNative optimizer
+  error=1.997979e-04
+flow=couette    K= 16 sample=  6/20
+Running AdamNative optimizer
+  error=3.486797e-04
+flow=couette    K= 16 sample=  7/20
+Running AdamNative optimizer
+  error=5.615960e-04
+flow=couette    K= 16 sample=  8/20
+Running AdamNative optimizer
+  error=1.445355e-04
+flow=couette    K= 16 sample=  9/20
+Running AdamNative optimizer
+  error=7.132509e-03
+flow=couette    K= 16 sample= 10/20
+Running AdamNative optimizer
+  error=4.575388e-04
+flow=couette    K= 16 sample= 11/20
+Running AdamNative optimizer
+  error=2.693083e-04
+flow=couette    K= 16 sample= 12/20
+Running AdamNative optimizer
+  error=5.766916e-04
+flow=couette    K= 16 sample= 13/20
+Running AdamNative optimizer
+  error=4.477356e-04
+flow=couette    K= 16 sample= 14/20
+Running AdamNative optimizer
+  error=4.350266e-04
+flow=couette    K= 16 sample= 15/20
+Running AdamNative optimizer
+  error=2.575860e-04
+flow=couette    K= 16 sample= 16/20
+Running AdamNative optimizer
+  error=4.266314e-04
+flow=couette    K= 16 sample= 17/20
+Running AdamNative optimizer
+  error=1.982432e-04
+flow=couette    K= 16 sample= 18/20
+Running AdamNative optimizer
+  error=3.933769e-04
+flow=couette    K= 16 sample= 19/20
+Running AdamNative optimizer
+  error=2.036316e-04
+flow=couette    K= 16 sample= 20/20
+Running AdamNative optimizer
+  error=2.708049e-04
+flow=couette    K= 20 sample=  1/20
+Running AdamNative optimizer
+  error=2.272425e-04
+flow=couette    K= 20 sample=  2/20
+Running AdamNative optimizer
+  error=1.381365e-04
+flow=couette    K= 20 sample=  3/20
+Running AdamNative optimizer
+  error=6.140213e-03
+flow=couette    K= 20 sample=  4/20
+Running AdamNative optimizer
+  error=3.447585e-04
+flow=couette    K= 20 sample=  5/20
+Running AdamNative optimizer
+  error=4.569316e-04
+flow=couette    K= 20 sample=  6/20
+Running AdamNative optimizer
+  error=3.959952e-04
+flow=couette    K= 20 sample=  7/20
+Running AdamNative optimizer
+  error=2.525816e-04
+flow=couette    K= 20 sample=  8/20
+Running AdamNative optimizer
+  error=1.818777e-04
+flow=couette    K= 20 sample=  9/20
+Running AdamNative optimizer
+  error=2.363350e-04
+flow=couette    K= 20 sample= 10/20
+Running AdamNative optimizer
+  error=2.306109e-04
+flow=couette    K= 20 sample= 11/20
+Running AdamNative optimizer
+  error=1.550768e-04
+flow=couette    K= 20 sample= 12/20
+Running AdamNative optimizer
+  error=3.438884e-04
+flow=couette    K= 20 sample= 13/20
+Running AdamNative optimizer
+  error=1.977419e-04
+flow=couette    K= 20 sample= 14/20
+Running AdamNative optimizer
+  error=7.456800e-03
+flow=couette    K= 20 sample= 15/20
+Running AdamNative optimizer
+  error=1.008439e-04
+flow=couette    K= 20 sample= 16/20
+Running AdamNative optimizer
+  error=5.317874e-04
+flow=couette    K= 20 sample= 17/20
+Running AdamNative optimizer
+  error=8.921114e-04
+flow=couette    K= 20 sample= 18/20
+Running AdamNative optimizer
+  error=3.751350e-04
+flow=couette    K= 20 sample= 19/20
+Running AdamNative optimizer
+  error=2.526325e-04
+flow=couette    K= 20 sample= 20/20
+Running AdamNative optimizer
+  error=4.845464e-04
+flow=couette    K= 24 sample=  1/20
+Running AdamNative optimizer
+  error=1.124503e-04
+flow=couette    K= 24 sample=  2/20
+Running AdamNative optimizer
+  error=2.751887e-04
+flow=couette    K= 24 sample=  3/20
+Running AdamNative optimizer
+  error=3.402168e-04
+flow=couette    K= 24 sample=  4/20
+Running AdamNative optimizer
+  error=3.531887e-04
+flow=couette    K= 24 sample=  5/20
+Running AdamNative optimizer
+  error=3.581057e-04
+flow=couette    K= 24 sample=  6/20
+Running AdamNative optimizer
+  error=1.948241e-03
+flow=couette    K= 24 sample=  7/20
+Running AdamNative optimizer
+  error=1.875170e-04
+flow=couette    K= 24 sample=  8/20
+Running AdamNative optimizer
+  error=2.539103e-04
+flow=couette    K= 24 sample=  9/20
+Running AdamNative optimizer
+  error=2.345588e-04
+flow=couette    K= 24 sample= 10/20
+Running AdamNative optimizer
+  error=8.819632e-05
+flow=couette    K= 24 sample= 11/20
+Running AdamNative optimizer
+  error=6.223560e-04
+flow=couette    K= 24 sample= 12/20
+Running AdamNative optimizer
+  error=1.221717e-04
+flow=couette    K= 24 sample= 13/20
+Running AdamNative optimizer
+  error=3.508919e-04
+flow=couette    K= 24 sample= 14/20
+Running AdamNative optimizer
+  error=1.467672e-04
+flow=couette    K= 24 sample= 15/20
+Running AdamNative optimizer
+  error=1.617880e-04
+flow=couette    K= 24 sample= 16/20
+Running AdamNative optimizer
+  error=1.229779e-04
+flow=couette    K= 24 sample= 17/20
+Running AdamNative optimizer
+  error=1.851632e-04
+flow=couette    K= 24 sample= 18/20
+Running AdamNative optimizer
+  error=1.586234e-04
+flow=couette    K= 24 sample= 19/20
+Running AdamNative optimizer
+  error=1.761909e-04
+flow=couette    K= 24 sample= 20/20
+Running AdamNative optimizer
+  error=3.055944e-04
+flow=couette    K= 29 sample=  1/20
+Running AdamNative optimizer
+  error=1.175213e-04
+flow=couette    K= 29 sample=  2/20
+Running AdamNative optimizer
+  error=1.787161e-04
+flow=couette    K= 29 sample=  3/20
+Running AdamNative optimizer
+  error=1.712293e-04
+flow=couette    K= 29 sample=  4/20
+Running AdamNative optimizer
+  error=1.512001e-04
+flow=couette    K= 29 sample=  5/20
+Running AdamNative optimizer
+  error=2.501344e-04
+flow=couette    K= 29 sample=  6/20
+Running AdamNative optimizer
+  error=2.156298e-04
+flow=couette    K= 29 sample=  7/20
+Running AdamNative optimizer
+  error=2.064755e-04
+flow=couette    K= 29 sample=  8/20
+Running AdamNative optimizer
+  error=1.837960e-04
+flow=couette    K= 29 sample=  9/20
+Running AdamNative optimizer
+  error=3.767897e-04
+flow=couette    K= 29 sample= 10/20
+Running AdamNative optimizer
+  error=1.605266e-04
+flow=couette    K= 29 sample= 11/20
+Running AdamNative optimizer
+  error=6.136686e-04
+flow=couette    K= 29 sample= 12/20
+Running AdamNative optimizer
+  error=2.289021e-04
+flow=couette    K= 29 sample= 13/20
+Running AdamNative optimizer
+  error=8.058521e-04
+flow=couette    K= 29 sample= 14/20
+Running AdamNative optimizer
+  error=2.395887e-04
+flow=couette    K= 29 sample= 15/20
+Running AdamNative optimizer
+  error=1.370013e-04
+flow=couette    K= 29 sample= 16/20
+Running AdamNative optimizer
+  error=1.661489e-04
+flow=couette    K= 29 sample= 17/20
+Running AdamNative optimizer
+  error=1.967302e-04
+flow=couette    K= 29 sample= 18/20
+Running AdamNative optimizer
+  error=1.875252e-04
+flow=couette    K= 29 sample= 19/20
+Running AdamNative optimizer
+  error=2.287910e-04
+flow=couette    K= 29 sample= 20/20
+Running AdamNative optimizer
+  error=2.663716e-04
+flow=couette    K= 35 sample=  1/20
+Running AdamNative optimizer
+  error=1.227569e-04
+flow=couette    K= 35 sample=  2/20
+Running AdamNative optimizer
+  error=1.027284e-04
+flow=couette    K= 35 sample=  3/20
+Running AdamNative optimizer
+  error=1.145956e-04
+flow=couette    K= 35 sample=  4/20
+Running AdamNative optimizer
+  error=1.614492e-04
+flow=couette    K= 35 sample=  5/20
+Running AdamNative optimizer
+  error=2.362692e-04
+flow=couette    K= 35 sample=  6/20
+Running AdamNative optimizer
+  error=9.843088e-05
+flow=couette    K= 35 sample=  7/20
+Running AdamNative optimizer
+  error=1.548550e-04
+flow=couette    K= 35 sample=  8/20
+Running AdamNative optimizer
+  error=1.428318e-04
+flow=couette    K= 35 sample=  9/20
+Running AdamNative optimizer
+  error=2.104244e-04
+flow=couette    K= 35 sample= 10/20
+Running AdamNative optimizer
+  error=1.694419e-03
+flow=couette    K= 35 sample= 11/20
+Running AdamNative optimizer
+  error=3.061399e-04
+flow=couette    K= 35 sample= 12/20
+Running AdamNative optimizer
+  error=1.313459e-04
+flow=couette    K= 35 sample= 13/20
+Running AdamNative optimizer
+  error=1.481283e-04
+flow=couette    K= 35 sample= 14/20
+Running AdamNative optimizer
+  error=1.026969e-04
+flow=couette    K= 35 sample= 15/20
+Running AdamNative optimizer
+  error=1.644948e-04
+flow=couette    K= 35 sample= 16/20
+Running AdamNative optimizer
+  error=1.921581e-04
+flow=couette    K= 35 sample= 17/20
+Running AdamNative optimizer
+  error=9.793275e-05
+flow=couette    K= 35 sample= 18/20
+Running AdamNative optimizer
+  error=1.614589e-04
+flow=couette    K= 35 sample= 19/20
+Running AdamNative optimizer
+  error=1.306738e-04
+flow=couette    K= 35 sample= 20/20
+Running AdamNative optimizer
+  error=1.062660e-04
+flow=couette    K= 40 sample=  1/20
+Running AdamNative optimizer
+  error=1.026546e-04
+flow=couette    K= 40 sample=  2/20
+Running AdamNative optimizer
+  error=8.117686e-05
+flow=couette    K= 40 sample=  3/20
+Running AdamNative optimizer
+  error=1.513621e-04
+flow=couette    K= 40 sample=  4/20
+Running AdamNative optimizer
+  error=1.108025e-04
+flow=couette    K= 40 sample=  5/20
+Running AdamNative optimizer
+  error=1.110892e-04
+flow=couette    K= 40 sample=  6/20
+Running AdamNative optimizer
+  error=1.461852e-04
+flow=couette    K= 40 sample=  7/20
+Running AdamNative optimizer
+  error=1.996907e-04
+flow=couette    K= 40 sample=  8/20
+Running AdamNative optimizer
+  error=1.076057e-04
+flow=couette    K= 40 sample=  9/20
+Running AdamNative optimizer
+  error=2.201136e-04
+flow=couette    K= 40 sample= 10/20
+Running AdamNative optimizer
+  error=8.915125e-05
+flow=couette    K= 40 sample= 11/20
+Running AdamNative optimizer
+  error=1.544055e-04
+flow=couette    K= 40 sample= 12/20
+Running AdamNative optimizer
+  error=1.371360e-04
+flow=couette    K= 40 sample= 13/20
+Running AdamNative optimizer
+  error=1.328005e-04
+flow=couette    K= 40 sample= 14/20
+Running AdamNative optimizer
+  error=1.526650e-04
+flow=couette    K= 40 sample= 15/20
+Running AdamNative optimizer
+  error=1.165445e-04
+flow=couette    K= 40 sample= 16/20
+Running AdamNative optimizer
+  error=1.425321e-04
+flow=couette    K= 40 sample= 17/20
+Running AdamNative optimizer
+  error=9.868697e-05
+flow=couette    K= 40 sample= 18/20
+Running AdamNative optimizer
+  error=1.040207e-04
+flow=couette    K= 40 sample= 19/20
+Running AdamNative optimizer
+  error=1.394188e-04
+flow=couette    K= 40 sample= 20/20
+Running AdamNative optimizer
+  error=1.156132e-04
+flow=couette    K= 45 sample=  1/20
+Running AdamNative optimizer
+  error=8.845572e-05
+flow=couette    K= 45 sample=  2/20
+Running AdamNative optimizer
+  error=1.335932e-04
+flow=couette    K= 45 sample=  3/20
+Running AdamNative optimizer
+  error=1.424569e-04
+flow=couette    K= 45 sample=  4/20
+Running AdamNative optimizer
+  error=5.511716e-02
+flow=couette    K= 45 sample=  5/20
+Running AdamNative optimizer
+  error=1.900252e-04
+flow=couette    K= 45 sample=  6/20
+Running AdamNative optimizer
+  error=1.172374e-04
+flow=couette    K= 45 sample=  7/20
+Running AdamNative optimizer
+  error=7.811222e-05
+flow=couette    K= 45 sample=  8/20
+Running AdamNative optimizer
+  error=9.063632e-05
+flow=couette    K= 45 sample=  9/20
+Running AdamNative optimizer
+  error=1.115789e-04
+flow=couette    K= 45 sample= 10/20
+Running AdamNative optimizer
+  error=2.089999e-04
+flow=couette    K= 45 sample= 11/20
+Running AdamNative optimizer
+  error=1.205204e-04
+flow=couette    K= 45 sample= 12/20
+Running AdamNative optimizer
+  error=1.459657e-04
+flow=couette    K= 45 sample= 13/20
+Running AdamNative optimizer
+  error=1.826638e-04
+flow=couette    K= 45 sample= 14/20
+Running AdamNative optimizer
+  error=1.832640e-04
+flow=couette    K= 45 sample= 15/20
+Running AdamNative optimizer
+  error=2.174923e-04
+flow=couette    K= 45 sample= 16/20
+Running AdamNative optimizer
+  error=7.769339e-05
+flow=couette    K= 45 sample= 17/20
+Running AdamNative optimizer
+  error=1.061517e-04
+flow=couette    K= 45 sample= 18/20
+Running AdamNative optimizer
+  error=1.117652e-04
+flow=couette    K= 45 sample= 19/20
+Running AdamNative optimizer
+  error=2.329225e-04
+flow=couette    K= 45 sample= 20/20
+Running AdamNative optimizer
+  error=8.679745e-05
+flow=couette    K= 50 sample=  1/20
+Running AdamNative optimizer
+  error=1.088225e-04
+flow=couette    K= 50 sample=  2/20
+Running AdamNative optimizer
+  error=1.566515e-04
+flow=couette    K= 50 sample=  3/20
+Running AdamNative optimizer
+  error=1.626421e-04
+flow=couette    K= 50 sample=  4/20
+Running AdamNative optimizer
+  error=2.492776e-04
+flow=couette    K= 50 sample=  5/20
+Running AdamNative optimizer
+  error=1.935353e-04
+flow=couette    K= 50 sample=  6/20
+Running AdamNative optimizer
+  error=1.802878e-04
+flow=couette    K= 50 sample=  7/20
+Running AdamNative optimizer
+  error=9.645967e-05
+flow=couette    K= 50 sample=  8/20
+Running AdamNative optimizer
+  error=1.852127e-04
+flow=couette    K= 50 sample=  9/20
+Running AdamNative optimizer
+  error=1.978780e-04
+flow=couette    K= 50 sample= 10/20
+Running AdamNative optimizer
+  error=7.818485e-05
+flow=couette    K= 50 sample= 11/20
+Running AdamNative optimizer
+  error=1.393474e-04
+flow=couette    K= 50 sample= 12/20
+Running AdamNative optimizer
+  error=2.153779e-04
+flow=couette    K= 50 sample= 13/20
+Running AdamNative optimizer
+  error=1.238601e-04
+flow=couette    K= 50 sample= 14/20
+Running AdamNative optimizer
+  error=3.104476e-04
+flow=couette    K= 50 sample= 15/20
+Running AdamNative optimizer
+  error=1.161240e-04
+flow=couette    K= 50 sample= 16/20
+Running AdamNative optimizer
+  error=1.248920e-04
+flow=couette    K= 50 sample= 17/20
+Running AdamNative optimizer
+  error=1.922222e-04
+flow=couette    K= 50 sample= 18/20
+Running AdamNative optimizer
+  error=1.365451e-04
+flow=couette    K= 50 sample= 19/20
+Running AdamNative optimizer
+  error=1.843006e-04
+flow=couette    K= 50 sample= 20/20
+Running AdamNative optimizer
+  error=2.556928e-04
+
+=== flow: poiseuille source: analytic ===
+flow=poiseuille K=  1 sample=  1/20
+Running AdamNative optimizer
+  error=6.462957e-01
+flow=poiseuille K=  1 sample=  2/20
+Running AdamNative optimizer
+  error=7.165375e-01
+flow=poiseuille K=  1 sample=  3/20
+Running AdamNative optimizer
+  error=6.451664e-01
+flow=poiseuille K=  1 sample=  4/20
+Running AdamNative optimizer
+  error=6.426428e-01
+flow=poiseuille K=  1 sample=  5/20
+Running AdamNative optimizer
+  error=7.769721e-01
+flow=poiseuille K=  1 sample=  6/20
+Running AdamNative optimizer
+  error=3.398602e-01
+flow=poiseuille K=  1 sample=  7/20
+Running AdamNative optimizer
+  error=7.773320e-01
+flow=poiseuille K=  1 sample=  8/20
+Running AdamNative optimizer
+  error=5.835564e-01
+flow=poiseuille K=  1 sample=  9/20
+Running AdamNative optimizer
+  error=8.161590e-01
+flow=poiseuille K=  1 sample= 10/20
+Running AdamNative optimizer
+  error=8.944562e-01
+flow=poiseuille K=  1 sample= 11/20
+Running AdamNative optimizer
+  error=6.970041e-01
+flow=poiseuille K=  1 sample= 12/20
+Running AdamNative optimizer
+  error=6.759861e-01
+flow=poiseuille K=  1 sample= 13/20
+Running AdamNative optimizer
+  error=6.546053e-01
+flow=poiseuille K=  1 sample= 14/20
+Running AdamNative optimizer
+  error=8.711883e-01
+flow=poiseuille K=  1 sample= 15/20
+Running AdamNative optimizer
+  error=8.242675e-01
+flow=poiseuille K=  1 sample= 16/20
+Running AdamNative optimizer
+  error=6.311011e-01
+flow=poiseuille K=  1 sample= 17/20
+Running AdamNative optimizer
+  error=8.651691e-01
+flow=poiseuille K=  1 sample= 18/20
+Running AdamNative optimizer
+  error=4.110605e-01
+flow=poiseuille K=  1 sample= 19/20
+Running AdamNative optimizer
+  error=6.938692e-01
+flow=poiseuille K=  1 sample= 20/20
+Running AdamNative optimizer
+  error=6.418758e-01
+flow=poiseuille K=  2 sample=  1/20
+Running AdamNative optimizer
+  error=3.345521e-01
+flow=poiseuille K=  2 sample=  2/20
+Running AdamNative optimizer
+  error=6.551511e-01
+flow=poiseuille K=  2 sample=  3/20
+Running AdamNative optimizer
+  error=5.022191e-01
+flow=poiseuille K=  2 sample=  4/20
+Running AdamNative optimizer
+  error=3.066338e-01
+flow=poiseuille K=  2 sample=  5/20
+Running AdamNative optimizer
+  error=1.923215e-01
+flow=poiseuille K=  2 sample=  6/20
+Running AdamNative optimizer
+  error=9.235488e-01
+flow=poiseuille K=  2 sample=  7/20
+Running AdamNative optimizer
+  error=8.338715e-01
+flow=poiseuille K=  2 sample=  8/20
+Running AdamNative optimizer
+  error=4.225819e-01
+flow=poiseuille K=  2 sample=  9/20
+Running AdamNative optimizer
+  error=6.919494e-01
+flow=poiseuille K=  2 sample= 10/20
+Running AdamNative optimizer
+  error=2.983330e-01
+flow=poiseuille K=  2 sample= 11/20
+Running AdamNative optimizer
+  error=2.032191e-01
+flow=poiseuille K=  2 sample= 12/20
+Running AdamNative optimizer
+  error=5.948707e-01
+flow=poiseuille K=  2 sample= 13/20
+Running AdamNative optimizer
+  error=2.704748e-01
+flow=poiseuille K=  2 sample= 14/20
+Running AdamNative optimizer
+  error=4.610899e-01
+flow=poiseuille K=  2 sample= 15/20
+Running AdamNative optimizer
+  error=3.111887e-01
+flow=poiseuille K=  2 sample= 16/20
+Running AdamNative optimizer
+  error=3.868525e-01
+flow=poiseuille K=  2 sample= 17/20
+Running AdamNative optimizer
+  error=1.006945e+00
+flow=poiseuille K=  2 sample= 18/20
+Running AdamNative optimizer
+  error=6.449391e-01
+flow=poiseuille K=  2 sample= 19/20
+Running AdamNative optimizer
+  error=2.341175e-01
+flow=poiseuille K=  2 sample= 20/20
+Running AdamNative optimizer
+  error=4.577421e-01
+flow=poiseuille K=  4 sample=  1/20
+Running AdamNative optimizer
+  error=1.725753e-01
+flow=poiseuille K=  4 sample=  2/20
+Running AdamNative optimizer
+  error=1.108336e-01
+flow=poiseuille K=  4 sample=  3/20
+Running AdamNative optimizer
+  error=1.932931e-01
+flow=poiseuille K=  4 sample=  4/20
+Running AdamNative optimizer
+  error=9.734857e-02
+flow=poiseuille K=  4 sample=  5/20
+Running AdamNative optimizer
+  error=1.692291e-01
+flow=poiseuille K=  4 sample=  6/20
+Running AdamNative optimizer
+  error=5.670429e-02
+flow=poiseuille K=  4 sample=  7/20
+Running AdamNative optimizer
+  error=2.686517e-01
+flow=poiseuille K=  4 sample=  8/20
+Running AdamNative optimizer
+  error=2.252710e-01
+flow=poiseuille K=  4 sample=  9/20
+Running AdamNative optimizer
+  error=6.581868e-02
+flow=poiseuille K=  4 sample= 10/20
+Running AdamNative optimizer
+  error=2.163585e-01
+flow=poiseuille K=  4 sample= 11/20
+Running AdamNative optimizer
+  error=1.870445e-01
+flow=poiseuille K=  4 sample= 12/20
+Running AdamNative optimizer
+  error=1.692028e-01
+flow=poiseuille K=  4 sample= 13/20
+Running AdamNative optimizer
+  error=3.871402e-01
+flow=poiseuille K=  4 sample= 14/20
+Running AdamNative optimizer
+  error=8.437320e-02
+flow=poiseuille K=  4 sample= 15/20
+Running AdamNative optimizer
+  error=7.756187e-02
+flow=poiseuille K=  4 sample= 16/20
+Running AdamNative optimizer
+  error=1.050038e-01
+flow=poiseuille K=  4 sample= 17/20
+Running AdamNative optimizer
+  error=2.296575e-01
+flow=poiseuille K=  4 sample= 18/20
+Running AdamNative optimizer
+  error=3.657587e-01
+flow=poiseuille K=  4 sample= 19/20
+Running AdamNative optimizer
+  error=2.463924e-01
+flow=poiseuille K=  4 sample= 20/20
+Running AdamNative optimizer
+  error=1.308927e-01
+flow=poiseuille K=  6 sample=  1/20
+Running AdamNative optimizer
+  error=3.780641e-02
+flow=poiseuille K=  6 sample=  2/20
+Running AdamNative optimizer
+  error=5.509748e-02
+flow=poiseuille K=  6 sample=  3/20
+Running AdamNative optimizer
+  error=5.007640e-02
+flow=poiseuille K=  6 sample=  4/20
+Running AdamNative optimizer
+  error=8.860484e-02
+flow=poiseuille K=  6 sample=  5/20
+Running AdamNative optimizer
+  error=9.870007e-02
+flow=poiseuille K=  6 sample=  6/20
+Running AdamNative optimizer
+  error=1.380346e-01
+flow=poiseuille K=  6 sample=  7/20
+Running AdamNative optimizer
+  error=6.132354e-02
+flow=poiseuille K=  6 sample=  8/20
+Running AdamNative optimizer
+  error=7.519813e-02
+flow=poiseuille K=  6 sample=  9/20
+Running AdamNative optimizer
+  error=3.711962e-02
+flow=poiseuille K=  6 sample= 10/20
+Running AdamNative optimizer
+  error=7.122005e-02
+flow=poiseuille K=  6 sample= 11/20
+Running AdamNative optimizer
+  error=2.298161e-01
+flow=poiseuille K=  6 sample= 12/20
+Running AdamNative optimizer
+  error=7.319585e-02
+flow=poiseuille K=  6 sample= 13/20
+Running AdamNative optimizer
+  error=2.870004e-02
+flow=poiseuille K=  6 sample= 14/20
+Running AdamNative optimizer
+  error=1.088141e-01
+flow=poiseuille K=  6 sample= 15/20
+Running AdamNative optimizer
+  error=1.202997e-01
+flow=poiseuille K=  6 sample= 16/20
+Running AdamNative optimizer
+  error=3.958454e-02
+flow=poiseuille K=  6 sample= 17/20
+Running AdamNative optimizer
+  error=4.445334e-02
+flow=poiseuille K=  6 sample= 18/20
+Running AdamNative optimizer
+  error=4.207178e-02
+flow=poiseuille K=  6 sample= 19/20
+Running AdamNative optimizer
+  error=6.226030e-02
+flow=poiseuille K=  6 sample= 20/20
+Running AdamNative optimizer
+  error=3.250422e-02
+flow=poiseuille K=  8 sample=  1/20
+Running AdamNative optimizer
+  error=3.136646e-02
+flow=poiseuille K=  8 sample=  2/20
+Running AdamNative optimizer
+  error=2.684324e-02
+flow=poiseuille K=  8 sample=  3/20
+Running AdamNative optimizer
+  error=5.240680e-02
+flow=poiseuille K=  8 sample=  4/20
+Running AdamNative optimizer
+  error=3.481084e-02
+flow=poiseuille K=  8 sample=  5/20
+Running AdamNative optimizer
+  error=2.977538e-02
+flow=poiseuille K=  8 sample=  6/20
+Running AdamNative optimizer
+  error=3.460584e-02
+flow=poiseuille K=  8 sample=  7/20
+Running AdamNative optimizer
+  error=2.246986e-02
+flow=poiseuille K=  8 sample=  8/20
+Running AdamNative optimizer
+  error=3.260003e-02
+flow=poiseuille K=  8 sample=  9/20
+Running AdamNative optimizer
+  error=2.723366e-02
+flow=poiseuille K=  8 sample= 10/20
+Running AdamNative optimizer
+  error=5.203651e-02
+flow=poiseuille K=  8 sample= 11/20
+Running AdamNative optimizer
+  error=3.795695e-02
+flow=poiseuille K=  8 sample= 12/20
+Running AdamNative optimizer
+  error=1.571080e-02
+flow=poiseuille K=  8 sample= 13/20
+Running AdamNative optimizer
+  error=2.979408e-02
+flow=poiseuille K=  8 sample= 14/20
+Running AdamNative optimizer
+  error=1.390056e-02
+flow=poiseuille K=  8 sample= 15/20
+Running AdamNative optimizer
+  error=5.377394e-02
+flow=poiseuille K=  8 sample= 16/20
+Running AdamNative optimizer
+  error=2.341331e-02
+flow=poiseuille K=  8 sample= 17/20
+Running AdamNative optimizer
+  error=3.286755e-02
+flow=poiseuille K=  8 sample= 18/20
+Running AdamNative optimizer
+  error=3.574744e-02
+flow=poiseuille K=  8 sample= 19/20
+Running AdamNative optimizer
+  error=4.772755e-02
+flow=poiseuille K=  8 sample= 20/20
+Running AdamNative optimizer
+  error=2.623625e-02
+flow=poiseuille K= 10 sample=  1/20
+Running AdamNative optimizer
+  error=1.892052e-02
+flow=poiseuille K= 10 sample=  2/20
+Running AdamNative optimizer
+  error=1.663885e-02
+flow=poiseuille K= 10 sample=  3/20
+Running AdamNative optimizer
+  error=3.239450e-02
+flow=poiseuille K= 10 sample=  4/20
+Running AdamNative optimizer
+  error=2.353445e-02
+flow=poiseuille K= 10 sample=  5/20
+Running AdamNative optimizer
+  error=3.059367e-02
+flow=poiseuille K= 10 sample=  6/20
+Running AdamNative optimizer
+  error=3.140192e-02
+flow=poiseuille K= 10 sample=  7/20
+Running AdamNative optimizer
+  error=2.082982e-02
+flow=poiseuille K= 10 sample=  8/20
+Running AdamNative optimizer
+  error=2.572612e-02
+flow=poiseuille K= 10 sample=  9/20
+Running AdamNative optimizer
+  error=1.877470e-02
+flow=poiseuille K= 10 sample= 10/20
+Running AdamNative optimizer
+  error=2.545883e-02
+flow=poiseuille K= 10 sample= 11/20
+Running AdamNative optimizer
+  error=1.601716e-02
+flow=poiseuille K= 10 sample= 12/20
+Running AdamNative optimizer
+  error=2.567364e-02
+flow=poiseuille K= 10 sample= 13/20
+Running AdamNative optimizer
+  error=1.989777e-02
+flow=poiseuille K= 10 sample= 14/20
+Running AdamNative optimizer
+  error=3.203232e-02
+flow=poiseuille K= 10 sample= 15/20
+Running AdamNative optimizer
+  error=1.711327e-02
+flow=poiseuille K= 10 sample= 16/20
+Running AdamNative optimizer
+  error=3.954805e-02
+flow=poiseuille K= 10 sample= 17/20
+Running AdamNative optimizer
+  error=2.406885e-02
+flow=poiseuille K= 10 sample= 18/20
+Running AdamNative optimizer
+  error=3.621560e-02
+flow=poiseuille K= 10 sample= 19/20
+Running AdamNative optimizer
+  error=1.984851e-02
+flow=poiseuille K= 10 sample= 20/20
+Running AdamNative optimizer
+  error=1.637861e-02
+flow=poiseuille K= 12 sample=  1/20
+Running AdamNative optimizer
+  error=1.178249e-02
+flow=poiseuille K= 12 sample=  2/20
+Running AdamNative optimizer
+  error=1.683342e-02
+flow=poiseuille K= 12 sample=  3/20
+Running AdamNative optimizer
+  error=1.244879e-02
+flow=poiseuille K= 12 sample=  4/20
+Running AdamNative optimizer
+  error=2.079599e-02
+flow=poiseuille K= 12 sample=  5/20
+Running AdamNative optimizer
+  error=1.265282e-02
+flow=poiseuille K= 12 sample=  6/20
+Running AdamNative optimizer
+  error=2.397949e-02
+flow=poiseuille K= 12 sample=  7/20
+Running AdamNative optimizer
+  error=1.120129e-02
+flow=poiseuille K= 12 sample=  8/20
+Running AdamNative optimizer
+  error=2.793844e-02
+flow=poiseuille K= 12 sample=  9/20
+Running AdamNative optimizer
+  error=1.530903e-02
+flow=poiseuille K= 12 sample= 10/20
+Running AdamNative optimizer
+  error=2.309933e-02
+flow=poiseuille K= 12 sample= 11/20
+Running AdamNative optimizer
+  error=1.367164e-02
+flow=poiseuille K= 12 sample= 12/20
+Running AdamNative optimizer
+  error=2.229805e-02
+flow=poiseuille K= 12 sample= 13/20
+Running AdamNative optimizer
+  error=1.095512e-02
+flow=poiseuille K= 12 sample= 14/20
+Running AdamNative optimizer
+  error=2.789579e-02
+flow=poiseuille K= 12 sample= 15/20
+Running AdamNative optimizer
+  error=1.370899e-02
+flow=poiseuille K= 12 sample= 16/20
+Running AdamNative optimizer
+  error=1.822737e-02
+flow=poiseuille K= 12 sample= 17/20
+Running AdamNative optimizer
+  error=1.785707e-02
+flow=poiseuille K= 12 sample= 18/20
+Running AdamNative optimizer
+  error=3.662373e-02
+flow=poiseuille K= 12 sample= 19/20
+Running AdamNative optimizer
+  error=1.393496e-02
+flow=poiseuille K= 12 sample= 20/20
+Running AdamNative optimizer
+  error=3.173913e-02
+flow=poiseuille K= 16 sample=  1/20
+Running AdamNative optimizer
+  error=1.000347e-02
+flow=poiseuille K= 16 sample=  2/20
+Running AdamNative optimizer
+  error=6.660371e-03
+flow=poiseuille K= 16 sample=  3/20
+Running AdamNative optimizer
+  error=6.961165e-03
+flow=poiseuille K= 16 sample=  4/20
+Running AdamNative optimizer
+  error=8.221167e-03
+flow=poiseuille K= 16 sample=  5/20
+Running AdamNative optimizer
+  error=1.430022e-02
+flow=poiseuille K= 16 sample=  6/20
+Running AdamNative optimizer
+  error=1.411269e-02
+flow=poiseuille K= 16 sample=  7/20
+Running AdamNative optimizer
+  error=1.347301e-02
+flow=poiseuille K= 16 sample=  8/20
+Running AdamNative optimizer
+  error=7.454027e-03
+flow=poiseuille K= 16 sample=  9/20
+Running AdamNative optimizer
+  error=2.770275e-02
+flow=poiseuille K= 16 sample= 10/20
+Running AdamNative optimizer
+  error=6.655214e-03
+flow=poiseuille K= 16 sample= 11/20
+Running AdamNative optimizer
+  error=7.559615e-03
+flow=poiseuille K= 16 sample= 12/20
+Running AdamNative optimizer
+  error=9.495761e-03
+flow=poiseuille K= 16 sample= 13/20
+Running AdamNative optimizer
+  error=2.109603e-02
+flow=poiseuille K= 16 sample= 14/20
+Running AdamNative optimizer
+  error=1.188572e-02
+flow=poiseuille K= 16 sample= 15/20
+Running AdamNative optimizer
+  error=9.118701e-03
+flow=poiseuille K= 16 sample= 16/20
+Running AdamNative optimizer
+  error=6.885249e-03
+flow=poiseuille K= 16 sample= 17/20
+Running AdamNative optimizer
+  error=8.644447e-03
+flow=poiseuille K= 16 sample= 18/20
+Running AdamNative optimizer
+  error=8.127353e-03
+flow=poiseuille K= 16 sample= 19/20
+Running AdamNative optimizer
+  error=2.368972e-02
+flow=poiseuille K= 16 sample= 20/20
+Running AdamNative optimizer
+  error=1.337785e-02
+flow=poiseuille K= 20 sample=  1/20
+Running AdamNative optimizer
+  error=1.252264e-02
+flow=poiseuille K= 20 sample=  2/20
+Running AdamNative optimizer
+  error=9.524485e-03
+flow=poiseuille K= 20 sample=  3/20
+Running AdamNative optimizer
+  error=5.017965e-03
+flow=poiseuille K= 20 sample=  4/20
+Running AdamNative optimizer
+  error=7.467754e-03
+flow=poiseuille K= 20 sample=  5/20
+Running AdamNative optimizer
+  error=4.333602e-03
+flow=poiseuille K= 20 sample=  6/20
+Running AdamNative optimizer
+  error=6.395139e-03
+flow=poiseuille K= 20 sample=  7/20
+Running AdamNative optimizer
+  error=6.161319e-03
+flow=poiseuille K= 20 sample=  8/20
+Running AdamNative optimizer
+  error=1.859555e-02
+flow=poiseuille K= 20 sample=  9/20
+Running AdamNative optimizer
+  error=5.290199e-03
+flow=poiseuille K= 20 sample= 10/20
+Running AdamNative optimizer
+  error=2.111259e-02
+flow=poiseuille K= 20 sample= 11/20
+Running AdamNative optimizer
+  error=1.433170e-02
+flow=poiseuille K= 20 sample= 12/20
+Running AdamNative optimizer
+  error=7.324180e-03
+flow=poiseuille K= 20 sample= 13/20
+Running AdamNative optimizer
+  error=1.467153e-02
+flow=poiseuille K= 20 sample= 14/20
+Running AdamNative optimizer
+  error=8.257187e-03
+flow=poiseuille K= 20 sample= 15/20
+Running AdamNative optimizer
+  error=5.652133e-03
+flow=poiseuille K= 20 sample= 16/20
+Running AdamNative optimizer
+  error=5.296737e-03
+flow=poiseuille K= 20 sample= 17/20
+Running AdamNative optimizer
+  error=6.330766e-03
+flow=poiseuille K= 20 sample= 18/20
+Running AdamNative optimizer
+  error=9.296676e-03
+flow=poiseuille K= 20 sample= 19/20
+Running AdamNative optimizer
+  error=2.315004e-02
+flow=poiseuille K= 20 sample= 20/20
+Running AdamNative optimizer
+  error=4.737793e-03
+flow=poiseuille K= 24 sample=  1/20
+Running AdamNative optimizer
+  error=6.176271e-03
+flow=poiseuille K= 24 sample=  2/20
+Running AdamNative optimizer
+  error=7.478431e-03
+flow=poiseuille K= 24 sample=  3/20
+Running AdamNative optimizer
+  error=6.938655e-03
+flow=poiseuille K= 24 sample=  4/20
+Running AdamNative optimizer
+  error=7.326726e-03
+flow=poiseuille K= 24 sample=  5/20
+Running AdamNative optimizer
+  error=6.944274e-03
+flow=poiseuille K= 24 sample=  6/20
+Running AdamNative optimizer
+  error=5.241067e-03
+flow=poiseuille K= 24 sample=  7/20
+Running AdamNative optimizer
+  error=4.879008e-03
+flow=poiseuille K= 24 sample=  8/20
+Running AdamNative optimizer
+  error=6.188319e-03
+flow=poiseuille K= 24 sample=  9/20
+Running AdamNative optimizer
+  error=5.266447e-03
+flow=poiseuille K= 24 sample= 10/20
+Running AdamNative optimizer
+  error=1.112195e-02
+flow=poiseuille K= 24 sample= 11/20
+Running AdamNative optimizer
+  error=8.267597e-03
+flow=poiseuille K= 24 sample= 12/20
+Running AdamNative optimizer
+  error=4.618690e-03
+flow=poiseuille K= 24 sample= 13/20
+Running AdamNative optimizer
+  error=8.466247e-03
+flow=poiseuille K= 24 sample= 14/20
+Running AdamNative optimizer
+  error=4.872634e-03
+flow=poiseuille K= 24 sample= 15/20
+Running AdamNative optimizer
+  error=6.275446e-03
+flow=poiseuille K= 24 sample= 16/20
+Running AdamNative optimizer
+  error=8.905877e-03
+flow=poiseuille K= 24 sample= 17/20
+Running AdamNative optimizer
+  error=8.409414e-03
+flow=poiseuille K= 24 sample= 18/20
+Running AdamNative optimizer
+  error=9.254401e-03
+flow=poiseuille K= 24 sample= 19/20
+Running AdamNative optimizer
+  error=5.815926e-03
+flow=poiseuille K= 24 sample= 20/20
+Running AdamNative optimizer
+  error=1.201978e-02
+flow=poiseuille K= 29 sample=  1/20
+Running AdamNative optimizer
+  error=4.614518e-03
+flow=poiseuille K= 29 sample=  2/20
+Running AdamNative optimizer
+  error=4.685703e-03
+flow=poiseuille K= 29 sample=  3/20
+Running AdamNative optimizer
+  error=4.252521e-03
+flow=poiseuille K= 29 sample=  4/20
+Running AdamNative optimizer
+  error=8.235473e-03
+flow=poiseuille K= 29 sample=  5/20
+Running AdamNative optimizer
+  error=8.791203e-03
+flow=poiseuille K= 29 sample=  6/20
+Running AdamNative optimizer
+  error=7.342805e-03
+flow=poiseuille K= 29 sample=  7/20
+Running AdamNative optimizer
+  error=6.105656e-03
+flow=poiseuille K= 29 sample=  8/20
+Running AdamNative optimizer
+  error=5.217644e-03
+flow=poiseuille K= 29 sample=  9/20
+Running AdamNative optimizer
+  error=4.360242e-03
+flow=poiseuille K= 29 sample= 10/20
+Running AdamNative optimizer
+  error=5.238676e-03
+flow=poiseuille K= 29 sample= 11/20
+Running AdamNative optimizer
+  error=3.991907e-03
+flow=poiseuille K= 29 sample= 12/20
+Running AdamNative optimizer
+  error=4.293247e-03
+flow=poiseuille K= 29 sample= 13/20
+Running AdamNative optimizer
+  error=4.380092e-03
+flow=poiseuille K= 29 sample= 14/20
+Running AdamNative optimizer
+  error=8.312952e-03
+flow=poiseuille K= 29 sample= 15/20
+Running AdamNative optimizer
+  error=5.234076e-03
+flow=poiseuille K= 29 sample= 16/20
+Running AdamNative optimizer
+  error=1.528412e-02
+flow=poiseuille K= 29 sample= 17/20
+Running AdamNative optimizer
+  error=5.818819e-03
+flow=poiseuille K= 29 sample= 18/20
+Running AdamNative optimizer
+  error=4.200446e-03
+flow=poiseuille K= 29 sample= 19/20
+Running AdamNative optimizer
+  error=1.802471e-02
+flow=poiseuille K= 29 sample= 20/20
+Running AdamNative optimizer
+  error=5.599700e-03
+flow=poiseuille K= 35 sample=  1/20
+Running AdamNative optimizer
+  error=7.627659e-03
+flow=poiseuille K= 35 sample=  2/20
+Running AdamNative optimizer
+  error=5.357002e-03
+flow=poiseuille K= 35 sample=  3/20
+Running AdamNative optimizer
+  error=3.145593e-03
+flow=poiseuille K= 35 sample=  4/20
+Running AdamNative optimizer
+  error=4.021158e-03
+flow=poiseuille K= 35 sample=  5/20
+Running AdamNative optimizer
+  error=3.375009e-03
+flow=poiseuille K= 35 sample=  6/20
+Running AdamNative optimizer
+  error=7.157748e-03
+flow=poiseuille K= 35 sample=  7/20
+Running AdamNative optimizer
+  error=4.333465e-03
+flow=poiseuille K= 35 sample=  8/20
+Running AdamNative optimizer
+  error=6.637328e-03
+flow=poiseuille K= 35 sample=  9/20
+Running AdamNative optimizer
+  error=2.941610e-03
+flow=poiseuille K= 35 sample= 10/20
+Running AdamNative optimizer
+  error=5.025843e-03
+flow=poiseuille K= 35 sample= 11/20
+Running AdamNative optimizer
+  error=2.849680e-03
+flow=poiseuille K= 35 sample= 12/20
+Running AdamNative optimizer
+  error=7.630052e-03
+flow=poiseuille K= 35 sample= 13/20
+Running AdamNative optimizer
+  error=7.050610e-03
+flow=poiseuille K= 35 sample= 14/20
+Running AdamNative optimizer
+  error=3.857061e-03
+flow=poiseuille K= 35 sample= 15/20
+Running AdamNative optimizer
+  error=4.939209e-03
+flow=poiseuille K= 35 sample= 16/20
+Running AdamNative optimizer
+  error=4.073943e-03
+flow=poiseuille K= 35 sample= 17/20
+Running AdamNative optimizer
+  error=2.448652e-03
+flow=poiseuille K= 35 sample= 18/20
+Running AdamNative optimizer
+  error=7.264033e-03
+flow=poiseuille K= 35 sample= 19/20
+Running AdamNative optimizer
+  error=6.113259e-03
+flow=poiseuille K= 35 sample= 20/20
+Running AdamNative optimizer
+  error=5.363798e-03
+flow=poiseuille K= 40 sample=  1/20
+Running AdamNative optimizer
+  error=2.422745e-03
+flow=poiseuille K= 40 sample=  2/20
+Running AdamNative optimizer
+  error=3.301495e-03
+flow=poiseuille K= 40 sample=  3/20
+Running AdamNative optimizer
+  error=3.898062e-03
+flow=poiseuille K= 40 sample=  4/20
+Running AdamNative optimizer
+  error=3.891110e-03
+flow=poiseuille K= 40 sample=  5/20
+Running AdamNative optimizer
+  error=3.261192e-03
+flow=poiseuille K= 40 sample=  6/20
+Running AdamNative optimizer
+  error=5.038183e-03
+flow=poiseuille K= 40 sample=  7/20
+Running AdamNative optimizer
+  error=2.797993e-03
+flow=poiseuille K= 40 sample=  8/20
+Running AdamNative optimizer
+  error=1.365818e-02
+flow=poiseuille K= 40 sample=  9/20
+Running AdamNative optimizer
+  error=1.181368e-02
+flow=poiseuille K= 40 sample= 10/20
+Running AdamNative optimizer
+  error=2.035174e-03
+flow=poiseuille K= 40 sample= 11/20
+Running AdamNative optimizer
+  error=3.192437e-03
+flow=poiseuille K= 40 sample= 12/20
+Running AdamNative optimizer
+  error=3.655689e-03
+flow=poiseuille K= 40 sample= 13/20
+Running AdamNative optimizer
+  error=4.282917e-03
+flow=poiseuille K= 40 sample= 14/20
+Running AdamNative optimizer
+  error=4.302449e-03
+flow=poiseuille K= 40 sample= 15/20
+Running AdamNative optimizer
+  error=3.131945e-03
+flow=poiseuille K= 40 sample= 16/20
+Running AdamNative optimizer
+  error=5.143510e-03
+flow=poiseuille K= 40 sample= 17/20
+Running AdamNative optimizer
+  error=3.143435e-03
+flow=poiseuille K= 40 sample= 18/20
+Running AdamNative optimizer
+  error=4.885278e-03
+flow=poiseuille K= 40 sample= 19/20
+Running AdamNative optimizer
+  error=6.053267e-03
+flow=poiseuille K= 40 sample= 20/20
+Running AdamNative optimizer
+  error=4.257516e-03
+flow=poiseuille K= 45 sample=  1/20
+Running AdamNative optimizer
+  error=3.395251e-03
+flow=poiseuille K= 45 sample=  2/20
+Running AdamNative optimizer
+  error=3.157871e-03
+flow=poiseuille K= 45 sample=  3/20
+Running AdamNative optimizer
+  error=3.038493e-03
+flow=poiseuille K= 45 sample=  4/20
+Running AdamNative optimizer
+  error=2.094538e-03
+flow=poiseuille K= 45 sample=  5/20
+Running AdamNative optimizer
+  error=3.599869e-03
+flow=poiseuille K= 45 sample=  6/20
+Running AdamNative optimizer
+  error=3.371722e-03
+flow=poiseuille K= 45 sample=  7/20
+Running AdamNative optimizer
+  error=4.845493e-03
+flow=poiseuille K= 45 sample=  8/20
+Running AdamNative optimizer
+  error=2.877518e-03
+flow=poiseuille K= 45 sample=  9/20
+Running AdamNative optimizer
+  error=4.483586e-03
+flow=poiseuille K= 45 sample= 10/20
+Running AdamNative optimizer
+  error=5.902143e-03
+flow=poiseuille K= 45 sample= 11/20
+Running AdamNative optimizer
+  error=2.089551e-03
+flow=poiseuille K= 45 sample= 12/20
+Running AdamNative optimizer
+  error=3.788806e-03
+flow=poiseuille K= 45 sample= 13/20
+Running AdamNative optimizer
+  error=4.188451e-03
+flow=poiseuille K= 45 sample= 14/20
+Running AdamNative optimizer
+  error=4.296137e-03
+flow=poiseuille K= 45 sample= 15/20
+Running AdamNative optimizer
+  error=3.158125e-03
+flow=poiseuille K= 45 sample= 16/20
+Running AdamNative optimizer
+  error=2.579062e-03
+flow=poiseuille K= 45 sample= 17/20
+Running AdamNative optimizer
+  error=6.499190e-03
+flow=poiseuille K= 45 sample= 18/20
+Running AdamNative optimizer
+  error=3.105008e-03
+flow=poiseuille K= 45 sample= 19/20
+Running AdamNative optimizer
+  error=4.079998e-03
+flow=poiseuille K= 45 sample= 20/20
+Running AdamNative optimizer
+  error=4.270488e-03
+flow=poiseuille K= 50 sample=  1/20
+Running AdamNative optimizer
+  error=2.419712e-03
+flow=poiseuille K= 50 sample=  2/20
+Running AdamNative optimizer
+  error=7.773338e-03
+flow=poiseuille K= 50 sample=  3/20
+Running AdamNative optimizer
+  error=2.219718e-03
+flow=poiseuille K= 50 sample=  4/20
+Running AdamNative optimizer
+  error=3.802878e-03
+flow=poiseuille K= 50 sample=  5/20
+Running AdamNative optimizer
+  error=2.989532e-03
+flow=poiseuille K= 50 sample=  6/20
+Running AdamNative optimizer
+  error=3.490954e-03
+flow=poiseuille K= 50 sample=  7/20
+Running AdamNative optimizer
+  error=2.104748e-03
+flow=poiseuille K= 50 sample=  8/20
+Running AdamNative optimizer
+  error=2.988402e-03
+flow=poiseuille K= 50 sample=  9/20
+Running AdamNative optimizer
+  error=2.423400e-03
+flow=poiseuille K= 50 sample= 10/20
+Running AdamNative optimizer
+  error=4.738559e-03
+flow=poiseuille K= 50 sample= 11/20
+Running AdamNative optimizer
+  error=2.505455e-03
+flow=poiseuille K= 50 sample= 12/20
+Running AdamNative optimizer
+  error=2.392693e-03
+flow=poiseuille K= 50 sample= 13/20
+Running AdamNative optimizer
+  error=3.702780e-03
+flow=poiseuille K= 50 sample= 14/20
+Running AdamNative optimizer
+  error=2.792125e-03
+flow=poiseuille K= 50 sample= 15/20
+Running AdamNative optimizer
+  error=3.103435e-03
+flow=poiseuille K= 50 sample= 16/20
+Running AdamNative optimizer
+  error=4.250614e-03
+flow=poiseuille K= 50 sample= 17/20
+Running AdamNative optimizer
+  error=3.090777e-03
+flow=poiseuille K= 50 sample= 18/20
+Running AdamNative optimizer
+  error=4.187232e-03
+flow=poiseuille K= 50 sample= 19/20
+Running AdamNative optimizer
+  error=3.361438e-03
+flow=poiseuille K= 50 sample= 20/20
+Running AdamNative optimizer
+  error=5.202525e-03
+
+=== flow: cavity source: /Users/hanshuozhang/Desktop/ODIL_literature/Lid-driven cavity Forward/out_cavity_re3200/data_Re3200_final.pickle ===
+flow=cavity     K=  1 sample=  1/20
+Running AdamNative optimizer
+  error=1.999740e-01
+flow=cavity     K=  1 sample=  2/20
+Running AdamNative optimizer
+  error=2.029410e-01
+flow=cavity     K=  1 sample=  3/20
+Running AdamNative optimizer
+  error=1.998427e-01
+flow=cavity     K=  1 sample=  4/20
+Running AdamNative optimizer
+  error=2.030694e-01
+flow=cavity     K=  1 sample=  5/20
+Running AdamNative optimizer
+  error=2.214921e-01
+flow=cavity     K=  1 sample=  6/20
+Running AdamNative optimizer
+  error=2.095374e-01
+flow=cavity     K=  1 sample=  7/20
+Running AdamNative optimizer
+  error=2.034523e-01
+flow=cavity     K=  1 sample=  8/20
+Running AdamNative optimizer
+  error=1.990953e-01
+flow=cavity     K=  1 sample=  9/20
+Running AdamNative optimizer
+  error=1.925836e-01
+flow=cavity     K=  1 sample= 10/20
+Running AdamNative optimizer
+  error=2.067846e-01
+flow=cavity     K=  1 sample= 11/20
+Running AdamNative optimizer
+  error=2.000531e-01
+flow=cavity     K=  1 sample= 12/20
+Running AdamNative optimizer
+  error=2.088015e-01
+flow=cavity     K=  1 sample= 13/20
+Running AdamNative optimizer
+  error=2.022525e-01
+flow=cavity     K=  1 sample= 14/20
+Running AdamNative optimizer
+  error=2.036986e-01
+flow=cavity     K=  1 sample= 15/20
+Running AdamNative optimizer
+  error=2.075038e-01
+flow=cavity     K=  1 sample= 16/20
+Running AdamNative optimizer
+  error=2.196977e-01
+flow=cavity     K=  1 sample= 17/20
+Running AdamNative optimizer
+  error=2.019500e-01
+flow=cavity     K=  1 sample= 18/20
+Running AdamNative optimizer
+  error=1.978727e-01
+flow=cavity     K=  1 sample= 19/20
+Running AdamNative optimizer
+  error=1.929435e-01
+flow=cavity     K=  1 sample= 20/20
+Running AdamNative optimizer
+  error=1.990069e-01
+flow=cavity     K=  2 sample=  1/20
+Running AdamNative optimizer
+  error=1.706090e-01
+flow=cavity     K=  2 sample=  2/20
+Running AdamNative optimizer
+  error=2.113073e-01
+flow=cavity     K=  2 sample=  3/20
+Running AdamNative optimizer
+  error=1.874351e-01
+flow=cavity     K=  2 sample=  4/20
+Running AdamNative optimizer
+  error=1.582616e-01
+flow=cavity     K=  2 sample=  5/20
+Running AdamNative optimizer
+  error=1.930630e-01
+flow=cavity     K=  2 sample=  6/20
+Running AdamNative optimizer
+  error=2.059131e-01
+flow=cavity     K=  2 sample=  7/20
+Running AdamNative optimizer
+  error=2.148450e-01
+flow=cavity     K=  2 sample=  8/20
+Running AdamNative optimizer
+  error=2.064000e-01
+flow=cavity     K=  2 sample=  9/20
+Running AdamNative optimizer
+  error=1.809139e-01
+flow=cavity     K=  2 sample= 10/20
+Running AdamNative optimizer
+  error=1.796175e-01
+flow=cavity     K=  2 sample= 11/20
+Running AdamNative optimizer
+  error=1.563502e-01
+flow=cavity     K=  2 sample= 12/20
+Running AdamNative optimizer
+  error=1.813148e-01
+flow=cavity     K=  2 sample= 13/20
+Running AdamNative optimizer
+  error=1.719587e-01
+flow=cavity     K=  2 sample= 14/20
+Running AdamNative optimizer
+  error=1.988267e-01
+flow=cavity     K=  2 sample= 15/20
+Running AdamNative optimizer
+  error=1.649704e-01
+flow=cavity     K=  2 sample= 16/20
+Running AdamNative optimizer
+  error=2.001743e-01
+flow=cavity     K=  2 sample= 17/20
+Running AdamNative optimizer
+  error=1.747595e-01
+flow=cavity     K=  2 sample= 18/20
+Running AdamNative optimizer
+  error=1.970120e-01
+flow=cavity     K=  2 sample= 19/20
+Running AdamNative optimizer
+  error=1.857681e-01
+flow=cavity     K=  2 sample= 20/20
+Running AdamNative optimizer
+  error=2.150639e-01
+flow=cavity     K=  4 sample=  1/20
+Running AdamNative optimizer
+  error=1.709941e-01
+flow=cavity     K=  4 sample=  2/20
+Running AdamNative optimizer
+  error=1.612451e-01
+flow=cavity     K=  4 sample=  3/20
+Running AdamNative optimizer
+  error=1.539596e-01
+flow=cavity     K=  4 sample=  4/20
+Running AdamNative optimizer
+  error=1.606984e-01
+flow=cavity     K=  4 sample=  5/20
+Running AdamNative optimizer
+  error=2.597327e-01
+flow=cavity     K=  4 sample=  6/20
+Running AdamNative optimizer
+  error=1.380707e-01
+flow=cavity     K=  4 sample=  7/20
+Running AdamNative optimizer
+  error=1.506769e-01
+flow=cavity     K=  4 sample=  8/20
+Running AdamNative optimizer
+  error=1.486401e-01
+flow=cavity     K=  4 sample=  9/20
+Running AdamNative optimizer
+  error=1.911671e-01
+flow=cavity     K=  4 sample= 10/20
+Running AdamNative optimizer
+  error=1.415206e-01
+flow=cavity     K=  4 sample= 11/20
+Running AdamNative optimizer
+  error=1.535848e-01
+flow=cavity     K=  4 sample= 12/20
+Running AdamNative optimizer
+  error=1.321078e-01
+flow=cavity     K=  4 sample= 13/20
+Running AdamNative optimizer
+  error=1.778289e-01
+flow=cavity     K=  4 sample= 14/20
+Running AdamNative optimizer
+  error=1.523870e-01
+flow=cavity     K=  4 sample= 15/20
+Running AdamNative optimizer
+  error=1.540076e-01
+flow=cavity     K=  4 sample= 16/20
+Running AdamNative optimizer
+  error=1.359400e-01
+flow=cavity     K=  4 sample= 17/20
+Running AdamNative optimizer
+  error=1.638465e-01
+flow=cavity     K=  4 sample= 18/20
+Running AdamNative optimizer
+  error=1.463166e-01
+flow=cavity     K=  4 sample= 19/20
+Running AdamNative optimizer
+  error=1.448305e-01
+flow=cavity     K=  4 sample= 20/20
+Running AdamNative optimizer
+  error=1.734746e-01
+flow=cavity     K=  6 sample=  1/20
+Running AdamNative optimizer
+  error=1.308875e-01
+flow=cavity     K=  6 sample=  2/20
+Running AdamNative optimizer
+  error=1.380364e-01
+flow=cavity     K=  6 sample=  3/20
+Running AdamNative optimizer
+  error=1.615511e-01
+flow=cavity     K=  6 sample=  4/20
+Running AdamNative optimizer
+  error=1.254951e-01
+flow=cavity     K=  6 sample=  5/20
+Running AdamNative optimizer
+  error=1.477442e-01
+flow=cavity     K=  6 sample=  6/20
+Running AdamNative optimizer
+  error=1.369478e-01
+flow=cavity     K=  6 sample=  7/20
+Running AdamNative optimizer
+  error=9.411827e-02
+flow=cavity     K=  6 sample=  8/20
+Running AdamNative optimizer
+  error=1.436068e-01
+flow=cavity     K=  6 sample=  9/20
+Running AdamNative optimizer
+  error=9.283792e-02
+flow=cavity     K=  6 sample= 10/20
+Running AdamNative optimizer
+  error=1.449885e-01
+flow=cavity     K=  6 sample= 11/20
+Running AdamNative optimizer
+  error=1.367750e-01
+flow=cavity     K=  6 sample= 12/20
+Running AdamNative optimizer
+  error=9.856668e-02
+flow=cavity     K=  6 sample= 13/20
+Running AdamNative optimizer
+  error=1.074943e-01
+flow=cavity     K=  6 sample= 14/20
+Running AdamNative optimizer
+  error=2.066506e-01
+flow=cavity     K=  6 sample= 15/20
+Running AdamNative optimizer
+  error=1.110938e-01
+flow=cavity     K=  6 sample= 16/20
+Running AdamNative optimizer
+  error=1.725329e-01
+flow=cavity     K=  6 sample= 17/20
+Running AdamNative optimizer
+  error=1.889324e-01
+flow=cavity     K=  6 sample= 18/20
+Running AdamNative optimizer
+  error=1.655232e-01
+flow=cavity     K=  6 sample= 19/20
+Running AdamNative optimizer
+  error=1.303294e-01
+flow=cavity     K=  6 sample= 20/20
+Running AdamNative optimizer
+  error=1.559385e-01
+flow=cavity     K=  8 sample=  1/20
+Running AdamNative optimizer
+  error=1.027588e-01
+flow=cavity     K=  8 sample=  2/20
+Running AdamNative optimizer
+  error=1.211007e-01
+flow=cavity     K=  8 sample=  3/20
+Running AdamNative optimizer
+  error=8.579715e-02
+flow=cavity     K=  8 sample=  4/20
+Running AdamNative optimizer
+  error=8.151384e-02
+flow=cavity     K=  8 sample=  5/20
+Running AdamNative optimizer
+  error=1.395859e-01
+flow=cavity     K=  8 sample=  6/20
+Running AdamNative optimizer
+  error=1.000113e-01
+flow=cavity     K=  8 sample=  7/20
+Running AdamNative optimizer
+  error=9.389929e-02
+flow=cavity     K=  8 sample=  8/20
+Running AdamNative optimizer
+  error=1.554708e-01
+flow=cavity     K=  8 sample=  9/20
+Running AdamNative optimizer
+  error=9.323900e-02
+flow=cavity     K=  8 sample= 10/20
+Running AdamNative optimizer
+  error=9.386913e-02
+flow=cavity     K=  8 sample= 11/20
+Running AdamNative optimizer
+  error=1.076293e-01
+flow=cavity     K=  8 sample= 12/20
+Running AdamNative optimizer
+  error=9.638787e-02
+flow=cavity     K=  8 sample= 13/20
+Running AdamNative optimizer
+  error=9.422300e-02
+flow=cavity     K=  8 sample= 14/20
+Running AdamNative optimizer
+  error=1.111958e-01
+flow=cavity     K=  8 sample= 15/20
+Running AdamNative optimizer
+  error=8.224580e-02
+flow=cavity     K=  8 sample= 16/20
+Running AdamNative optimizer
+  error=8.461859e-02
+flow=cavity     K=  8 sample= 17/20
+Running AdamNative optimizer
+  error=1.690986e-01
+flow=cavity     K=  8 sample= 18/20
+Running AdamNative optimizer
+  error=1.336358e-01
+flow=cavity     K=  8 sample= 19/20
+Running AdamNative optimizer
+  error=9.903227e-02
+flow=cavity     K=  8 sample= 20/20
+Running AdamNative optimizer
+  error=1.056719e-01
+flow=cavity     K= 10 sample=  1/20
+Running AdamNative optimizer
+  error=8.144353e-02
+flow=cavity     K= 10 sample=  2/20
+Running AdamNative optimizer
+  error=6.843830e-02
+flow=cavity     K= 10 sample=  3/20
+Running AdamNative optimizer
+  error=8.565043e-02
+flow=cavity     K= 10 sample=  4/20
+Running AdamNative optimizer
+  error=1.229194e-01
+flow=cavity     K= 10 sample=  5/20
+Running AdamNative optimizer
+  error=9.497652e-02
+flow=cavity     K= 10 sample=  6/20
+Running AdamNative optimizer
+  error=8.413658e-02
+flow=cavity     K= 10 sample=  7/20
+Running AdamNative optimizer
+  error=9.459598e-02
+flow=cavity     K= 10 sample=  8/20
+Running AdamNative optimizer
+  error=9.049873e-02
+flow=cavity     K= 10 sample=  9/20
+Running AdamNative optimizer
+  error=1.205772e-01
+flow=cavity     K= 10 sample= 10/20
+Running AdamNative optimizer
+  error=1.224983e-01
+flow=cavity     K= 10 sample= 11/20
+Running AdamNative optimizer
+  error=1.261372e-01
+flow=cavity     K= 10 sample= 12/20
+Running AdamNative optimizer
+  error=8.401027e-02
+flow=cavity     K= 10 sample= 13/20
+Running AdamNative optimizer
+  error=8.860213e-02
+flow=cavity     K= 10 sample= 14/20
+Running AdamNative optimizer
+  error=9.359490e-02
+flow=cavity     K= 10 sample= 15/20
+Running AdamNative optimizer
+  error=8.695499e-02
+flow=cavity     K= 10 sample= 16/20
+Running AdamNative optimizer
+  error=7.258575e-02
+flow=cavity     K= 10 sample= 17/20
+Running AdamNative optimizer
+  error=1.004677e-01
+flow=cavity     K= 10 sample= 18/20
+Running AdamNative optimizer
+  error=8.280728e-02
+flow=cavity     K= 10 sample= 19/20
+Running AdamNative optimizer
+  error=1.209274e-01
+flow=cavity     K= 10 sample= 20/20
+Running AdamNative optimizer
+  error=1.023920e-01
+flow=cavity     K= 12 sample=  1/20
+Running AdamNative optimizer
+  error=9.151828e-02
+flow=cavity     K= 12 sample=  2/20
+Running AdamNative optimizer
+  error=6.919338e-02
+flow=cavity     K= 12 sample=  3/20
+Running AdamNative optimizer
+  error=7.187887e-02
+flow=cavity     K= 12 sample=  4/20
+Running AdamNative optimizer
+  error=8.956512e-02
+flow=cavity     K= 12 sample=  5/20
+Running AdamNative optimizer
+  error=8.310517e-02
+flow=cavity     K= 12 sample=  6/20
+Running AdamNative optimizer
+  error=8.440053e-02
+flow=cavity     K= 12 sample=  7/20
+Running AdamNative optimizer
+  error=9.660920e-02
+flow=cavity     K= 12 sample=  8/20
+Running AdamNative optimizer
+  error=6.887002e-02
+flow=cavity     K= 12 sample=  9/20
+Running AdamNative optimizer
+  error=1.047618e-01
+flow=cavity     K= 12 sample= 10/20
+Running AdamNative optimizer
+  error=8.670487e-02
+flow=cavity     K= 12 sample= 11/20
+Running AdamNative optimizer
+  error=8.565838e-02
+flow=cavity     K= 12 sample= 12/20
+Running AdamNative optimizer
+  error=6.665899e-02
+flow=cavity     K= 12 sample= 13/20
+Running AdamNative optimizer
+  error=6.424879e-02
+flow=cavity     K= 12 sample= 14/20
+Running AdamNative optimizer
+  error=9.266592e-02
+flow=cavity     K= 12 sample= 15/20
+Running AdamNative optimizer
+  error=6.515385e-02
+flow=cavity     K= 12 sample= 16/20
+Running AdamNative optimizer
+  error=1.263547e-01
+flow=cavity     K= 12 sample= 17/20
+Running AdamNative optimizer
+  error=8.403567e-02
+flow=cavity     K= 12 sample= 18/20
+Running AdamNative optimizer
+  error=6.648195e-02
+flow=cavity     K= 12 sample= 19/20
+Running AdamNative optimizer
+  error=9.262854e-02
+flow=cavity     K= 12 sample= 20/20
+Running AdamNative optimizer
+  error=9.435602e-02
+flow=cavity     K= 16 sample=  1/20
+Running AdamNative optimizer
+  error=7.373100e-02
+flow=cavity     K= 16 sample=  2/20
+Running AdamNative optimizer
+  error=7.487386e-02
+flow=cavity     K= 16 sample=  3/20
+Running AdamNative optimizer
+  error=6.077937e-02
+flow=cavity     K= 16 sample=  4/20
+Running AdamNative optimizer
+  error=5.749757e-02
+flow=cavity     K= 16 sample=  5/20
+Running AdamNative optimizer
+  error=6.706016e-02
+flow=cavity     K= 16 sample=  6/20
+Running AdamNative optimizer
+  error=6.192934e-02
+flow=cavity     K= 16 sample=  7/20
+Running AdamNative optimizer
+  error=7.340326e-02
+flow=cavity     K= 16 sample=  8/20
+Running AdamNative optimizer
+  error=7.338350e-02
+flow=cavity     K= 16 sample=  9/20
+Running AdamNative optimizer
+  error=6.763806e-02
+flow=cavity     K= 16 sample= 10/20
+Running AdamNative optimizer
+  error=6.936306e-02
+flow=cavity     K= 16 sample= 11/20
+Running AdamNative optimizer
+  error=9.714900e-02
+flow=cavity     K= 16 sample= 12/20
+Running AdamNative optimizer
+  error=6.878738e-02
+flow=cavity     K= 16 sample= 13/20
+Running AdamNative optimizer
+  error=8.236773e-02
+flow=cavity     K= 16 sample= 14/20
+Running AdamNative optimizer
+  error=7.092545e-02
+flow=cavity     K= 16 sample= 15/20
+Running AdamNative optimizer
+  error=6.715944e-02
+flow=cavity     K= 16 sample= 16/20
+Running AdamNative optimizer
+  error=6.429543e-02
+flow=cavity     K= 16 sample= 17/20
+Running AdamNative optimizer
+  error=6.959584e-02
+flow=cavity     K= 16 sample= 18/20
+Running AdamNative optimizer
+  error=6.462957e-02
+flow=cavity     K= 16 sample= 19/20
+Running AdamNative optimizer
+  error=6.953573e-02
+flow=cavity     K= 16 sample= 20/20
+Running AdamNative optimizer
+  error=7.151339e-02
+flow=cavity     K= 20 sample=  1/20
+Running AdamNative optimizer
+  error=5.971255e-02
+flow=cavity     K= 20 sample=  2/20
+Running AdamNative optimizer
+  error=6.179657e-02
+flow=cavity     K= 20 sample=  3/20
+Running AdamNative optimizer
+  error=7.112404e-02
+flow=cavity     K= 20 sample=  4/20
+Running AdamNative optimizer
+  error=7.140520e-02
+flow=cavity     K= 20 sample=  5/20
+Running AdamNative optimizer
+  error=5.704035e-02
+flow=cavity     K= 20 sample=  6/20
+Running AdamNative optimizer
+  error=5.588161e-02
+flow=cavity     K= 20 sample=  7/20
+Running AdamNative optimizer
+  error=5.961514e-02
+flow=cavity     K= 20 sample=  8/20
+Running AdamNative optimizer
+  error=7.269014e-02
+flow=cavity     K= 20 sample=  9/20
+Running AdamNative optimizer
+  error=7.422060e-02
+flow=cavity     K= 20 sample= 10/20
+Running AdamNative optimizer
+  error=6.888093e-02
+flow=cavity     K= 20 sample= 11/20
+Running AdamNative optimizer
+  error=6.344569e-02
+flow=cavity     K= 20 sample= 12/20
+Running AdamNative optimizer
+  error=4.856712e-02
+flow=cavity     K= 20 sample= 13/20
+Running AdamNative optimizer
+  error=8.291806e-02
+flow=cavity     K= 20 sample= 14/20
+Running AdamNative optimizer
+  error=6.114188e-02
+flow=cavity     K= 20 sample= 15/20
+Running AdamNative optimizer
+  error=5.942778e-02
+flow=cavity     K= 20 sample= 16/20
+Running AdamNative optimizer
+  error=4.708951e-02
+flow=cavity     K= 20 sample= 17/20
+Running AdamNative optimizer
+  error=5.802715e-02
+flow=cavity     K= 20 sample= 18/20
+Running AdamNative optimizer
+  error=6.653150e-02
+flow=cavity     K= 20 sample= 19/20
+Running AdamNative optimizer
+  error=7.656450e-02
+flow=cavity     K= 20 sample= 20/20
+Running AdamNative optimizer
+  error=6.075867e-02
+flow=cavity     K= 24 sample=  1/20
+Running AdamNative optimizer
+  error=4.205334e-02
+flow=cavity     K= 24 sample=  2/20
+Running AdamNative optimizer
+  error=6.547651e-02
+flow=cavity     K= 24 sample=  3/20
+Running AdamNative optimizer
+  error=4.669318e-02
+flow=cavity     K= 24 sample=  4/20
+Running AdamNative optimizer
+  error=4.589333e-02
+flow=cavity     K= 24 sample=  5/20
+Running AdamNative optimizer
+  error=4.692187e-02
+flow=cavity     K= 24 sample=  6/20
+Running AdamNative optimizer
+  error=6.981788e-02
+flow=cavity     K= 24 sample=  7/20
+Running AdamNative optimizer
+  error=5.065344e-02
+flow=cavity     K= 24 sample=  8/20
+Running AdamNative optimizer
+  error=4.534184e-02
+flow=cavity     K= 24 sample=  9/20
+Running AdamNative optimizer
+  error=5.946773e-02
+flow=cavity     K= 24 sample= 10/20
+Running AdamNative optimizer
+  error=5.428983e-02
+flow=cavity     K= 24 sample= 11/20
+Running AdamNative optimizer
+  error=5.129628e-02
+flow=cavity     K= 24 sample= 12/20
+Running AdamNative optimizer
+  error=4.600222e-02
+flow=cavity     K= 24 sample= 13/20
+Running AdamNative optimizer
+  error=6.128177e-02
+flow=cavity     K= 24 sample= 14/20
+Running AdamNative optimizer
+  error=4.870483e-02
+flow=cavity     K= 24 sample= 15/20
+Running AdamNative optimizer
+  error=6.243515e-02
+flow=cavity     K= 24 sample= 16/20
+Running AdamNative optimizer
+  error=4.262660e-02
+flow=cavity     K= 24 sample= 17/20
+Running AdamNative optimizer
+  error=6.159649e-02
+flow=cavity     K= 24 sample= 18/20
+Running AdamNative optimizer
+  error=5.181149e-02
+flow=cavity     K= 24 sample= 19/20
+Running AdamNative optimizer
+  error=4.027621e-02
+flow=cavity     K= 24 sample= 20/20
+Running AdamNative optimizer
+  error=5.456493e-02
+flow=cavity     K= 29 sample=  1/20
+Running AdamNative optimizer
+  error=5.773970e-02
+flow=cavity     K= 29 sample=  2/20
+Running AdamNative optimizer
+  error=4.818216e-02
+flow=cavity     K= 29 sample=  3/20
+Running AdamNative optimizer
+  error=4.611889e-02
+flow=cavity     K= 29 sample=  4/20
+Running AdamNative optimizer
+  error=4.503402e-02
+flow=cavity     K= 29 sample=  5/20
+Running AdamNative optimizer
+  error=4.401089e-02
+flow=cavity     K= 29 sample=  6/20
+Running AdamNative optimizer
+  error=4.049784e-02
+flow=cavity     K= 29 sample=  7/20
+Running AdamNative optimizer
+  error=5.546773e-02
+flow=cavity     K= 29 sample=  8/20
+Running AdamNative optimizer
+  error=4.047258e-02
+flow=cavity     K= 29 sample=  9/20
+Running AdamNative optimizer
+  error=4.535409e-02
+flow=cavity     K= 29 sample= 10/20
+Running AdamNative optimizer
+  error=4.753823e-02
+flow=cavity     K= 29 sample= 11/20
+Running AdamNative optimizer
+  error=5.657323e-02
+flow=cavity     K= 29 sample= 12/20
+Running AdamNative optimizer
+  error=3.994468e-02
+flow=cavity     K= 29 sample= 13/20
+Running AdamNative optimizer
+  error=5.334288e-02
+flow=cavity     K= 29 sample= 14/20
+Running AdamNative optimizer
+  error=4.860812e-02
+flow=cavity     K= 29 sample= 15/20
+Running AdamNative optimizer
+  error=4.458287e-02
+flow=cavity     K= 29 sample= 16/20
+Running AdamNative optimizer
+  error=5.023173e-02
+flow=cavity     K= 29 sample= 17/20
+Running AdamNative optimizer
+  error=4.856912e-02
+flow=cavity     K= 29 sample= 18/20
+Running AdamNative optimizer
+  error=5.243091e-02
+flow=cavity     K= 29 sample= 19/20
+Running AdamNative optimizer
+  error=4.958372e-02
+flow=cavity     K= 29 sample= 20/20
+Running AdamNative optimizer
+  error=4.119110e-02
+flow=cavity     K= 35 sample=  1/20
+Running AdamNative optimizer
+  error=4.301002e-02
+flow=cavity     K= 35 sample=  2/20
+Running AdamNative optimizer
+  error=4.487840e-02
+flow=cavity     K= 35 sample=  3/20
+Running AdamNative optimizer
+  error=4.607122e-02
+flow=cavity     K= 35 sample=  4/20
+Running AdamNative optimizer
+  error=4.523581e-02
+flow=cavity     K= 35 sample=  5/20
+Running AdamNative optimizer
+  error=4.741042e-02
+flow=cavity     K= 35 sample=  6/20
+Running AdamNative optimizer
+  error=4.948711e-02
+flow=cavity     K= 35 sample=  7/20
+Running AdamNative optimizer
+  error=4.701520e-02
+flow=cavity     K= 35 sample=  8/20
+Running AdamNative optimizer
+  error=3.933388e-02
+flow=cavity     K= 35 sample=  9/20
+Running AdamNative optimizer
+  error=5.228836e-02
+flow=cavity     K= 35 sample= 10/20
+Running AdamNative optimizer
+  error=5.404447e-02
+flow=cavity     K= 35 sample= 11/20
+Running AdamNative optimizer
+  error=4.120322e-02
+flow=cavity     K= 35 sample= 12/20
+Running AdamNative optimizer
+  error=5.542187e-02
+flow=cavity     K= 35 sample= 13/20
+Running AdamNative optimizer
+  error=4.949064e-02
+flow=cavity     K= 35 sample= 14/20
+Running AdamNative optimizer
+  error=3.925924e-02
+flow=cavity     K= 35 sample= 15/20
+Running AdamNative optimizer
+  error=5.962644e-02
+flow=cavity     K= 35 sample= 16/20
+Running AdamNative optimizer
+  error=5.124708e-02
+flow=cavity     K= 35 sample= 17/20
+Running AdamNative optimizer
+  error=5.216455e-02
+flow=cavity     K= 35 sample= 18/20
+Running AdamNative optimizer
+  error=4.130524e-02
+flow=cavity     K= 35 sample= 19/20
+Running AdamNative optimizer
+  error=5.046421e-02
+flow=cavity     K= 35 sample= 20/20
+Running AdamNative optimizer
+  error=5.146428e-02
+flow=cavity     K= 40 sample=  1/20
+Running AdamNative optimizer
+  error=4.399457e-02
+flow=cavity     K= 40 sample=  2/20
+Running AdamNative optimizer
+  error=3.799265e-02
+flow=cavity     K= 40 sample=  3/20
+Running AdamNative optimizer
+  error=4.679919e-02
+flow=cavity     K= 40 sample=  4/20
+Running AdamNative optimizer
+  error=4.200086e-02
+flow=cavity     K= 40 sample=  5/20
+Running AdamNative optimizer
+  error=4.125647e-02
+flow=cavity     K= 40 sample=  6/20
+Running AdamNative optimizer
+  error=4.522251e-02
+flow=cavity     K= 40 sample=  7/20
+Running AdamNative optimizer
+  error=4.119414e-02
+flow=cavity     K= 40 sample=  8/20
+Running AdamNative optimizer
+  error=4.908507e-02
+flow=cavity     K= 40 sample=  9/20
+Running AdamNative optimizer
+  error=4.620445e-02
+flow=cavity     K= 40 sample= 10/20
+Running AdamNative optimizer
+  error=4.316803e-02
+flow=cavity     K= 40 sample= 11/20
+Running AdamNative optimizer
+  error=4.203223e-02
+flow=cavity     K= 40 sample= 12/20
+Running AdamNative optimizer
+  error=4.744281e-02
+flow=cavity     K= 40 sample= 13/20
+Running AdamNative optimizer
+  error=4.330376e-02
+flow=cavity     K= 40 sample= 14/20
+Running AdamNative optimizer
+  error=4.129022e-02
+flow=cavity     K= 40 sample= 15/20
+Running AdamNative optimizer
+  error=4.292529e-02
+flow=cavity     K= 40 sample= 16/20
+Running AdamNative optimizer
+  error=5.337443e-02
+flow=cavity     K= 40 sample= 17/20
+Running AdamNative optimizer
+  error=4.210718e-02
+flow=cavity     K= 40 sample= 18/20
+Running AdamNative optimizer
+  error=4.206970e-02
+flow=cavity     K= 40 sample= 19/20
+Running AdamNative optimizer
+  error=3.764077e-02
+flow=cavity     K= 40 sample= 20/20
+Running AdamNative optimizer
+  error=3.506124e-02
+flow=cavity     K= 45 sample=  1/20
+Running AdamNative optimizer
+  error=4.248841e-02
+flow=cavity     K= 45 sample=  2/20
+Running AdamNative optimizer
+  error=4.258664e-02
+flow=cavity     K= 45 sample=  3/20
+Running AdamNative optimizer
+  error=4.291023e-02
+flow=cavity     K= 45 sample=  4/20
+Running AdamNative optimizer
+  error=4.551899e-02
+flow=cavity     K= 45 sample=  5/20
+Running AdamNative optimizer
+  error=3.808078e-02
+flow=cavity     K= 45 sample=  6/20
+Running AdamNative optimizer
+  error=3.830326e-02
+flow=cavity     K= 45 sample=  7/20
+Running AdamNative optimizer
+  error=3.561182e-02
+flow=cavity     K= 45 sample=  8/20
+Running AdamNative optimizer
+  error=5.006023e-02
+flow=cavity     K= 45 sample=  9/20
+Running AdamNative optimizer
+  error=3.484408e-02
+flow=cavity     K= 45 sample= 10/20
+Running AdamNative optimizer
+  error=4.378198e-02
+flow=cavity     K= 45 sample= 11/20
+Running AdamNative optimizer
+  error=4.046185e-02
+flow=cavity     K= 45 sample= 12/20
+Running AdamNative optimizer
+  error=3.852458e-02
+flow=cavity     K= 45 sample= 13/20
+Running AdamNative optimizer
+  error=3.935182e-02
+flow=cavity     K= 45 sample= 14/20
+Running AdamNative optimizer
+  error=4.448037e-02
+flow=cavity     K= 45 sample= 15/20
+Running AdamNative optimizer
+  error=3.979802e-02
+flow=cavity     K= 45 sample= 16/20
+Running AdamNative optimizer
+  error=4.257464e-02
+flow=cavity     K= 45 sample= 17/20
+Running AdamNative optimizer
+  error=4.147075e-02
+flow=cavity     K= 45 sample= 18/20
+Running AdamNative optimizer
+  error=3.889068e-02
+flow=cavity     K= 45 sample= 19/20
+Running AdamNative optimizer
+  error=3.768452e-02
+flow=cavity     K= 45 sample= 20/20
+Running AdamNative optimizer
+  error=3.805800e-02
+flow=cavity     K= 50 sample=  1/20
+Running AdamNative optimizer
+  error=3.903463e-02
+flow=cavity     K= 50 sample=  2/20
+Running AdamNative optimizer
+  error=3.327928e-02
+flow=cavity     K= 50 sample=  3/20
+Running AdamNative optimizer
+  error=3.400631e-02
+flow=cavity     K= 50 sample=  4/20
+Running AdamNative optimizer
+  error=4.361012e-02
+flow=cavity     K= 50 sample=  5/20
+Running AdamNative optimizer
+  error=3.927963e-02
+flow=cavity     K= 50 sample=  6/20
+Running AdamNative optimizer
+  error=3.931317e-02
+flow=cavity     K= 50 sample=  7/20
+Running AdamNative optimizer
+  error=4.455579e-02
+flow=cavity     K= 50 sample=  8/20
+Running AdamNative optimizer
+  error=3.707580e-02
+flow=cavity     K= 50 sample=  9/20
+Running AdamNative optimizer
+  error=4.081073e-02
+flow=cavity     K= 50 sample= 10/20
+Running AdamNative optimizer
+  error=3.860415e-02
+flow=cavity     K= 50 sample= 11/20
+Running AdamNative optimizer
+  error=4.939861e-02
+flow=cavity     K= 50 sample= 12/20
+Running AdamNative optimizer
+  error=3.469903e-02
+flow=cavity     K= 50 sample= 13/20
+Running AdamNative optimizer
+  error=3.225430e-02
+flow=cavity     K= 50 sample= 14/20
+Running AdamNative optimizer
+  error=5.128079e-02
+flow=cavity     K= 50 sample= 15/20
+Running AdamNative optimizer
+  error=3.883725e-02
+flow=cavity     K= 50 sample= 16/20
+Running AdamNative optimizer
+  error=4.075365e-02
+flow=cavity     K= 50 sample= 17/20
+Running AdamNative optimizer
+  error=3.491660e-02
+flow=cavity     K= 50 sample= 18/20
+Running AdamNative optimizer
+  error=3.849652e-02
+flow=cavity     K= 50 sample= 19/20
+Running AdamNative optimizer
+  error=3.501421e-02
+flow=cavity     K= 50 sample= 20/20
+Running AdamNative optimizer
+  error=3.635327e-02
