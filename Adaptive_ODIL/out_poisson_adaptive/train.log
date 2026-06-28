@@ -1,0 +1,126 @@
+adaptive_poisson_odil.py --adaptive 1 --mgloss 1 --outdir out_poisson_adaptive
+ODIL backend: jax
+ODIL JIT: 0
+grid cshape: (64, 64)
+field shape cc: (64, 64)
+multigrid levels: [(64, 64), (32, 32), (16, 16), (8, 8), (4, 4), (2, 2)]
+Running AdamNative optimizer
+
+epoch=00000
+residual: fu:2265.1, fu_mg1:1997.9
+error: rmse=4.841353e-01, rel_rmse=1.000000e+00, residual_rmse=2.265055e+03
+memory: 314 MiB
+walltime: 0.460 s
+walltime+callback: 0.460 s
+poisson_field_00000.png poisson_data_00000.pickle
+adaptive weights: pde:1->0.8625, mg:1->1.159
+
+epoch=00100
+residual: fu:693.39, fu_mg1:383.69
+error: rmse=1.867890e-01, rel_rmse=3.858199e-01, residual_rmse=6.850157e+02
+memory: 408 MiB
+walltime: 0.591 s
+walltime+callback: 2.103 s
+walltime/epoch: 5.912 ms
+throughput: 0.693M cells/s
+poisson_field_00001.png poisson_data_00001.pickle
+adaptive weights: pde:0.8625->0.7088, mg:1.159->1.411
+
+epoch=00200
+residual: fu:224.81, fu_mg1:102.53
+error: rmse=1.308834e-01, rel_rmse=2.703446e-01, residual_rmse=2.581316e+02
+memory: 427 MiB
+walltime: 0.617 s
+walltime+callback: 2.427 s
+walltime/epoch: 0.254 ms
+throughput: 16.107M cells/s
+poisson_field_00002.png poisson_data_00002.pickle
+adaptive weights: pde:0.7088->0.6004, mg:1.411->1.666
+
+epoch=00300
+residual: fu:94.634, fu_mg1:48.721
+error: rmse=1.020882e-01, rel_rmse=2.108672e-01, residual_rmse=1.326046e+02
+memory: 448 MiB
+walltime: 0.644 s
+walltime+callback: 2.803 s
+walltime/epoch: 0.271 ms
+throughput: 15.107M cells/s
+poisson_field_00003.png poisson_data_00003.pickle
+adaptive weights: pde:0.6004->0.5441, mg:1.666->1.838
+
+epoch=00400
+residual: fu:51.268, fu_mg1:34.59
+error: rmse=8.624310e-02, rel_rmse=1.781384e-01, residual_rmse=8.498239e+01
+memory: 459 MiB
+walltime: 0.669 s
+walltime+callback: 3.127 s
+walltime/epoch: 0.254 ms
+throughput: 16.117M cells/s
+poisson_field_00004.png poisson_data_00004.pickle
+adaptive weights: pde:0.5441->0.5163, mg:1.838->1.937
+
+epoch=00500
+residual: fu:32.892, fu_mg1:26.652
+error: rmse=7.367282e-02, rel_rmse=1.521740e-01, residual_rmse=6.022515e+01
+memory: 439 MiB
+walltime: 0.698 s
+walltime+callback: 3.475 s
+walltime/epoch: 0.294 ms
+throughput: 13.948M cells/s
+poisson_field_00005.png poisson_data_00005.pickle
+adaptive weights: pde:0.5163->0.5056, mg:1.937->1.978
+
+epoch=00600
+residual: fu:22.585, fu_mg1:20.777
+error: rmse=6.533882e-02, rel_rmse=1.349598e-01, residual_rmse=4.358875e+01
+memory: 443 MiB
+walltime: 0.723 s
+walltime+callback: 3.793 s
+walltime/epoch: 0.244 ms
+throughput: 16.817M cells/s
+poisson_field_00006.png poisson_data_00006.pickle
+adaptive weights: pde:0.5056->0.5114, mg:1.978->1.955
+
+epoch=00700
+residual: fu:15.853, fu_mg1:16.595
+error: rmse=6.241349e-02, rel_rmse=1.289175e-01, residual_rmse=3.124843e+01
+memory: 456 MiB
+walltime: 0.748 s
+walltime+callback: 4.110 s
+walltime/epoch: 0.251 ms
+throughput: 16.298M cells/s
+poisson_field_00007.png poisson_data_00007.pickle
+adaptive weights: pde:0.5114->0.5637, mg:1.955->1.774
+
+epoch=00800
+residual: fu:11.642, fu_mg1:17.183
+error: rmse=6.363200e-02, rel_rmse=1.314343e-01, residual_rmse=2.212202e+01
+memory: 457 MiB
+walltime: 0.772 s
+walltime+callback: 4.425 s
+walltime/epoch: 0.243 ms
+throughput: 16.828M cells/s
+poisson_field_00008.png poisson_data_00008.pickle
+adaptive weights: pde:0.5637->0.6211, mg:1.774->1.61
+
+epoch=00900
+residual: fu:7.3539, fu_mg1:10.839
+error: rmse=6.652962e-02, rel_rmse=1.374195e-01, residual_rmse=1.299945e+01
+memory: 470 MiB
+walltime: 0.797 s
+walltime+callback: 4.739 s
+walltime/epoch: 0.243 ms
+throughput: 16.843M cells/s
+poisson_field_00009.png poisson_data_00009.pickle
+adaptive weights: pde:0.6211->0.7107, mg:1.61->1.407
+
+epoch=01000
+residual: fu:5.1126, fu_mg1:8.7676
+error: rmse=6.981520e-02, rel_rmse=1.442060e-01, residual_rmse=8.208322e+00
+memory: 483 MiB
+walltime: 0.822 s
+walltime+callback: 5.055 s
+walltime/epoch: 0.252 ms
+throughput: 16.263M cells/s
+poisson_field_00010.png poisson_data_00010.pickle
+poisson_field_final.png poisson_data_final.pickle

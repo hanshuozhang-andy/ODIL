@@ -197,6 +197,22 @@ def operator_wave(ctx):
 # Plotting and diagnostics
 # ----------------------------------------------------------------------
 
+def setup_white_plot_style():
+    import matplotlib.pyplot as plt
+
+    plt.rcParams.update({
+        "figure.facecolor": "white",
+        "axes.facecolor": "white",
+        "savefig.facecolor": "white",
+        "savefig.edgecolor": "white",
+        "savefig.transparent": False,
+        "text.color": "black",
+        "axes.labelcolor": "black",
+        "xtick.color": "black",
+        "ytick.color": "black",
+    })
+
+
 def get_uut(domain, init_u, uu):
     from odil.core import extrap_quad, extrap_quadh
 
@@ -216,6 +232,7 @@ def plot_func(problem, state, epoch, frame, cbinfo=None):
     from odil.plot import plot_1d
 
     del cbinfo
+    setup_white_plot_style()
 
     domain = problem.domain
     extra = problem.extra
@@ -260,6 +277,7 @@ def plot_func(problem, state, epoch, frame, cbinfo=None):
         transpose=True,
         umin=-umax,
         umax=umax,
+        transparent=False,
     )
 
     umax = max(abs(np.max(extra.ref_ut)), abs(np.min(extra.ref_ut)))
@@ -275,6 +293,7 @@ def plot_func(problem, state, epoch, frame, cbinfo=None):
         transpose=True,
         umin=-umax,
         umax=umax,
+        transparent=False,
     )
 
 

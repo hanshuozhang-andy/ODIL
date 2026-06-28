@@ -1,0 +1,192 @@
+adaptive_wave_odil.py --adaptive 0 --outdir out_wave_fixed
+Running L-BFGS-B optimizer
+
+epoch=00000
+residual: pde:23.57, init:0.063246
+error: u:0.22361
+memory: 208 MiB
+walltime: 0.115 s
+walltime+callback: 0.115 s
+u_00000.png ut_00000.png
+
+epoch=00100
+residual: pde:1.0157, init:0.054586
+error: u:0.19723
+memory: 289 MiB
+walltime: 1.360 s
+walltime+callback: 2.257 s
+walltime/epoch: 13.597 ms
+throughput: 0.046M cells/s
+
+epoch=00200
+residual: pde:0.32622, init:0.054106
+error: u:0.19274
+memory: 289 MiB
+walltime: 1.398 s
+walltime+callback: 2.296 s
+walltime/epoch: 0.386 ms
+throughput: 1.619M cells/s
+
+epoch=00300
+residual: pde:0.14195, init:0.053978
+error: u:0.19217
+memory: 288 MiB
+walltime: 1.437 s
+walltime+callback: 2.335 s
+walltime/epoch: 0.387 ms
+throughput: 1.616M cells/s
+
+epoch=00400
+residual: pde:0.025763, init:0.053979
+error: u:0.19178
+memory: 288 MiB
+walltime: 1.475 s
+walltime+callback: 2.373 s
+walltime/epoch: 0.380 ms
+throughput: 1.644M cells/s
+
+epoch=00500
+residual: pde:0.0082392, init:0.054011
+error: u:0.19175
+memory: 288 MiB
+walltime: 1.513 s
+walltime+callback: 2.412 s
+walltime/epoch: 0.384 ms
+throughput: 1.628M cells/s
+
+epoch=00600
+residual: pde:0.0032051, init:0.05401
+error: u:0.19172
+memory: 288 MiB
+walltime: 1.552 s
+walltime+callback: 2.451 s
+walltime/epoch: 0.386 ms
+throughput: 1.621M cells/s
+
+epoch=00700
+residual: pde:0.0029533, init:0.053982
+error: u:0.19162
+memory: 287 MiB
+walltime: 1.588 s
+walltime+callback: 2.487 s
+walltime/epoch: 0.362 ms
+throughput: 1.725M cells/s
+
+epoch=00800
+residual: pde:0.003459, init:0.053717
+error: u:0.19073
+memory: 287 MiB
+walltime: 1.620 s
+walltime+callback: 2.520 s
+walltime/epoch: 0.321 ms
+throughput: 1.946M cells/s
+
+epoch=00900
+residual: pde:0.0039541, init:0.053557
+error: u:0.19018
+memory: 287 MiB
+walltime: 1.651 s
+walltime+callback: 2.552 s
+walltime/epoch: 0.312 ms
+throughput: 2.006M cells/s
+
+epoch=01000
+residual: pde:0.0045862, init:0.053439
+error: u:0.18977
+memory: 287 MiB
+walltime: 1.682 s
+walltime+callback: 2.583 s
+walltime/epoch: 0.309 ms
+throughput: 2.022M cells/s
+u_00001.png ut_00001.png
+
+epoch=01100
+residual: pde:0.0055567, init:0.053226
+error: u:0.189
+memory: 295 MiB
+walltime: 1.720 s
+walltime+callback: 2.708 s
+walltime/epoch: 0.377 ms
+throughput: 1.658M cells/s
+
+epoch=01200
+residual: pde:0.01091, init:0.050856
+error: u:0.18049
+memory: 295 MiB
+walltime: 1.753 s
+walltime+callback: 2.741 s
+walltime/epoch: 0.327 ms
+throughput: 1.912M cells/s
+
+epoch=01300
+residual: pde:0.014975, init:0.048245
+error: u:0.17124
+memory: 295 MiB
+walltime: 1.784 s
+walltime+callback: 2.773 s
+walltime/epoch: 0.313 ms
+throughput: 1.996M cells/s
+
+epoch=01400
+residual: pde:0.021676, init:0.04075
+error: u:0.14534
+memory: 295 MiB
+walltime: 1.815 s
+walltime+callback: 2.805 s
+walltime/epoch: 0.312 ms
+throughput: 2.003M cells/s
+
+epoch=01500
+residual: pde:0.024425, init:0.033312
+error: u:0.12033
+memory: 293 MiB
+walltime: 1.846 s
+walltime+callback: 2.836 s
+walltime/epoch: 0.312 ms
+throughput: 2.004M cells/s
+
+epoch=01600
+residual: pde:0.022391, init:0.017499
+error: u:0.071782
+memory: 293 MiB
+walltime: 1.877 s
+walltime+callback: 2.867 s
+walltime/epoch: 0.309 ms
+throughput: 2.021M cells/s
+
+epoch=01700
+residual: pde:0.018609, init:0.010718
+error: u:0.05595
+memory: 293 MiB
+walltime: 1.909 s
+walltime+callback: 2.899 s
+walltime/epoch: 0.311 ms
+throughput: 2.009M cells/s
+
+epoch=01800
+residual: pde:0.016851, init:0.0092512
+error: u:0.05332
+memory: 293 MiB
+walltime: 1.939 s
+walltime+callback: 2.930 s
+walltime/epoch: 0.308 ms
+throughput: 2.027M cells/s
+
+epoch=01900
+residual: pde:0.013467, init:0.0075305
+error: u:0.050753
+memory: 293 MiB
+walltime: 1.970 s
+walltime+callback: 2.961 s
+walltime/epoch: 0.310 ms
+throughput: 2.016M cells/s
+
+epoch=02000
+residual: pde:0.009193, init:0.0058034
+error: u:0.048808
+memory: 293 MiB
+walltime: 2.001 s
+walltime+callback: 2.992 s
+walltime/epoch: 0.309 ms
+throughput: 2.024M cells/s
+u_00002.png ut_00002.png

@@ -15,7 +15,7 @@ Reference solution:
 Recommended macOS run:
     python Poisson_odil_jax.py \
       --N 64 \
-      --k 4 \
+      --k 2 \
       --rhs exact \
       --optimizer adam \
       --multigrid 1 \

@@ -36,6 +36,13 @@ import odil
 from odil import history, printlog
 
 
+def set_white_background(fig):
+    fig.patch.set_facecolor("white")
+    fig.patch.set_alpha(1)
+    for ax in fig.axes:
+        ax.set_facecolor("white")
+
+
 def get_init_u(t, x, mod):
     """U(x)=g(x)-g(0), g(x)=exp(-50(x-0.5)^2)."""
     del t
@@ -256,11 +263,11 @@ def plot_func(problem, state, epoch, frame, cbinfo=None):
                 zorder=100,
             )
 
-    plot_1d(
+    fig_u = plot_1d(
         domain,
         np.array(extra.imp_u),
         state_u,
-        path=path_u,
+        path=None,
         title=title_u,
         cmap="YlOrBr",
         nslices=5,
@@ -270,8 +277,19 @@ def plot_func(problem, state, epoch, frame, cbinfo=None):
         umin=0,
         umax=1,
     )
+    set_white_background(fig_u)
+    fig_u.savefig(
+        path_u,
+        dpi=300,
+        pad_inches=0.01,
+        transparent=False,
+        facecolor="white",
+        edgecolor="white",
+    )
+    plt.close(fig_u)
 
     fig, ax = plt.subplots(figsize=(1.7, 1.5))
+    set_white_background(fig)
     ref_uk = extra.ref_uk
     ref_k = extra.ref_k
 
@@ -286,7 +304,13 @@ def plot_func(problem, state, epoch, frame, cbinfo=None):
     ax.set_ylabel("k")
     ax.set_ylim(0, 0.03)
     ax.set_title(title_k)
-    fig.savefig(path_k, bbox_inches="tight")
+    fig.savefig(
+        path_k,
+        bbox_inches="tight",
+        facecolor="white",
+        edgecolor="white",
+        transparent=False,
+    )
     plt.close(fig)
 
     if args.dump_data:

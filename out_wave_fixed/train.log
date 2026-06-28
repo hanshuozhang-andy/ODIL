@@ -1,0 +1,189 @@
+Adaptive_ODIL/adaptive_wave_odil.py --adaptive 0 --outdir out_wave_fixed --epochs 200 --plot_every 100000 --frames 0
+Running AdamNative optimizer
+
+epoch=00000
+residual: pde:96.544, init:0.039528
+error: u:0.22361
+memory: 217 MiB
+walltime: 0.148 s
+walltime+callback: 0.148 s
+
+epoch=00010
+residual: pde:89.682, init:0.039547
+error: u:0.22374
+memory: 218 MiB
+walltime: 0.218 s
+walltime+callback: 0.227 s
+walltime/epoch: 21.847 ms
+throughput: 0.187M cells/s
+
+epoch=00020
+residual: pde:82.498, init:0.039506
+error: u:0.22396
+memory: 218 MiB
+walltime: 0.222 s
+walltime+callback: 0.230 s
+walltime/epoch: 0.337 ms
+throughput: 12.140M cells/s
+
+epoch=00030
+residual: pde:75.875, init:0.039527
+error: u:0.22428
+memory: 218 MiB
+walltime: 0.225 s
+walltime+callback: 0.234 s
+walltime/epoch: 0.321 ms
+throughput: 12.754M cells/s
+
+epoch=00040
+residual: pde:69.859, init:0.039532
+error: u:0.22468
+memory: 218 MiB
+walltime: 0.230 s
+walltime+callback: 0.240 s
+walltime/epoch: 0.450 ms
+throughput: 9.103M cells/s
+
+epoch=00050
+residual: pde:64.439, init:0.039534
+error: u:0.22514
+memory: 218 MiB
+walltime: 0.232 s
+walltime+callback: 0.242 s
+walltime/epoch: 0.238 ms
+throughput: 17.207M cells/s
+
+epoch=00060
+residual: pde:59.579, init:0.039542
+error: u:0.22565
+memory: 218 MiB
+walltime: 0.234 s
+walltime+callback: 0.244 s
+walltime/epoch: 0.160 ms
+throughput: 25.622M cells/s
+
+epoch=00070
+residual: pde:55.23, init:0.039551
+error: u:0.22619
+memory: 218 MiB
+walltime: 0.235 s
+walltime+callback: 0.246 s
+walltime/epoch: 0.137 ms
+throughput: 29.894M cells/s
+
+epoch=00080
+residual: pde:51.338, init:0.039562
+error: u:0.22676
+memory: 218 MiB
+walltime: 0.236 s
+walltime+callback: 0.247 s
+walltime/epoch: 0.127 ms
+throughput: 32.287M cells/s
+
+epoch=00090
+residual: pde:47.848, init:0.039572
+error: u:0.22734
+memory: 218 MiB
+walltime: 0.237 s
+walltime+callback: 0.249 s
+walltime/epoch: 0.126 ms
+throughput: 32.409M cells/s
+
+epoch=00100
+residual: pde:44.714, init:0.039584
+error: u:0.22793
+memory: 218 MiB
+walltime: 0.239 s
+walltime+callback: 0.250 s
+walltime/epoch: 0.128 ms
+throughput: 31.998M cells/s
+
+epoch=00110
+residual: pde:41.892, init:0.039597
+error: u:0.22853
+memory: 218 MiB
+walltime: 0.240 s
+walltime+callback: 0.251 s
+walltime/epoch: 0.127 ms
+throughput: 32.372M cells/s
+
+epoch=00120
+residual: pde:39.346, init:0.039611
+error: u:0.22912
+memory: 218 MiB
+walltime: 0.241 s
+walltime+callback: 0.253 s
+walltime/epoch: 0.126 ms
+throughput: 32.513M cells/s
+
+epoch=00130
+residual: pde:37.046, init:0.039626
+error: u:0.22972
+memory: 218 MiB
+walltime: 0.243 s
+walltime+callback: 0.254 s
+walltime/epoch: 0.146 ms
+throughput: 27.962M cells/s
+
+epoch=00140
+residual: pde:34.966, init:0.039642
+error: u:0.2303
+memory: 218 MiB
+walltime: 0.244 s
+walltime+callback: 0.256 s
+walltime/epoch: 0.143 ms
+throughput: 28.614M cells/s
+
+epoch=00150
+residual: pde:33.082, init:0.039659
+error: u:0.23089
+memory: 218 MiB
+walltime: 0.246 s
+walltime+callback: 0.258 s
+walltime/epoch: 0.144 ms
+throughput: 28.439M cells/s
+
+epoch=00160
+residual: pde:31.376, init:0.039676
+error: u:0.23146
+memory: 218 MiB
+walltime: 0.247 s
+walltime+callback: 0.259 s
+walltime/epoch: 0.146 ms
+throughput: 27.985M cells/s
+
+epoch=00170
+residual: pde:29.83, init:0.039694
+error: u:0.23202
+memory: 218 MiB
+walltime: 0.248 s
+walltime+callback: 0.261 s
+walltime/epoch: 0.144 ms
+throughput: 28.453M cells/s
+
+epoch=00180
+residual: pde:28.428, init:0.039712
+error: u:0.23257
+memory: 218 MiB
+walltime: 0.250 s
+walltime+callback: 0.262 s
+walltime/epoch: 0.143 ms
+throughput: 28.571M cells/s
+
+epoch=00190
+residual: pde:27.158, init:0.039732
+error: u:0.23312
+memory: 218 MiB
+walltime: 0.251 s
+walltime+callback: 0.264 s
+walltime/epoch: 0.143 ms
+throughput: 28.576M cells/s
+
+epoch=00200
+residual: pde:26.005, init:0.039752
+error: u:0.23364
+memory: 218 MiB
+walltime: 0.253 s
+walltime+callback: 0.266 s
+walltime/epoch: 0.143 ms
+throughput: 28.552M cells/s

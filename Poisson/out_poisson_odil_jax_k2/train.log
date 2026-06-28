@@ -1,0 +1,116 @@
+Poisson_odil_jax.py --N 64 --k 2 --rhs exact --optimizer adam --multigrid 1 --mg_interp conv --lr 0.005 --epochs 1000 --plot_every 100 --report_every 100 --outdir out_poisson_odil_jax_k2
+ODIL backend: jax
+ODIL JIT: 0
+grid cshape: (64, 64)
+field shape cc: (64, 64)
+multigrid levels: [(64, 64), (32, 32), (16, 16), (8, 8), (4, 4), (2, 2)]
+Running AdamNative optimizer
+
+epoch=00000
+residual: fu:145.67
+error: rmse=4.678125e-01, rel_rmse=1.000000e+00, residual_rmse=1.456703e+02
+memory: 305 MiB
+walltime: 0.352 s
+walltime+callback: 0.352 s
+poisson_field_00000.png poisson_data_00000.pickle
+
+epoch=00100
+residual: fu:10.789
+error: rmse=9.675429e-02, rel_rmse=2.068228e-01, residual_rmse=1.047856e+01
+memory: 403 MiB
+walltime: 0.485 s
+walltime+callback: 2.068 s
+walltime/epoch: 4.847 ms
+throughput: 0.845M cells/s
+poisson_field_00001.png poisson_data_00001.pickle
+
+epoch=00200
+residual: fu:4.142
+error: rmse=7.269882e-02, rel_rmse=1.554016e-01, residual_rmse=4.447187e+00
+memory: 423 MiB
+walltime: 0.506 s
+walltime+callback: 2.384 s
+walltime/epoch: 0.217 ms
+throughput: 18.842M cells/s
+poisson_field_00002.png poisson_data_00002.pickle
+
+epoch=00300
+residual: fu:4.4159
+error: rmse=5.526685e-02, rel_rmse=1.181389e-01, residual_rmse=4.053394e+00
+memory: 434 MiB
+walltime: 0.529 s
+walltime+callback: 2.691 s
+walltime/epoch: 0.223 ms
+throughput: 18.370M cells/s
+poisson_field_00003.png poisson_data_00003.pickle
+
+epoch=00400
+residual: fu:3.8623
+error: rmse=4.163770e-02, rel_rmse=8.900511e-02, residual_rmse=3.944965e+00
+memory: 451 MiB
+walltime: 0.551 s
+walltime+callback: 3.006 s
+walltime/epoch: 0.222 ms
+throughput: 18.472M cells/s
+poisson_field_00004.png poisson_data_00004.pickle
+
+epoch=00500
+residual: fu:4.7854
+error: rmse=3.191462e-02, rel_rmse=6.822096e-02, residual_rmse=5.076037e+00
+memory: 451 MiB
+walltime: 0.573 s
+walltime+callback: 3.358 s
+walltime/epoch: 0.222 ms
+throughput: 18.454M cells/s
+poisson_field_00005.png poisson_data_00005.pickle
+
+epoch=00600
+residual: fu:4.9806
+error: rmse=2.515664e-02, rel_rmse=5.377506e-02, residual_rmse=4.488533e+00
+memory: 450 MiB
+walltime: 0.595 s
+walltime+callback: 3.673 s
+walltime/epoch: 0.222 ms
+throughput: 18.490M cells/s
+poisson_field_00006.png poisson_data_00006.pickle
+
+epoch=00700
+residual: fu:4.3436
+error: rmse=2.032863e-02, rel_rmse=4.345466e-02, residual_rmse=4.521294e+00
+memory: 440 MiB
+walltime: 0.618 s
+walltime+callback: 3.984 s
+walltime/epoch: 0.224 ms
+throughput: 18.297M cells/s
+poisson_field_00007.png poisson_data_00007.pickle
+
+epoch=00800
+residual: fu:4.9742
+error: rmse=1.661651e-02, rel_rmse=3.551960e-02, residual_rmse=4.903954e+00
+memory: 440 MiB
+walltime: 0.640 s
+walltime+callback: 4.334 s
+walltime/epoch: 0.220 ms
+throughput: 18.596M cells/s
+poisson_field_00008.png poisson_data_00008.pickle
+
+epoch=00900
+residual: fu:4.7472
+error: rmse=1.360299e-02, rel_rmse=2.907787e-02, residual_rmse=4.303567e+00
+memory: 441 MiB
+walltime: 0.662 s
+walltime+callback: 4.652 s
+walltime/epoch: 0.222 ms
+throughput: 18.416M cells/s
+poisson_field_00009.png poisson_data_00009.pickle
+
+epoch=01000
+residual: fu:5.5446
+error: rmse=1.108968e-02, rel_rmse=2.370540e-02, residual_rmse=5.515112e+00
+memory: 441 MiB
+walltime: 0.685 s
+walltime+callback: 4.978 s
+walltime/epoch: 0.228 ms
+throughput: 17.959M cells/s
+poisson_field_00010.png poisson_data_00010.pickle
+poisson_field_final.png poisson_data_final.pickle

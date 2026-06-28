@@ -4,27 +4,27 @@ Running Newton optimizer
 epoch=00000
 residual: fu:23.57
 error: u:0.22361
-memory: 429 MiB
-walltime: 0.672 s
-walltime+callback: 0.672 s
+memory: 435 MiB
+walltime: 0.662 s
+walltime+callback: 0.662 s
 u_00000.png ut_00000.png
 
 epoch=00001
 residual: fu:6.0427e-11
 error: u:0.048197
-memory: 477 MiB
-walltime: 0.959 s
-walltime+callback: 1.170 s
-walltime/epoch: 959.353 ms
+memory: 481 MiB
+walltime: 0.963 s
+walltime+callback: 1.178 s
+walltime/epoch: 963.140 ms
 throughput: 0.001M cells/s
 u_00001.png ut_00001.png
 
 epoch=00002
 residual: fu:1.5095e-14
 error: u:0.048197
-memory: 495 MiB
-walltime: 1.045 s
-walltime+callback: 1.343 s
-walltime/epoch: 85.251 ms
-throughput: 0.007M cells/s
+memory: 504 MiB
+walltime: 1.046 s
+walltime+callback: 1.346 s
+walltime/epoch: 83.292 ms
+throughput: 0.008M cells/s
 u_00002.png ut_00002.png

@@ -1,18 +1,6 @@
 #!/usr/bin/env python3
 """
-python body_shape_odil_jax.py \
-  --case all \
-  --N 64 \
-  --Re 60 \
-  --D 0.4 \
-  --lambda_penalty 10 \
-  --forward_epochs 12000 \
-  --epochs 20000 \
-  --lr 1e-3 \
-  --forward_lr 1e-3 \
-  --n_data 100 \
-  --report_every 200 \
-  --outdir out_body_shape
+MPLCONFIGDIR=/private/tmp/mpl-odil python3 body_shape_odil_jax.py --case all --N 64 --Re 60 --D 0.4 --lambda_penalty 10 --forward_epochs 20000 --epochs 20000 --lr 1e-3 --forward_lr 1e-3 --n_data 100 --report_every 200 --w_area 0 --load_ref 0 --outdir out_body_shape_paper
 """
 
 from __future__ import annotations
@@ -100,24 +88,37 @@ def make_grid(N: int, dtype=np.float64) -> Tuple[np.ndarray, np.ndarray, float, 
     return x, y, dx, dy
 
 
+def rotated_coordinates(
+    x: np.ndarray,
+    y: np.ndarray,
+    cx: float,
+    cy: float,
+    angle_deg: float,
+) -> Tuple[np.ndarray, np.ndarray]:
+    theta = np.deg2rad(angle_deg)
+    c, s = np.cos(theta), np.sin(theta)
+    xx, yy = x - cx, y - cy
+    return c * xx + s * yy, -s * xx + c * yy
+
+
 def phi_body(case: str, x: np.ndarray, y: np.ndarray, D: float) -> np.ndarray:
     """Signed-distance-like phi: positive inside the body, negative outside."""
     cx, cy = 0.62, 0.50
+    r = 0.5 * D
     if case == "circle":
-        r = 0.5 * D
         return r - np.sqrt((x - cx) ** 2 + (y - cy) ** 2 + 1e-12)
     if case == "ellipse":
-        # Approximate signed distance to an ellipse. Good enough for a level set.
-        a, b = 0.30, 0.14
-        q = np.sqrt(((x - cx) / a) ** 2 + ((y - cy) / b) ** 2 + 1e-12)
+        a, b = 0.70 * D, 0.25 * D
+        ex, ey = rotated_coordinates(x, y, cx=cx, cy=cy, angle_deg=35.0)
+        # Rotated standard ellipse: (ex/a)^2 + (ey/b)^2 = 1.
+        q = np.sqrt((ex / a) ** 2 + (ey / b) ** 2 + 1e-12)
         return min(a, b) * (1.0 - q)
     if case == "nonconvex":
-        # A concave three-lobed body. This is deliberately harder, like Fig. 11.
-        xx, yy = x - cx, y - cy
-        th = np.arctan2(yy, xx)
-        rr = np.sqrt(xx**2 + yy**2 + 1e-12)
-        r0 = 0.19 * (1.0 + 0.30 * np.cos(3.0 * th) - 0.16 * np.cos(th))
-        return r0 - rr
+        # A circle with its downstream-upper quarter disk removed.
+        dx0, dy0 = x - cx, y - cy
+        phi_circle = r - np.sqrt(dx0**2 + dy0**2 + 1e-12)
+        phi_removed_quarter = np.minimum.reduce((phi_circle, dx0, dy0))
+        return np.minimum(phi_circle, -phi_removed_quarter)
     raise ValueError(f"unknown case {case!r}")
 
 
@@ -141,24 +142,63 @@ def sample_measurements(
     n_data: int,
     gap: float,
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
-    """Choose velocity measurement points outside the body, away from boundaries."""
+    """Choose velocity measurement points around the body, away from boundaries."""
+    outside_distance = -phi_ref
     mask = (
-        (phi_ref < -gap)
+        (outside_distance > gap)
         & (x > 0.18)
         & (x < 1.85)
         & (y > 0.08)
         & (y < 0.92)
     )
-    # Prefer points around the body and wake, where the velocity carries shape info.
-    cx, cy = 0.62, 0.50
-    roi = mask & (x > cx - 0.35) & (x < 1.65) & (np.abs(y - cy) < 0.38)
+    body = phi_ref > 0.0
+    if np.any(body):
+        cx = float(np.mean(x[body]))
+        cy = float(np.mean(y[body]))
+        radius = float(np.sqrt(np.max((x[body] - cx) ** 2 + (y[body] - cy) ** 2)))
+    else:
+        cx, cy, radius = 0.62, 0.50, 0.2
+
+    dist = np.sqrt((x - cx) ** 2 + (y - cy) ** 2)
+    theta = np.arctan2(y - cy, x - cx)
+    # The paper uses points chosen at a distance from the body.  Restrict the
+    # candidates to a signed-distance band and stratify by angle so the sample
+    # is not biased toward the downstream wake.
+    outer_gap = max(0.24, 1.25 * radius)
+    roi = mask & (outside_distance <= outer_gap)
     ids = np.argwhere(roi)
+    if len(ids) < n_data:
+        roi_radius = radius + outer_gap
+        ids = np.argwhere(mask & (dist <= roi_radius))
     if len(ids) < n_data:
         ids = np.argwhere(mask)
     if len(ids) < n_data:
         raise RuntimeError("not enough candidate measurement points")
-    choice = rng.choice(len(ids), size=n_data, replace=False)
-    ij = ids[choice]
+
+    bins = np.linspace(-np.pi, np.pi, 9)
+    chosen: list[np.ndarray] = []
+    chosen_flat: set[int] = set()
+    per_bin = int(np.ceil(n_data / (len(bins) - 1)))
+    for lo, hi in zip(bins[:-1], bins[1:]):
+        sector = ids[(theta[ids[:, 0], ids[:, 1]] >= lo) & (theta[ids[:, 0], ids[:, 1]] < hi)]
+        if len(sector) == 0:
+            continue
+        take = min(per_bin, len(sector), n_data - len(chosen))
+        sector_choice = sector[rng.choice(len(sector), size=take, replace=False)]
+        for item in sector_choice:
+            chosen.append(item)
+            chosen_flat.add(int(item[0]) * x.shape[1] + int(item[1]))
+        if len(chosen) == n_data:
+            break
+
+    if len(chosen) < n_data:
+        unused = [item for item in ids if int(item[0]) * x.shape[1] + int(item[1]) not in chosen_flat]
+        fill = np.asarray(unused)
+        take = n_data - len(chosen)
+        fill_choice = fill[rng.choice(len(fill), size=take, replace=False)]
+        chosen.extend(fill_choice)
+
+    ij = np.asarray(chosen, dtype=np.int64)
     mi, mj = ij[:, 0], ij[:, 1]
     return mi, mj, u_ref[mi, mj], v_ref[mi, mj]
 
@@ -199,6 +239,35 @@ def upwind_y(q: Array, adv: Array, dy: float) -> Array:
     backward = (qp[1:-1, 1:-1] - qp[1:-1, :-2]) / dy
     forward = (qp[1:-1, 2:] - qp[1:-1, 1:-1]) / dy
     return jnp.where(adv >= 0.0, backward, forward)
+
+
+def one_sided_x(q: Array, dx: float) -> Tuple[Array, Array]:
+    qp = pad_edge(q)
+    backward = (qp[1:-1, 1:-1] - qp[:-2, 1:-1]) / dx
+    forward = (qp[2:, 1:-1] - qp[1:-1, 1:-1]) / dx
+    return backward, forward
+
+
+def one_sided_y(q: Array, dy: float) -> Tuple[Array, Array]:
+    qp = pad_edge(q)
+    backward = (qp[1:-1, 1:-1] - qp[1:-1, :-2]) / dy
+    forward = (qp[1:-1, 2:] - qp[1:-1, 1:-1]) / dy
+    return backward, forward
+
+
+def eikonal_godunov_grad_sq(phi: Array, dx: float, dy: float) -> Array:
+    dxm, dxp = one_sided_x(phi, dx)
+    dym, dyp = one_sided_y(phi, dy)
+
+    grad_pos = (
+        jnp.maximum(jnp.maximum(dxm, 0.0) ** 2, jnp.minimum(dxp, 0.0) ** 2)
+        + jnp.maximum(jnp.maximum(dym, 0.0) ** 2, jnp.minimum(dyp, 0.0) ** 2)
+    )
+    grad_neg = (
+        jnp.maximum(jnp.minimum(dxm, 0.0) ** 2, jnp.maximum(dxp, 0.0) ** 2)
+        + jnp.maximum(jnp.minimum(dym, 0.0) ** 2, jnp.maximum(dyp, 0.0) ** 2)
+    )
+    return jnp.where(phi >= 0.0, grad_pos, grad_neg)
 
 
 def impose_velocity_data(u: Array, v: Array, const: Const) -> Tuple[Array, Array]:
@@ -277,10 +346,9 @@ def total_loss(params: PyTree, const: Const, mode: str, kphi: float) -> Tuple[Ar
     loss_area = jnp.array(0.0, dtype=u.dtype)
     loss_phi_anchor = jnp.array(0.0, dtype=u.dtype)
     if mode == "inverse":
-        phix = first_x(phi, const.dx)
-        phiy = first_y(phi, const.dy)
-        loss_eik = jnp.mean((phix**2 + phiy**2 - 1.0) ** 2)
-        # Small stabilizers; set weights to zero to exactly remove them.
+        grad_sq = eikonal_godunov_grad_sq(phi, const.dx, const.dy)
+        loss_eik = jnp.mean((grad_sq - 1.0) ** 2)
+        # Disabled by default; useful only for debugging or extra stabilization.
         loss_area = (jnp.mean(chi) - jnp.mean(const.chi_ref)) ** 2
         loss_phi_anchor = jnp.mean((phi - const.phi_ref) ** 2)
 
@@ -357,7 +425,7 @@ def train(
         writer = csv.DictWriter(f, fieldnames=hist_keys)
         writer.writeheader()
         for epoch in range(1, epochs + 1):
-            kphi = max(kphi_min, kphi0 * (0.5 ** (epoch / 1000.0)))
+            kphi = max(kphi_min, kphi0 * (0.5 ** ((epoch - 1) / 1000.0)))
             if mode == "forward":
                 (val, aux), grads = value_grad_forward(params, const)
             else:
@@ -493,6 +561,34 @@ def largest_component_mask(mask: np.ndarray) -> np.ndarray:
     return result
 
 
+def fill_mask_holes(mask: np.ndarray) -> np.ndarray:
+    mask = np.asarray(mask, dtype=bool)
+    outside = np.zeros(mask.shape, dtype=bool)
+    stack: list[tuple[int, int]] = []
+    for i in range(mask.shape[0]):
+        for j in (0, mask.shape[1] - 1):
+            if not mask[i, j] and not outside[i, j]:
+                outside[i, j] = True
+                stack.append((i, j))
+    for j in range(mask.shape[1]):
+        for i in (0, mask.shape[0] - 1):
+            if not mask[i, j] and not outside[i, j]:
+                outside[i, j] = True
+                stack.append((i, j))
+
+    while stack:
+        i, j = stack.pop()
+        for di in (-1, 0, 1):
+            for dj in (-1, 0, 1):
+                if di == 0 and dj == 0:
+                    continue
+                ni, nj = i + di, j + dj
+                if 0 <= ni < mask.shape[0] and 0 <= nj < mask.shape[1] and not mask[ni, nj] and not outside[ni, nj]:
+                    outside[ni, nj] = True
+                    stack.append((ni, nj))
+    return mask | ~outside
+
+
 def box_smooth(arr: np.ndarray, passes: int = 3) -> np.ndarray:
     smoothed = np.asarray(arr, dtype=float)
     for _ in range(passes):
@@ -507,11 +603,12 @@ def box_smooth(arr: np.ndarray, passes: int = 3) -> np.ndarray:
 
 def inferred_body_mask_for_plot(chi: np.ndarray) -> np.ndarray:
     # Display-only smoothing turns checkerboard-like inferred chi into a readable outline.
-    return largest_component_mask(box_smooth(chi, passes=3) >= 0.18).astype(float)
+    mask = largest_component_mask(box_smooth(chi, passes=3) >= 0.18)
+    return fill_mask_holes(mask).astype(float)
 
 
 def reference_body_mask_for_plot(chi_ref: np.ndarray) -> np.ndarray:
-    return largest_component_mask(chi_ref >= 0.5).astype(float)
+    return fill_mask_holes(largest_component_mask(chi_ref >= 0.5)).astype(float)
 
 
 def overlay_body_contours(ax, x: np.ndarray, y: np.ndarray, chi: np.ndarray, chi_ref: np.ndarray) -> None:
@@ -921,7 +1018,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--D", type=float, default=0.4, help="Characteristic body length")
     p.add_argument("--lambda_penalty", type=float, default=10.0, help="Brinkman body penalization lambda")
     p.add_argument("--epochs", type=int, default=20000, help="Inverse Adam iterations")
-    p.add_argument("--forward_epochs", type=int, default=12000, help="Forward/reference Adam iterations")
+    p.add_argument("--forward_epochs", type=int, default=20000, help="Forward/reference Adam iterations")
     p.add_argument("--lr", type=float, default=1e-3)
     p.add_argument("--forward_lr", type=float, default=1e-3)
     p.add_argument("--report_every", type=int, default=200)
@@ -929,16 +1026,16 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--data_gap", type=float, default=0.06, help="Minimum signed-distance gap from body for data points")
     p.add_argument("--hard_data", type=int, default=1, help="Kept for compatibility; this script always uses hard data reparameterization")
     p.add_argument("--w_pde", type=float, default=1.0)
-    p.add_argument("--w_bc", type=float, default=10.0)
-    p.add_argument("--w_data", type=float, default=100.0, help="Only used when --hard_data 0")
-    p.add_argument("--w_eik", type=float, default=0.01, help="Eikonal loss multiplier before kphi^2")
-    p.add_argument("--w_area", type=float, default=1e-3, help="Small area stabilizer; set 0 to remove")
+    p.add_argument("--w_bc", type=float, default=1.0)
+    p.add_argument("--w_data", type=float, default=0.0, help="Unused with hard data reparameterization")
+    p.add_argument("--w_eik", type=float, default=1.0, help="Eikonal loss multiplier before kphi^2")
+    p.add_argument("--w_area", type=float, default=0.0, help="Optional area stabilizer for debugging only")
     p.add_argument("--w_phi_anchor", type=float, default=0.0, help="Optional phi-to-reference anchor for debugging only")
     p.add_argument("--kphi0", type=float, default=10.0)
     p.add_argument("--kphi_min", type=float, default=1.0)
     p.add_argument("--seed", type=int, default=1)
     p.add_argument("--outdir", default="out_body_shape")
-    p.add_argument("--load_ref", type=int, default=1, help="Reuse reference.pkl if present")
+    p.add_argument("--load_ref", type=int, default=0, help="Reuse reference.pkl if present")
     p.add_argument("--viz_only", type=int, default=0, help="Reload existing states and regenerate figures without training")
     return p.parse_args()
 

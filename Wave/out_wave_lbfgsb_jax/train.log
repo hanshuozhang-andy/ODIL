@@ -5,188 +5,188 @@ epoch=00000
 residual: fu:23.57
 error: u:0.22361
 memory: 210 MiB
-walltime: 0.105 s
-walltime+callback: 0.105 s
+walltime: 0.119 s
+walltime+callback: 0.119 s
 u_00000.png ut_00000.png
 
 epoch=00100
 residual: fu:1.0172
 error: u:0.19723
-memory: 287 MiB
-walltime: 0.706 s
-walltime+callback: 1.116 s
-walltime/epoch: 7.056 ms
-throughput: 0.089M cells/s
+memory: 263 MiB
+walltime: 0.847 s
+walltime+callback: 1.392 s
+walltime/epoch: 8.467 ms
+throughput: 0.074M cells/s
 
 epoch=00200
 residual: fu:0.33066
 error: u:0.19274
-memory: 287 MiB
-walltime: 0.736 s
-walltime+callback: 1.147 s
-walltime/epoch: 0.301 ms
-throughput: 2.074M cells/s
+memory: 263 MiB
+walltime: 0.877 s
+walltime+callback: 1.423 s
+walltime/epoch: 0.304 ms
+throughput: 2.057M cells/s
 
 epoch=00300
 residual: fu:0.15026
 error: u:0.19216
-memory: 287 MiB
-walltime: 0.767 s
-walltime+callback: 1.178 s
+memory: 263 MiB
+walltime: 0.908 s
+walltime+callback: 1.454 s
 walltime/epoch: 0.308 ms
-throughput: 2.027M cells/s
+throughput: 2.032M cells/s
 
 epoch=00400
 residual: fu:0.059644
 error: u:0.19178
-memory: 287 MiB
-walltime: 0.797 s
-walltime+callback: 1.209 s
-walltime/epoch: 0.302 ms
-throughput: 2.067M cells/s
+memory: 263 MiB
+walltime: 0.940 s
+walltime+callback: 1.486 s
+walltime/epoch: 0.322 ms
+throughput: 1.940M cells/s
 
 epoch=00500
 residual: fu:0.054601
 error: u:0.19174
-memory: 287 MiB
-walltime: 0.827 s
-walltime+callback: 1.239 s
-walltime/epoch: 0.299 ms
-throughput: 2.089M cells/s
+memory: 263 MiB
+walltime: 0.972 s
+walltime+callback: 1.518 s
+walltime/epoch: 0.316 ms
+throughput: 1.976M cells/s
 
 epoch=00600
 residual: fu:0.054104
 error: u:0.19172
-memory: 287 MiB
-walltime: 0.857 s
-walltime+callback: 1.269 s
-walltime/epoch: 0.298 ms
-throughput: 2.096M cells/s
+memory: 263 MiB
+walltime: 1.002 s
+walltime+callback: 1.550 s
+walltime/epoch: 0.308 ms
+throughput: 2.032M cells/s
 
 epoch=00700
 residual: fu:0.054064
 error: u:0.19162
-memory: 287 MiB
-walltime: 0.887 s
-walltime+callback: 1.299 s
-walltime/epoch: 0.301 ms
-throughput: 2.078M cells/s
+memory: 263 MiB
+walltime: 1.033 s
+walltime+callback: 1.581 s
+walltime/epoch: 0.311 ms
+throughput: 2.010M cells/s
 
 epoch=00800
 residual: fu:0.053787
 error: u:0.19055
-memory: 287 MiB
-walltime: 0.916 s
-walltime+callback: 1.329 s
-walltime/epoch: 0.298 ms
-throughput: 2.094M cells/s
+memory: 263 MiB
+walltime: 1.064 s
+walltime+callback: 1.612 s
+walltime/epoch: 0.308 ms
+throughput: 2.032M cells/s
 
 epoch=00900
 residual: fu:0.053681
 error: u:0.19012
-memory: 287 MiB
-walltime: 0.946 s
-walltime+callback: 1.359 s
-walltime/epoch: 0.299 ms
-throughput: 2.091M cells/s
+memory: 252 MiB
+walltime: 1.096 s
+walltime+callback: 1.645 s
+walltime/epoch: 0.321 ms
+throughput: 1.949M cells/s
 
 epoch=01000
 residual: fu:0.053579
 error: u:0.18949
-memory: 287 MiB
-walltime: 0.976 s
-walltime+callback: 1.390 s
-walltime/epoch: 0.301 ms
-throughput: 2.075M cells/s
+memory: 252 MiB
+walltime: 1.128 s
+walltime+callback: 1.677 s
+walltime/epoch: 0.316 ms
+throughput: 1.979M cells/s
 u_00001.png ut_00001.png
 
 epoch=01100
 residual: fu:0.052926
 error: u:0.18541
-memory: 295 MiB
-walltime: 1.007 s
-walltime+callback: 1.506 s
-walltime/epoch: 0.310 ms
-throughput: 2.017M cells/s
+memory: 272 MiB
+walltime: 1.159 s
+walltime+callback: 1.795 s
+walltime/epoch: 0.315 ms
+throughput: 1.986M cells/s
 
 epoch=01200
 residual: fu:0.051369
 error: u:0.17542
-memory: 295 MiB
-walltime: 1.038 s
-walltime+callback: 1.537 s
+memory: 272 MiB
+walltime: 1.190 s
+walltime+callback: 1.826 s
 walltime/epoch: 0.306 ms
-throughput: 2.041M cells/s
+throughput: 2.040M cells/s
 
 epoch=01300
 residual: fu:0.045408
 error: u:0.14237
-memory: 295 MiB
-walltime: 1.069 s
-walltime+callback: 1.568 s
-walltime/epoch: 0.310 ms
-throughput: 2.015M cells/s
+memory: 272 MiB
+walltime: 1.220 s
+walltime+callback: 1.857 s
+walltime/epoch: 0.303 ms
+throughput: 2.062M cells/s
 
 epoch=01400
 residual: fu:0.027732
 error: u:0.073114
-memory: 295 MiB
-walltime: 1.100 s
-walltime+callback: 1.599 s
-walltime/epoch: 0.306 ms
-throughput: 2.039M cells/s
+memory: 272 MiB
+walltime: 1.250 s
+walltime+callback: 1.887 s
+walltime/epoch: 0.299 ms
+throughput: 2.087M cells/s
 
 epoch=01500
 residual: fu:0.022943
 error: u:0.061971
-memory: 295 MiB
-walltime: 1.130 s
-walltime+callback: 1.630 s
-walltime/epoch: 0.304 ms
-throughput: 2.059M cells/s
+memory: 272 MiB
+walltime: 1.280 s
+walltime+callback: 1.917 s
+walltime/epoch: 0.297 ms
+throughput: 2.107M cells/s
 
 epoch=01600
 residual: fu:0.020132
 error: u:0.05644
-memory: 295 MiB
-walltime: 1.161 s
-walltime+callback: 1.661 s
-walltime/epoch: 0.307 ms
-throughput: 2.039M cells/s
+memory: 272 MiB
+walltime: 1.310 s
+walltime+callback: 1.947 s
+walltime/epoch: 0.298 ms
+throughput: 2.095M cells/s
 
 epoch=01700
 residual: fu:0.016819
 error: u:0.051935
-memory: 295 MiB
-walltime: 1.191 s
-walltime+callback: 1.692 s
-walltime/epoch: 0.303 ms
-throughput: 2.062M cells/s
+memory: 272 MiB
+walltime: 1.340 s
+walltime+callback: 1.977 s
+walltime/epoch: 0.298 ms
+throughput: 2.097M cells/s
 
 epoch=01800
 residual: fu:0.0099677
 error: u:0.047948
-memory: 295 MiB
-walltime: 1.221 s
-walltime+callback: 1.722 s
+memory: 272 MiB
+walltime: 1.369 s
+walltime+callback: 2.007 s
 walltime/epoch: 0.297 ms
-throughput: 2.101M cells/s
+throughput: 2.107M cells/s
 
 epoch=01900
 residual: fu:0.0070362
 error: u:0.04753
-memory: 295 MiB
-walltime: 1.251 s
-walltime+callback: 1.753 s
-walltime/epoch: 0.306 ms
-throughput: 2.039M cells/s
+memory: 272 MiB
+walltime: 1.399 s
+walltime+callback: 2.038 s
+walltime/epoch: 0.302 ms
+throughput: 2.072M cells/s
 
 epoch=02000
 residual: fu:0.0058703
 error: u:0.047475
-memory: 295 MiB
-walltime: 1.282 s
-walltime+callback: 1.783 s
-walltime/epoch: 0.301 ms
-throughput: 2.076M cells/s
+memory: 272 MiB
+walltime: 1.429 s
+walltime+callback: 2.068 s
+walltime/epoch: 0.297 ms
+throughput: 2.101M cells/s
 u_00002.png ut_00002.png
